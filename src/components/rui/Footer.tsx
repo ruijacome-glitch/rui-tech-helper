@@ -1,4 +1,5 @@
-import { navegacao, whatsappHref } from "@/data/site";
+import { Link } from "@tanstack/react-router";
+import { navegacao, contacto } from "@/data/site";
 import { LogoMark, Wordmark } from "./Brand";
 
 export function Footer() {
@@ -6,11 +7,10 @@ export function Footer() {
     <footer className="border-t border-border bg-night py-14">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          {/* Substituir por /logo.svg quando o ficheiro final for enviado. */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3" aria-label="O Rui dos Computadores — início">
             <LogoMark />
             <Wordmark />
-          </div>
+          </Link>
           <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Assistência informática em Cascais e arredores. Ao domicílio, remota e sem conversa
             técnica.
@@ -21,10 +21,13 @@ export function Footer() {
           <h2 className="label-tech text-steel">Navegação</h2>
           <ul className="mt-4 space-y-2 text-sm">
             {navegacao.map((i) => (
-              <li key={i.href}>
-                <a href={i.href} className="text-muted-foreground hover:text-foreground">
+              <li key={i.to}>
+                <Link
+                  to={i.to}
+                  className="text-muted-foreground hover:text-foreground data-[status=active]:text-foreground"
+                >
                   {i.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -34,20 +37,13 @@ export function Footer() {
           <h2 className="label-tech text-steel">Falar comigo</h2>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <a href={whatsappHref} className="text-muted-foreground hover:text-foreground">
-                WhatsApp
-              </a>
-            </li>
-            <li>
-              <a href="#contactos" className="text-muted-foreground hover:text-foreground">
+              <Link to="/contactos" className="text-muted-foreground hover:text-foreground">
                 Formulário de contacto
-              </a>
+              </Link>
             </li>
-            <li className="text-muted-foreground">Cascais e arredores</li>
-            <li>
-              <a href="#contactos" className="text-muted-foreground hover:text-foreground">
-                Política de privacidade
-              </a>
+            <li className="text-muted-foreground">{contacto.area}</li>
+            <li className="text-muted-foreground">
+              Telefone e email: {contacto.telefone || contacto.placeholder}
             </li>
           </ul>
         </div>

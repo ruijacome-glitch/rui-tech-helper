@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ContactosRouteImport } from './routes/contactos'
+import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
+import { Route as PrecarioRouteImport } from './routes/precario'
+import { Route as ServicosRouteImport } from './routes/servicos'
+import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
+  id: '/como-funciona',
+  path: '/como-funciona',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactosRoute = ContactosRouteImport.update({
+  id: '/contactos',
+  path: '/contactos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParaNegociosRoute = ParaNegociosRouteImport.update({
+  id: '/para-negocios',
+  path: '/para-negocios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrecarioRoute = PrecarioRouteImport.update({
+  id: '/precario',
+  path: '/precario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosRoute = ServicosRouteImport.update({
+  id: '/servicos',
+  path: '/servicos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreORuiRoute = SobreORuiRouteImport.update({
+  id: '/sobre-o-rui',
+  path: '/sobre-o-rui',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contactos': typeof ContactosRoute
+  '/para-negocios': typeof ParaNegociosRoute
+  '/precario': typeof PrecarioRoute
+  '/servicos': typeof ServicosRoute
+  '/sobre-o-rui': typeof SobreORuiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contactos': typeof ContactosRoute
+  '/para-negocios': typeof ParaNegociosRoute
+  '/precario': typeof PrecarioRoute
+  '/servicos': typeof ServicosRoute
+  '/sobre-o-rui': typeof SobreORuiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/como-funciona': typeof ComoFuncionaRoute
+  '/contactos': typeof ContactosRoute
+  '/para-negocios': typeof ParaNegociosRoute
+  '/precario': typeof PrecarioRoute
+  '/servicos': typeof ServicosRoute
+  '/sobre-o-rui': typeof SobreORuiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/como-funciona'
+    | '/contactos'
+    | '/para-negocios'
+    | '/precario'
+    | '/servicos'
+    | '/sobre-o-rui'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/como-funciona'
+    | '/contactos'
+    | '/para-negocios'
+    | '/precario'
+    | '/servicos'
+    | '/sobre-o-rui'
+  id:
+    | '__root__'
+    | '/'
+    | '/como-funciona'
+    | '/contactos'
+    | '/para-negocios'
+    | '/precario'
+    | '/servicos'
+    | '/sobre-o-rui'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ComoFuncionaRoute: typeof ComoFuncionaRoute
+  ContactosRoute: typeof ContactosRoute
+  ParaNegociosRoute: typeof ParaNegociosRoute
+  PrecarioRoute: typeof PrecarioRoute
+  ServicosRoute: typeof ServicosRoute
+  SobreORuiRoute: typeof SobreORuiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/como-funciona': {
+      id: '/como-funciona'
+      path: '/como-funciona'
+      fullPath: '/como-funciona'
+      preLoaderRoute: typeof ComoFuncionaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contactos': {
+      id: '/contactos'
+      path: '/contactos'
+      fullPath: '/contactos'
+      preLoaderRoute: typeof ContactosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/para-negocios': {
+      id: '/para-negocios'
+      path: '/para-negocios'
+      fullPath: '/para-negocios'
+      preLoaderRoute: typeof ParaNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/precario': {
+      id: '/precario'
+      path: '/precario'
+      fullPath: '/precario'
+      preLoaderRoute: typeof PrecarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos': {
+      id: '/servicos'
+      path: '/servicos'
+      fullPath: '/servicos'
+      preLoaderRoute: typeof ServicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre-o-rui': {
+      id: '/sobre-o-rui'
+      path: '/sobre-o-rui'
+      fullPath: '/sobre-o-rui'
+      preLoaderRoute: typeof SobreORuiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ComoFuncionaRoute: ComoFuncionaRoute,
+  ContactosRoute: ContactosRoute,
+  ParaNegociosRoute: ParaNegociosRoute,
+  PrecarioRoute: PrecarioRoute,
+  ServicosRoute: ServicosRoute,
+  SobreORuiRoute: SobreORuiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
