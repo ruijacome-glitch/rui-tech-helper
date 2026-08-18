@@ -40,6 +40,9 @@
   --color-ring-offset-background: var(--background);
   --color-night: var(--night);
   --color-night-soft: var(--night-soft);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-line: var(--navy-line);
+
   --color-electric: var(--electric);
   --color-electric-soft: var(--electric-soft);
   --color-orange: var(--orange);
@@ -69,6 +72,10 @@
 
   --night: oklch(0.16 0.045 264);
   --night-soft: oklch(0.22 0.05 264);
+  /* #051639 e #122646 — camadas navy profundas */
+  --navy-mid: #051639;
+  --navy-line: #122646;
+
   --electric: oklch(0.6 0.21 258);
   --electric-soft: oklch(0.72 0.16 254);
   --orange: oklch(0.73 0.19 55);
@@ -242,4 +249,18 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+@keyframes rui-draw {
+  from {
+    stroke-dashoffset: var(--rui-draw-length, 1200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@utility animate-draw {
+  stroke-dasharray: var(--rui-draw-length, 1200);
+  animation: rui-draw 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }

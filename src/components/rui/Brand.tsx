@@ -1,6 +1,21 @@
 import logoAsset from "@/assets/logo-rui.svg.asset.json";
 import mascoteAsset from "@/assets/mascote-rui.png.asset.json";
+import mascoteSobreAsset from "@/assets/mascote-sobre-o-rui.png.asset.json";
 import { cn } from "@/lib/utils";
+
+/** Mascote oficial da página "Sobre o Rui" (PNG com transparência real). */
+export function MascotBancada({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={mascoteSobreAsset.url}
+      alt="Rui, técnico de informática em Cascais, a diagnosticar um computador na bancada"
+      className={className}
+      loading="eager"
+      decoding="async"
+    />
+  );
+}
+
 
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
