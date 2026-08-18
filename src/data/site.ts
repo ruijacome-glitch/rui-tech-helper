@@ -195,3 +195,37 @@ export const negocios = {
   ],
   cta: "Falar sobre o meu negócio",
 };
+
+/** Valor por defeito enquanto os preços finais não estiverem fechados. */
+export const VALOR_A_CONFIRMAR = "Valor a confirmar";
+
+/** Áreas de preçário adicionais — editar aqui quando os valores existirem. */
+export const precarioAreas = [
+  {
+    titulo: "Limpeza e optimização",
+    valor: VALOR_A_CONFIRMAR,
+    nota: "Limpeza física, arranque, espaço em disco e desempenho geral.",
+  },
+  {
+    titulo: "Instalação e configuração",
+    valor: VALOR_A_CONFIRMAR,
+    nota: "Sistema, contas, email, cópias de segurança e equipamento novo.",
+  },
+  {
+    titulo: "Redes e periféricos",
+    valor: VALOR_A_CONFIRMAR,
+    nota: "Wi-Fi, routers, repetidores, impressoras e equipamento partilhado.",
+  },
+  {
+    titulo: "Recuperação de dados",
+    valor: "Mediante avaliação",
+    nota: "Depende sempre do estado do equipamento. Nunca há garantia de recuperação.",
+  },
+];
+
+export const notasPrecario = [
+  "O valor é sempre confirmado contigo antes de qualquer intervenção.",
+  "Peças e materiais não estão incluídos, salvo indicação em contrário.",
+  "A recuperação de dados depende de avaliação prévia e não tem resultado garantido.",
+  "Deslocações fora da área habitual de Cascais e arredores são avaliadas caso a caso.",
+];
