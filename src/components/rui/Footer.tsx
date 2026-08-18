@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { navegacao, contacto } from "@/data/site";
+import { abrirGestorCookies } from "@/lib/cookie-consent";
 import { LogoMark, Wordmark } from "./Brand";
 
 export function Footer() {
