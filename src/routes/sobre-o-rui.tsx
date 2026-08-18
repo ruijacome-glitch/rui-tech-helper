@@ -212,6 +212,29 @@ function SobrePage() {
         </div>
       </section>
 
+      {/* COMPETÊNCIAS — faixa editorial simples, sem cartões genéricos */}
+      <section className="bg-navy-mid py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <Reveal>
+            <p className="label-tech text-electric-soft">// Competências comprovadas</p>
+            <ul className="mt-6 flex flex-wrap gap-3">
+              {competencias.map((c) => (
+                <li
+                  key={c}
+                  className="inline-flex items-center gap-2 rounded-sm border border-electric/25 bg-night/60 px-4 py-2 text-sm text-foreground"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="size-1.5 animate-blink rounded-full bg-electric-soft"
+                  />
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
       {/* VALORES — composição editorial sobre navy, com pausa clara na primeira coluna */}
       <section className="bg-night py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
