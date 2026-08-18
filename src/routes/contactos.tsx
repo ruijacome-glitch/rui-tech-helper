@@ -9,7 +9,7 @@ const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
   "Conta-me o que se passa com o teu computador. Assistência informática em Cascais e arredores, ao domicílio ou remota.";
 
-type Busca = { problema?: string };
+type Busca = { problema?: string | undefined };
 
 export const Route = createFileRoute("/contactos")({
   validateSearch: (search: Record<string, unknown>): Busca => ({
