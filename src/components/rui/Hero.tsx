@@ -4,14 +4,62 @@ import { MascotPlaceholder } from "./Brand";
 import { Cable } from "./Cable";
 
 const etiquetas = [
-  { texto: "A analisar", classe: "left-0 top-10", cor: "text-electric-soft border-electric/50" },
-  { texto: "Problema detectado", classe: "right-0 top-1/3", cor: "text-orange border-orange/50" },
-  { texto: "Solução encontrada", classe: "left-2 bottom-12", cor: "text-foreground border-steel/40" },
+  {
+    texto: "A analisar",
+    cor: "text-electric-soft border-electric/50",
+    desktop: "left-4 top-6",
+    lineSide: "right" as const,
+  },
+  {
+    texto: "Problema detectado",
+    cor: "text-orange border-orange/50",
+    desktop: "right-4 top-6",
+    lineSide: "left" as const,
+  },
+  {
+    texto: "Solução encontrada",
+    cor: "text-foreground border-steel/40",
+    desktop: "left-4 bottom-6",
+    lineSide: "right" as const,
+  },
 ];
+
+function Etiqueta({
+  texto,
+  cor,
+  lineSide,
+  className = "",
+}: {
+  texto: string;
+  cor: string;
+  lineSide?: "left" | "right";
+  className?: string;
+}) {
+  const line = (
+    <span
+      className="hidden h-px w-8 bg-current/50 lg:inline-block"
+      aria-hidden="true"
+    />
+  );
+
+  return (
+    <span
+      className={`${cor} label-tech inline-flex items-center gap-2 rounded-sm border bg-night/90 px-3 py-1.5 animate-rise ${className}`}
+    >
+      {lineSide === "left" && line}
+      <span className="inline-block size-1.5 rounded-full bg-current animate-blink align-middle" />
+      {texto}
+      {lineSide === "right" && line}
+    </span>
+  );
+}
 
 export function Hero() {
   return (
-    <section id="topo" className="relative overflow-hidden bg-night pt-28 pb-16 sm:pt-36 lg:pb-24">
+    <section
+      id="topo"
+      className="relative overflow-hidden bg-night pt-28 pb-16 sm:pt-36 lg:pb-24"
+    >
       <Cable className="pointer-events-none absolute -left-6 top-24 hidden h-[640px] w-24 opacity-70 lg:block" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
@@ -24,7 +72,8 @@ export function Hero() {
             <span className="block text-electric">Precisa do Rui.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Assistência informática em Cascais, sem complicações e sem conversa técnica.
+            Assistência informática em Cascais, sem complicações e sem conversa
+            técnica.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -45,33 +94,79 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-square">
-            <div className="absolute inset-4 rounded-full border border-electric/45" />
-            <div className="absolute inset-4 rounded-full electric-glow" />
-            <svg viewBox="0 0 100 100" aria-hidden="true" className="absolute inset-4">
-              <circle
-                cx="50"
-                cy="50"
-                r="49"
-                fill="none"
-                stroke="var(--color-electric-soft)"
-                strokeWidth="1"
-                strokeDasharray="40 268"
-                className="animate-cable"
+        <div className="mx-auto w-full max-w-md lg:max-w-xl">
+          {/* Cena desktop: círculo + etiquetas nos cantos, fora da personagem */}
+          <div className="relative mx-auto hidden aspect-square lg:block">
+            <div className="absolute left-1/2 top-1/2 w-72 h-72 -translate-x-1/2 -translate-y-1/2 lg:w-80 lg:h-80">
+              <div className="absolute inset-0 rounded-full border border-electric/45 electric-glow" />
+              <svg
+                viewBox="0 0 100 100"
+                aria-hidden="true"
+                className="absolute inset-0"
+              >
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="49"
+                  fill="none"
+                  stroke="var(--color-electric-soft)"
+                  strokeWidth="1"
+                  strokeDasharray="40 268"
+                  className="animate-cable"
+                />
+              </svg>
+              <MascotPlaceholder
+                className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float"
+                loading="eager"
+                decoding="async"
               />
-            </svg>
-            <MascotPlaceholder className="absolute inset-6 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float" />
+            </div>
 
             {etiquetas.map((e) => (
-              <span
+              <Etiqueta
                 key={e.texto}
-                className={`absolute ${e.classe} ${e.cor} label-tech animate-rise rounded-sm border bg-night/90 px-3 py-1.5`}
-              >
-                <span className="mr-2 inline-block size-1.5 rounded-full bg-current animate-blink align-middle" />
-                {e.texto}
-              </span>
+                texto={e.texto}
+                cor={e.cor}
+                lineSide={e.lineSide}
+                className={`absolute ${e.desktop}`}
+              />
             ))}
+          </div>
+
+          {/* Cena mobile: círculo isolado + etiquetas por baixo numa linha que quebra */}
+          <div className="lg:hidden">
+            <div className="relative mx-auto aspect-square w-full max-w-sm">
+              <div className="absolute left-1/2 top-1/2 w-72 h-72 -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute inset-0 rounded-full border border-electric/45 electric-glow" />
+                <svg
+                  viewBox="0 0 100 100"
+                  aria-hidden="true"
+                  className="absolute inset-0"
+                >
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="49"
+                    fill="none"
+                    stroke="var(--color-electric-soft)"
+                    strokeWidth="1"
+                    strokeDasharray="40 268"
+                    className="animate-cable"
+                  />
+                </svg>
+                <MascotPlaceholder
+                  className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              {etiquetas.map((e) => (
+                <Etiqueta key={e.texto} texto={e.texto} cor={e.cor} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
