@@ -12,10 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
 import { Route as ContactosRouteImport } from './routes/contactos'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as PrecarioRouteImport } from './routes/precario'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
+import { Route as TermosLegaisRouteImport } from './routes/termos-legais'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -32,6 +35,11 @@ const ContactosRoute = ContactosRouteImport.update({
   path: '/contactos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ParaNegociosRoute = ParaNegociosRouteImport.update({
   id: '/para-negocios',
   path: '/para-negocios',
@@ -40,6 +48,11 @@ const ParaNegociosRoute = ParaNegociosRouteImport.update({
 const PrecarioRoute = PrecarioRouteImport.update({
   id: '/precario',
   path: '/precario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicosRoute = ServicosRouteImport.update({
@@ -52,34 +65,48 @@ const SobreORuiRoute = SobreORuiRouteImport.update({
   path: '/sobre-o-rui',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermosLegaisRoute = TermosLegaisRouteImport.update({
+  id: '/termos-legais',
+  path: '/termos-legais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
+  '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
+  '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
+  '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -87,38 +114,50 @@ export interface FileRouteTypes {
     | '/'
     | '/como-funciona'
     | '/contactos'
+    | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/como-funciona'
     | '/contactos'
+    | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   id:
     | '__root__'
     | '/'
     | '/como-funciona'
     | '/contactos'
+    | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   ContactosRoute: typeof ContactosRoute
+  CookiesRoute: typeof CookiesRoute
   ParaNegociosRoute: typeof ParaNegociosRoute
   PrecarioRoute: typeof PrecarioRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   ServicosRoute: typeof ServicosRoute
   SobreORuiRoute: typeof SobreORuiRoute
+  TermosLegaisRoute: typeof TermosLegaisRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -144,6 +183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/para-negocios': {
       id: '/para-negocios'
       path: '/para-negocios'
@@ -156,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/precario'
       fullPath: '/precario'
       preLoaderRoute: typeof PrecarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/servicos': {
@@ -172,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreORuiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/termos-legais': {
+      id: '/termos-legais'
+      path: '/termos-legais'
+      fullPath: '/termos-legais'
+      preLoaderRoute: typeof TermosLegaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -179,10 +239,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
   ContactosRoute: ContactosRoute,
+  CookiesRoute: CookiesRoute,
   ParaNegociosRoute: ParaNegociosRoute,
   PrecarioRoute: PrecarioRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   ServicosRoute: ServicosRoute,
   SobreORuiRoute: SobreORuiRoute,
+  TermosLegaisRoute: TermosLegaisRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

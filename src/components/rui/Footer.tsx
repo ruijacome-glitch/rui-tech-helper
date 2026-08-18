@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { navegacao, contacto } from "@/data/site";
+import { abrirGestorCookies } from "@/lib/cookie-consent";
 import { LogoMark, Wordmark } from "./Brand";
 
 export function Footer() {
@@ -49,9 +50,42 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-7xl flex-wrap items-center justify-between gap-3 border-t border-border px-4 pt-6 sm:px-6">
-        <p className="label-tech text-steel">RUI_OS v3.1 — obrigado pela confiança.</p>
-        <p className="label-tech text-steel">© {new Date().getFullYear()} O Rui dos Computadores</p>
+      <div className="mx-auto mt-12 max-w-7xl border-t border-border px-4 pt-6 sm:px-6">
+        <nav aria-label="Informação legal">
+          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+            <li>
+              <Link to="/termos-legais" className="text-muted-foreground hover:text-foreground">
+                Termos legais
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacidade" className="text-muted-foreground hover:text-foreground">
+                Privacidade
+              </Link>
+            </li>
+            <li>
+              <Link to="/cookies" className="text-muted-foreground hover:text-foreground">
+                Cookies
+              </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={abrirGestorCookies}
+                className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                Gerir cookies
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+          <p className="label-tech text-steel">RUI_OS v3.1 — obrigado pela confiança.</p>
+          <p className="label-tech text-steel">
+            © {new Date().getFullYear()} O Rui dos Computadores
+          </p>
+        </div>
       </div>
     </footer>
   );
