@@ -1,5 +1,6 @@
 import logoAsset from "@/assets/logo-rui.svg.asset.json";
 import mascoteAsset from "@/assets/mascote-rui.png.asset.json";
+import { cn } from "@/lib/utils";
 
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
@@ -8,16 +9,16 @@ export function LogoMark({ className = "" }: { className?: string }) {
       alt="Logótipo O Rui dos Computadores"
       width={40}
       height={40}
-      className={`size-10 shrink-0 rounded-full ${className}`}
+      className={cn("size-10 shrink-0 rounded-full", className)}
     />
   );
 }
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
-    <span className={`leading-none ${className}`}>
-      <span className="block display-xl text-base tracking-tight text-foreground">O Rui dos</span>
-      <span className="block display-xl text-base tracking-tight text-electric-soft">Computadores</span>
+    <span className={cn("leading-none text-base", className)}>
+      <span className="block display-xl tracking-tight text-foreground">O Rui dos</span>
+      <span className="block display-xl tracking-tight text-electric-soft">Computadores</span>
     </span>
   );
 }
