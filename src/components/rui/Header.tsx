@@ -10,8 +10,8 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-night/85 backdrop-blur-md">
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 lg:flex lg:justify-between">
         <a href="#topo" className="flex min-w-0 items-center gap-3" aria-label="O Rui dos Computadores — início">
-          <LogoMark />
-          <Wordmark className="min-w-0" />
+          <LogoMark className="size-12 lg:size-14" />
+          <Wordmark className="min-w-0 text-lg lg:text-xl" />
         </a>
 
         <nav aria-label="Principal" className="hidden lg:block">
