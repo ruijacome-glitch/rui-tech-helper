@@ -265,10 +265,26 @@ export const negociosModelo = [
 ];
 
 export const sobreTimeline = [
-  { ano: "2006", texto: "Início do percurso profissional em informática." },
-  { ano: "Anos seguintes", texto: "Suporte a utilizadores e a equipamentos do dia-a-dia." },
-  { ano: "Ao longo do tempo", texto: "Trabalho com sistemas, redes e infraestruturas." },
-  { ano: "Hoje", texto: "Assistência a particulares e pequenos negócios em Cascais e arredores." },
+  {
+    ano: "2006",
+    texto:
+      "Começo no suporte técnico presencial, a diagnosticar hardware, software e problemas reais de utilizadores.",
+  },
+  {
+    ano: "2008",
+    texto:
+      "Assumo a coordenação de uma equipa local de suporte informático, sem deixar o trabalho técnico no terreno.",
+  },
+  {
+    ano: "2011",
+    texto:
+      "Avanço para funções de responsável sénior de equipa de suporte e de especialista técnico sénior, com problemas mais complexos, sistemas, redes e infraestruturas.",
+  },
+  {
+    ano: "Hoje",
+    texto:
+      "Aplico essa experiência a particulares e pequenos negócios de Cascais, com apoio próximo, explicações claras e soluções proporcionais ao problema.",
+  },
 ];
 
 export const sobreValores = [
