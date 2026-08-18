@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
+import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as ServicosRouteImport } from './routes/servicos'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const ComoFuncionaRoute = ComoFuncionaRouteImport.update({
   path: '/como-funciona',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParaNegociosRoute = ParaNegociosRouteImport.update({
+  id: '/para-negocios',
+  path: '/para-negocios',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
@@ -32,30 +38,34 @@ const ServicosRoute = ServicosRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/para-negocios': typeof ParaNegociosRoute
   '/servicos': typeof ServicosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/para-negocios': typeof ParaNegociosRoute
   '/servicos': typeof ServicosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/como-funciona': typeof ComoFuncionaRoute
+  '/para-negocios': typeof ParaNegociosRoute
   '/servicos': typeof ServicosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/como-funciona' | '/servicos'
+  fullPaths: '/' | '/como-funciona' | '/para-negocios' | '/servicos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/como-funciona' | '/servicos'
-  id: '__root__' | '/' | '/como-funciona' | '/servicos'
+  to: '/' | '/como-funciona' | '/para-negocios' | '/servicos'
+  id: '__root__' | '/' | '/como-funciona' | '/para-negocios' | '/servicos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ComoFuncionaRoute: typeof ComoFuncionaRoute
+  ParaNegociosRoute: typeof ParaNegociosRoute
   ServicosRoute: typeof ServicosRoute
 }
 
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ComoFuncionaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/para-negocios': {
+      id: '/para-negocios'
+      path: '/para-negocios'
+      fullPath: '/para-negocios'
+      preLoaderRoute: typeof ParaNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos': {
       id: '/servicos'
       path: '/servicos'
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ComoFuncionaRoute: ComoFuncionaRoute,
+  ParaNegociosRoute: ParaNegociosRoute,
   ServicosRoute: ServicosRoute,
 }
 export const routeTree = rootRouteImport
