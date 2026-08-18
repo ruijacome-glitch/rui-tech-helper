@@ -28,6 +28,15 @@ const etiquetasHero = [
   { texto: "Desde 2006", cor: "text-orange border-orange/50" },
 ];
 
+const competencias = [
+  "Suporte a utilizadores",
+  "Hardware e software",
+  "Redes e sistemas",
+  "Cópias de segurança",
+  "Administração remota",
+  "Coordenação técnica",
+];
+
 function EtiquetaTecnica({
   texto,
   cor,
@@ -99,8 +108,11 @@ function SobrePage() {
                 como deve ser.
               </h1>
               <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-                Trabalho em informática desde 2006. Hoje ajudo particulares e pequenos negócios de
-                Cascais a resolver problemas sem os transformar num assunto complicado.
+                Trabalho em informática desde 2006. A abordagem simples e próxima resulta de quase
+                duas décadas a resolver problemas reais: utilizadores confusos, equipamentos que
+                falham, sistemas que não respondem e redes instáveis. Hoje aplico essa experiência a
+                particulares e pequenos negócios de Cascais, com explicações claras e soluções
+                proporcionais ao problema.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-2">
@@ -179,17 +191,21 @@ function SobrePage() {
           <Reveal delay={120} className="self-center">
             <div className="border-l border-electric/30 pl-6">
               <p className="text-lg text-muted-foreground">
-                Ao longo destes anos trabalhei com utilizadores e com equipamento de todos os
-                feitios: computadores, sistemas, redes e infraestruturas. Foi aí que percebi que a
-                parte mais importante não é a técnica — é conseguir explicar.
+                O percurso começou em suporte técnico presencial, a diagnosticar hardware e software
+                junto de quem usava o equipamento. Ao longo dos anos fui trabalhando com
+                computadores, servidores, impressoras, periféricos, redes, cópias de segurança e
+                administração remota.
               </p>
               <p className="mt-5 text-muted-foreground">
-                Vivo e trabalho em Cascais. Aparecer no local, olhar para o equipamento e falar com
-                quem o usa continua a ser a forma mais rápida de resolver a maioria dos problemas.
+                Em 2008 passei a coordenar uma equipa local de suporte, sem deixar o trabalho no
+                terreno. Mais tarde, como responsável sénior de equipa e especialista técnico
+                sénior, acompanhei técnicos juniores e estagiários e lidei com problemas mais
+                complexos de sistemas e infraestruturas.
               </p>
               <p className="mt-5 text-muted-foreground">
-                Apoio particulares e pequenos negócios. Não uso linguagem técnica desnecessária e
-                nunca proponho substituir aquilo que ainda não foi diagnosticado.
+                A experiência técnica só é útil quando o cliente percebe o problema e a solução.
+                Por isso explico primeiro, diagnostico antes de substituir e confirmo tudo contigo
+                antes de avançar.
               </p>
             </div>
           </Reveal>
