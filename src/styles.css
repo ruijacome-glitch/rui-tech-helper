@@ -72,6 +72,10 @@
 
   --night: oklch(0.16 0.045 264);
   --night-soft: oklch(0.22 0.05 264);
+  /* #051639 e #122646 — camadas navy profundas */
+  --navy-mid: #051639;
+  --navy-line: #122646;
+
   --electric: oklch(0.6 0.21 258);
   --electric-soft: oklch(0.72 0.16 254);
   --orange: oklch(0.73 0.19 55);
