@@ -17,6 +17,7 @@ import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as PrecarioRouteImport } from './routes/precario'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
+import { Route as TermosLegaisRouteImport } from './routes/termos-legais'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const SobreORuiRoute = SobreORuiRouteImport.update({
   path: '/sobre-o-rui',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermosLegaisRoute = TermosLegaisRouteImport.update({
+  id: '/termos-legais',
+  path: '/termos-legais',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/precario': typeof PrecarioRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/precario': typeof PrecarioRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/precario': typeof PrecarioRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
+  '/termos-legais': typeof TermosLegaisRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/precario'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/precario'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/precario'
     | '/servicos'
     | '/sobre-o-rui'
+    | '/termos-legais'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   PrecarioRoute: typeof PrecarioRoute
   ServicosRoute: typeof ServicosRoute
   SobreORuiRoute: typeof SobreORuiRoute
+  TermosLegaisRoute: typeof TermosLegaisRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreORuiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/termos-legais': {
+      id: '/termos-legais'
+      path: '/termos-legais'
+      fullPath: '/termos-legais'
+      preLoaderRoute: typeof TermosLegaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrecarioRoute: PrecarioRoute,
   ServicosRoute: ServicosRoute,
   SobreORuiRoute: SobreORuiRoute,
+  TermosLegaisRoute: TermosLegaisRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
