@@ -40,6 +40,9 @@
   --color-ring-offset-background: var(--background);
   --color-night: var(--night);
   --color-night-soft: var(--night-soft);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-line: var(--navy-line);
+
   --color-electric: var(--electric);
   --color-electric-soft: var(--electric-soft);
   --color-orange: var(--orange);
