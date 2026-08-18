@@ -18,13 +18,14 @@ export const telefoneLabel = contacto.telefone || contacto.placeholder;
 export const emailLabel = contacto.email || contacto.placeholder;
 
 export const navegacao = [
-  { label: "Serviços", href: "#servicos" },
-  { label: "Como funciona", href: "#como-funciona" },
-  { label: "Para negócios", href: "#negocios" },
-  { label: "Sobre o Rui", href: "#porque-o-rui" },
-  { label: "Preçário", href: "#precario" },
-  { label: "Contactos", href: "#contactos" },
-];
+  { label: "Serviços", to: "/servicos" },
+  { label: "Como funciona", to: "/como-funciona" },
+  { label: "Para negócios", to: "/para-negocios" },
+  { label: "Sobre o Rui", to: "/sobre-o-rui" },
+  { label: "Preçário", to: "/precario" },
+  { label: "Contactos", to: "/contactos" },
+] as const;
+
 
 export const sintomasTicker = [
   "Está lento",
