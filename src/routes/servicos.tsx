@@ -5,6 +5,16 @@ import { CableLine } from "@/components/rui/Cable";
 import { MascotPlaceholder } from "@/components/rui/Brand";
 import { servicosDetalhe } from "@/data/paginas";
 
+/** Liga cada serviço ao tipo de problema do formulário de contacto. */
+const tipoPorServico: Record<string, string> = {
+  reparacao: "Não arranca",
+  optimizacao: "Computador lento",
+  instalacao: "Instalação e configuração",
+  dados: "Ficheiros perdidos",
+  remoto: "Outro / não sei explicar",
+  redes: "Internet ou Wi-Fi",
+};
+
 const titulo = "Serviços de Assistência Informática em Cascais | O Rui dos Computadores";
 const descricao =
   "Reparação, limpeza e optimização, instalação, recuperação de dados, apoio remoto e redes Wi-Fi para particulares e pequenos negócios em Cascais.";
@@ -141,6 +151,7 @@ function ServicosPage() {
                   </p>
                   <Link
                     to="/contactos"
+                    search={{ problema: tipoPorServico[s.id] }}
                     className={`sm:col-span-2 inline-flex min-h-11 w-fit items-center gap-2 rounded-sm border px-5 text-sm font-semibold uppercase tracking-wide transition-colors ${
                       claro
                         ? "border-warm-ink/30 text-warm-ink hover:bg-warm-ink hover:text-warm"
