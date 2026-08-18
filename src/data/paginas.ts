@@ -1,0 +1,326 @@
+/**
+ * Conteúdo editável das subpáginas.
+ * Separado do layout: alterar textos aqui, nunca nos componentes.
+ */
+
+export type ServicoDetalhe = {
+  id: string;
+  numero: string;
+  titulo: string;
+  resumo: string;
+  problema: string;
+  sinais: string[];
+  incluido: string[];
+  quando: string;
+};
+
+export const servicosDetalhe: ServicoDetalhe[] = [
+  {
+    id: "reparacao",
+    numero: "01",
+    titulo: "Reparação de computadores e portáteis",
+    resumo: "Avarias de hardware e sistema, avaliadas antes de qualquer substituição.",
+    problema:
+      "O equipamento deixou de funcionar como deve e ninguém te explicou porquê. Muitas vezes não é preciso comprar outro.",
+    sinais: [
+      "Não liga ou desliga-se sozinho",
+      "Ecrã com falhas, riscas ou partido",
+      "Teclado, dobradiças ou carregador com folga",
+      "Ruído anormal ou aquecimento excessivo",
+    ],
+    incluido: [
+      "Avaliação do estado do equipamento",
+      "Identificação da avaria e das opções possíveis",
+      "Substituição de componentes quando fizer sentido",
+      "Testes contigo antes de dar por terminado",
+    ],
+    quando:
+      "Assim que o problema se repete. Continuar a usar um equipamento com falhas costuma agravar a avaria.",
+  },
+  {
+    id: "optimizacao",
+    numero: "02",
+    titulo: "Limpeza e optimização",
+    resumo: "Desempenho recuperado sem gastar em hardware novo.",
+    problema:
+      "O computador demora uma eternidade a arrancar e aquece com tarefas simples. Quase sempre é acumulação, não idade.",
+    sinais: [
+      "Arranque muito demorado",
+      "Ventoinha sempre no máximo",
+      "Disco cheio sem saberes porquê",
+      "Programas a abrir sozinhos com o sistema",
+    ],
+    incluido: [
+      "Limpeza física interior e ventilação",
+      "Revisão do arranque e dos programas em segundo plano",
+      "Libertação de espaço em disco",
+      "Actualizações e verificação de segurança básica",
+    ],
+    quando:
+      "Quando o trabalho do dia-a-dia começa a custar. É a intervenção mais simples e a que mais se nota.",
+  },
+  {
+    id: "instalacao",
+    numero: "03",
+    titulo: "Instalação e configuração",
+    resumo: "Equipamento novo, ou reinstalado, pronto a usar.",
+    problema:
+      "Comprar é a parte fácil. Ter as contas, os ficheiros e as cópias de segurança no sítio certo é outra história.",
+    sinais: [
+      "Computador novo ainda por configurar",
+      "Sistema a precisar de reinstalação",
+      "Email ou contas por configurar",
+      "Sem qualquer cópia de segurança",
+    ],
+    incluido: [
+      "Instalação de sistema e programas essenciais",
+      "Transferência de ficheiros e contas",
+      "Configuração de email e impressão",
+      "Cópias de segurança explicadas de forma simples",
+    ],
+    quando:
+      "Antes de começares a usar o equipamento novo. Evita ter de repetir tudo mais tarde.",
+  },
+  {
+    id: "dados",
+    numero: "04",
+    titulo: "Recuperação de dados",
+    resumo: "Avaliação honesta do que é possível — sem promessas.",
+    problema:
+      "Ficheiros apagados, disco com falhas ou sistema que deixou de arrancar. A recuperação depende sempre do estado do suporte.",
+    sinais: [
+      "Ficheiros apagados por engano",
+      "Disco reconhecido mas ilegível",
+      "Ruídos no disco ou falhas de leitura",
+      "Sistema que já não arranca",
+    ],
+    incluido: [
+      "Avaliação prévia do estado do suporte",
+      "Explicação clara do que é ou não possível",
+      "Tentativa de recuperação quando houver condições",
+      "Entrega dos dados recuperados em suporte seguro",
+    ],
+    quando:
+      "Imediatamente, e sem continuar a usar o equipamento. Nenhuma recuperação pode ser garantida à partida.",
+  },
+  {
+    id: "remoto",
+    numero: "05",
+    titulo: "Apoio remoto",
+    resumo: "Resolução à distância, contigo a ver o que está a ser feito.",
+    problema:
+      "Há problemas que não precisam de deslocação nenhuma. Uma ligação remota resolve-os no próprio dia.",
+    sinais: [
+      "Programa que deixou de abrir",
+      "Configuração de email ou contas",
+      "Dúvidas de utilização recorrentes",
+      "Erros que aparecem sempre no mesmo sítio",
+    ],
+    incluido: [
+      "Ligação remota autorizada por ti",
+      "Acompanhamento em directo do que faço",
+      "Explicação do que estava errado",
+      "Fim da sessão com o acesso encerrado",
+    ],
+    quando:
+      "Sempre que o computador liga e tem Internet. É a via mais rápida e a mais barata.",
+  },
+  {
+    id: "redes",
+    numero: "06",
+    titulo: "Redes Wi-Fi, impressoras e periféricos",
+    resumo: "Sinal estável em casa e equipamento que responde à primeira.",
+    problema:
+      "O Wi-Fi não chega a metade da casa e a impressora só funciona quando quer. É configuração, não azar.",
+    sinais: [
+      "Zonas sem cobertura Wi-Fi",
+      "Ligação a cair a meio de chamadas",
+      "Impressora que aparece e desaparece",
+      "Periféricos que o computador não reconhece",
+    ],
+    incluido: [
+      "Análise da cobertura e das interferências",
+      "Configuração de router, repetidores e rede",
+      "Instalação de impressoras e digitalização",
+      "Ligação de periféricos e testes finais",
+    ],
+    quando:
+      "Quando trabalhas ou estudas em casa e a ligação já te fez perder tempo mais do que uma vez.",
+  },
+];
+
+export const passosDetalhe = [
+  {
+    numero: "01",
+    titulo: "Explicas",
+    texto:
+      "Escreves à tua maneira o que se passa. Não precisas de saber o nome de nada — descreve o que vês.",
+  },
+  {
+    numero: "02",
+    titulo: "Faço uma primeira avaliação",
+    texto:
+      "Com o que me contaste, digo-te logo se é caso para apoio remoto ou para ir até ao local.",
+  },
+  {
+    numero: "03",
+    titulo: "Diagnostico",
+    texto:
+      "Vejo o equipamento, identifico a causa e distingo o que é urgente do que pode esperar.",
+  },
+  {
+    numero: "04",
+    titulo: "Confirmo a solução e o valor",
+    texto:
+      "Antes de mexer, explico o que proponho fazer e o valor. Só avanço depois de dizeres que sim.",
+  },
+  {
+    numero: "05",
+    titulo: "Resolvo e testo contigo",
+    texto:
+      "Aplico a solução e testamos juntos. Fica a funcionar e ficas a perceber o que aconteceu.",
+  },
+];
+
+export const primeiraMensagem = [
+  "Que equipamento é e há quanto tempo o tens.",
+  "O que está a acontecer, por palavras tuas.",
+  "Se apareceu alguma mensagem de erro — e qual.",
+  "Quando começou e se acontece sempre ou às vezes.",
+];
+
+export const remotoOuDomicilio = [
+  {
+    titulo: "Assistência remota",
+    texto:
+      "Indicada quando o computador liga e tem Internet: configurações, programas, email e erros de sistema. Mais rápida e sem deslocação.",
+  },
+  {
+    titulo: "Assistência ao domicílio",
+    texto:
+      "Indicada quando há hardware, redes, impressoras ou equipamento que não arranca. Em Cascais e arredores.",
+  },
+];
+
+export const antesDaIntervencao = [
+  "Explico o que encontrei em linguagem simples.",
+  "Digo o que é possível fazer e o que não vale a pena.",
+  "Sempre que houver risco para os dados, aviso antes.",
+  "Nada avança sem a tua confirmação.",
+];
+
+export const negociosAreas = [
+  {
+    numero: "01",
+    titulo: "Computadores e postos de trabalho",
+    texto: "Equipamento preparado, actualizado e igual para toda a equipa.",
+  },
+  {
+    numero: "02",
+    titulo: "Redes Wi-Fi",
+    texto: "Cobertura estável para a equipa e para os clientes, sem cortes a meio.",
+  },
+  {
+    numero: "03",
+    titulo: "Impressoras e periféricos",
+    texto: "Impressão, digitalização e equipamento partilhado a funcionar sempre.",
+  },
+  {
+    numero: "04",
+    titulo: "Instalação e configuração",
+    texto: "Postos novos, contas de email e programas do dia-a-dia prontos a usar.",
+  },
+  {
+    numero: "05",
+    titulo: "Resolução de avarias",
+    texto: "Diagnóstico rápido quando alguma coisa pára no meio do horário de trabalho.",
+  },
+  {
+    numero: "06",
+    titulo: "Apoio próximo e remoto",
+    texto: "Falas comigo directamente. Resolvo à distância ou apareço no local.",
+  },
+];
+
+export const negociosQuando = [
+  "O posto da caixa ou da recepção deixou de arrancar.",
+  "A impressora de facturas falha nas horas de maior movimento.",
+  "O Wi-Fi dos clientes não chega à sala toda.",
+  "Entrou alguém novo na equipa e falta um posto configurado.",
+  "Ninguém sabe onde estão as cópias de segurança.",
+  "Há um computador lento que trava o trabalho todos os dias.",
+];
+
+export const negociosModelo = [
+  {
+    titulo: "Intervenções pontuais",
+    texto:
+      "Chamas quando precisas. Avalio, confirmo o valor e resolvo. Sem qualquer compromisso posterior.",
+  },
+  {
+    titulo: "Acompanhamento adaptado",
+    texto:
+      "Se fizer sentido para o teu negócio, combinamos uma forma de acompanhamento à medida. Falamos primeiro; nada é vendido em pacote fechado.",
+  },
+];
+
+export const sobreTimeline = [
+  { ano: "2006", texto: "Início do percurso profissional em informática." },
+  { ano: "Anos seguintes", texto: "Suporte a utilizadores e a equipamentos do dia-a-dia." },
+  { ano: "Ao longo do tempo", texto: "Trabalho com sistemas, redes e infraestruturas." },
+  { ano: "Hoje", texto: "Assistência a particulares e pequenos negócios em Cascais e arredores." },
+];
+
+export const sobreValores = [
+  {
+    numero: "01",
+    titulo: "Explicar primeiro",
+    texto: "Antes de qualquer intervenção, percebes o que se passa e porquê.",
+  },
+  {
+    numero: "02",
+    titulo: "Diagnosticar antes de substituir",
+    texto: "Trocar peças sem diagnóstico é caro e raras vezes resolve.",
+  },
+  {
+    numero: "03",
+    titulo: "Confirmar antes de avançar",
+    texto: "A solução e o valor são confirmados contigo antes de começar.",
+  },
+  {
+    numero: "04",
+    titulo: "Resolver com transparência",
+    texto: "Digo o que fiz, o que não é possível e o que convém vigiar.",
+  },
+];
+
+export const tiposProblema = [
+  "Computador lento",
+  "Não arranca",
+  "Internet ou Wi-Fi",
+  "Ficheiros perdidos",
+  "Impressora ou periféricos",
+  "Instalação e configuração",
+  "Pequeno negócio",
+  "Outro / não sei explicar",
+];
+
+export const periodosContacto = ["Manhã", "Tarde", "Fim do dia", "Indiferente"];
+
+export const antesDeEnviares = [
+  {
+    numero: "01",
+    titulo: "Identifica o equipamento",
+    texto: "Portátil ou fixo, marca e, se souberes, há quantos anos o tens.",
+  },
+  {
+    numero: "02",
+    titulo: "Anota a mensagem de erro",
+    texto: "Se aparece um erro no ecrã, escreve-o tal como surge — ou fotografa-o.",
+  },
+  {
+    numero: "03",
+    titulo: "Não continues a usar o equipamento",
+    texto: "Se houver ficheiros em risco, desliga. Cada utilização reduz as hipóteses.",
+  },
+];
