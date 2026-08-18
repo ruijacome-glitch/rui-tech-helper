@@ -15,6 +15,7 @@ import { Route as ContactosRouteImport } from './routes/contactos'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as PrecarioRouteImport } from './routes/precario'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
 import { Route as TermosLegaisRouteImport } from './routes/termos-legais'
@@ -49,6 +50,11 @@ const PrecarioRoute = PrecarioRouteImport.update({
   path: '/precario',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicosRoute = ServicosRouteImport.update({
   id: '/servicos',
   path: '/servicos',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/para-negocios'
     | '/precario'
+    | '/privacidade'
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   ParaNegociosRoute: typeof ParaNegociosRoute
   PrecarioRoute: typeof PrecarioRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   ServicosRoute: typeof ServicosRoute
   SobreORuiRoute: typeof SobreORuiRoute
   TermosLegaisRoute: typeof TermosLegaisRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrecarioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/servicos': {
       id: '/servicos'
       path: '/servicos'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   ParaNegociosRoute: ParaNegociosRoute,
   PrecarioRoute: PrecarioRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   ServicosRoute: ServicosRoute,
   SobreORuiRoute: SobreORuiRoute,
   TermosLegaisRoute: TermosLegaisRoute,

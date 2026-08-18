@@ -1,7 +1,21 @@
 import logoAsset from "@/assets/logo-rui.svg.asset.json";
 import mascoteAsset from "@/assets/mascote-rui.png.asset.json";
 import mascoteSobreAsset from "@/assets/mascote-sobre-o-rui.png.asset.json";
+import mascotePrecarioAsset from "@/assets/mascote-precario.png.asset.json";
 import { cn } from "@/lib/utils";
+
+/** Mascote oficial da página "Preçário" (PNG com transparência real). */
+export function MascotPrecario({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={mascotePrecarioAsset.url}
+      alt="Rui, técnico de informática em Cascais, a calcular o valor de uma reparação na bancada"
+      className={className}
+      loading="eager"
+      decoding="async"
+    />
+  );
+}
 
 /** Mascote oficial da página "Sobre o Rui" (PNG com transparência real). */
 export function MascotBancada({ className = "" }: { className?: string }) {
