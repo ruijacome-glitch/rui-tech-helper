@@ -105,7 +105,7 @@ function ServicosPage() {
                     {s.problema}
                   </p>
                   <CableLine className="mt-8 h-2 w-full max-w-sm" />
-                  <p className={`mt-8 text-sm ${claro ? "text-warm-ink/70" : "text-steel"}`}>
+                  <p className={`mt-8 text-sm ${claro ? "text-warm-ink/75" : "text-steel"}`}>
                     <span className="label-tech">Quando pedir ajuda</span>
                     <br />
                     <span className="mt-2 block text-base">{s.quando}</span>
@@ -114,7 +114,7 @@ function ServicosPage() {
 
                 <div className="grid gap-8 sm:grid-cols-2">
                   <div>
-                    <h3 className="label-tech text-steel">Sinais comuns</h3>
+                    <h3 className={`label-tech ${claro ? "text-warm-ink/60" : "text-steel"}`}>Sinais comuns</h3>
                     <ul className="mt-4 space-y-3 text-sm">
                       {s.sinais.map((x) => (
                         <li
@@ -129,7 +129,7 @@ function ServicosPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="label-tech text-steel">Pode incluir</h3>
+                    <h3 className={`label-tech ${claro ? "text-warm-ink/60" : "text-steel"}`}>Pode incluir</h3>
                     <ul className="mt-4 space-y-3 text-sm">
                       {s.incluido.map((x) => (
                         <li key={x} className="flex gap-2">
