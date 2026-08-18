@@ -115,11 +115,7 @@ export function Hero() {
                   className="animate-cable"
                 />
               </svg>
-              <MascotPlaceholder
-                className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float"
-                loading="eager"
-                decoding="async"
-              />
+              <MascotPlaceholder className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float" />
             </div>
 
             {etiquetas.map((e) => (
@@ -154,11 +150,7 @@ export function Hero() {
                     className="animate-cable"
                   />
                 </svg>
-                <MascotPlaceholder
-                  className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float"
-                  loading="eager"
-                  decoding="async"
-                />
+                <MascotPlaceholder className="absolute inset-4 size-auto object-contain drop-shadow-[0_18px_40px_rgba(8,119,255,0.35)] animate-float" />
               </div>
             </div>
 
