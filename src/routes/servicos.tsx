@@ -170,11 +170,11 @@ function ServicosPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           {/* Desktop: imagem à esquerda, texto à direita */}
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
-            <div className="flex translate-y-10 justify-start self-end">
+            <div className="flex translate-y-16 justify-start self-end">
               <img
                 src={apontarOruiAsset.url}
                 alt="Rui a apontar para o botão de WhatsApp"
-                className="h-auto w-full max-w-[28rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
+                className="h-auto w-full max-w-[34rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
                 loading="lazy"
                 decoding="async"
               />
