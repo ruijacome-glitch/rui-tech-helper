@@ -35,7 +35,6 @@ function TermosPage() {
           <LinhaLegal rotulo="Nome comercial" campo={valorOuPendente(legal.nomeComercial)} />
           <LinhaLegal rotulo="Nome legal" campo={valorOuPendente(legal.nomeLegal)} />
           <LinhaLegal rotulo="NIF" campo={valorOuPendente(legal.nif)} />
-          <LinhaLegal rotulo="Endereço profissional" campo={valorOuPendente(legal.endereco)} />
           <LinhaLegal rotulo="Telefone" campo={valorOuPendente(legal.telefone)} />
           <LinhaLegal rotulo="Email" campo={valorOuPendente(legal.emailPrivacidade)} />
         </dl>
