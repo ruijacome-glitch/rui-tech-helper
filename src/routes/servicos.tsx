@@ -165,12 +165,46 @@ function ServicosPage() {
         );
       })}
 
-      <InnerCta
-        titulo="Não sabes qual é o serviço certo? Diz-me o que se passa."
-        texto="Descreve o problema por palavras tuas. A partir daí digo-te se é caso para apoio remoto ou deslocação."
-        accao="Falar comigo"
-        to="/contactos"
-      />
+      {/* CTA final — Chamar o Rui */}
+      <section className="relative overflow-hidden bg-electric py-16 text-primary-foreground sm:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr]">
+          <div className="relative flex justify-center lg:justify-start">
+            <img
+              src={apontarOruiAsset.url}
+              alt="Rui a apontar para o botão de WhatsApp"
+              className="h-auto w-full max-w-[16rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)] sm:max-w-[18rem] lg:max-w-[22rem]"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div className="text-center lg:text-left">
+            <p className="label-tech text-primary-foreground/70">// Chamada para ação</p>
+            <h2 className="mt-3 display-xl text-[clamp(2rem,6vw,3.5rem)]">
+              Chamar o Rui.
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-lg text-primary-foreground/85 lg:mx-0">
+              Resposta rápida no WhatsApp. Ou preenche o formulário se preferires descrever o problema por escrito.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <a
+                href={whatsappHref}
+                className="focus-tech inline-flex min-h-12 items-center gap-2 rounded-sm border border-primary-foreground/70 bg-primary-foreground px-6 font-semibold uppercase tracking-wide text-electric transition-colors hover:bg-primary-foreground/90"
+              >
+                <MessageCircle className="size-5" aria-hidden="true" />
+                WhatsApp
+              </a>
+              <Link
+                to="/contactos"
+                className="focus-tech inline-flex min-h-12 items-center rounded-sm bg-night px-6 font-semibold uppercase tracking-wide text-foreground transition-colors hover:bg-night/90"
+              >
+                Preencher formulário
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }
