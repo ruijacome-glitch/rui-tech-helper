@@ -4,6 +4,7 @@ import { PageShell, PageHero } from "@/components/rui/PageShell";
 import { ContactForm } from "@/components/rui/ContactForm";
 import { contacto, telefoneLabel, emailLabel } from "@/data/site";
 import { antesDeEnviares } from "@/data/paginas";
+import contactosHeroAsset from "@/assets/contactos-hero.png.asset.json";
 
 const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
