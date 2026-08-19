@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
-import { MascotPrecario } from "@/components/rui/Brand";
 import { Reveal } from "@/components/rui/Reveal";
 import { precos, precarioAreas, notasPrecario } from "@/data/site";
+import precarioHeroAsset from "@/assets/precario-hero.png.asset.json";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
 const descricao =
