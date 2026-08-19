@@ -2,7 +2,7 @@ import datacaisLogo from "@/assets/datacais-logo.png.asset.json";
 import { parceiro } from "@/data/site";
 
 type PartnerBlockProps = {
-  variant?: "inline" | "featured";
+  variant?: "inline" | "wide" | "featured";
 };
 
 function LinkedLogo({ size }: { size: "sm" | "lg" }) {
@@ -27,15 +27,19 @@ function LinkedLogo({ size }: { size: "sm" | "lg" }) {
   );
 }
 
-function InlineText() {
+function InlineText({ centered = false }: { centered?: boolean }) {
   const idx = parceiro.texto.indexOf(parceiro.nome);
   if (idx === -1) {
-    return <p className="min-w-0 max-w-md text-sm text-muted-foreground">{parceiro.texto}</p>;
+    return (
+      <p className={`max-w-2xl text-muted-foreground ${centered ? "text-center sm:text-left" : ""}`}>
+        {parceiro.texto}
+      </p>
+    );
   }
   const before = parceiro.texto.slice(0, idx);
   const after = parceiro.texto.slice(idx + parceiro.nome.length);
   return (
-    <p className="min-w-0 max-w-md text-sm text-muted-foreground">
+    <p className={`max-w-2xl text-muted-foreground ${centered ? "text-center sm:text-left" : ""}`}>
       {before}
       <a
         href={parceiro.url}
@@ -78,6 +82,15 @@ export function PartnerBlock({ variant = "inline" }: PartnerBlockProps) {
     );
   }
 
+  if (variant === "wide") {
+    return (
+      <div className="flex flex-col items-center gap-6 border-t border-border pt-8 sm:flex-row sm:gap-10">
+        <LinkedLogo size="sm" />
+        <InlineText centered />
+      </div>
+    );
+  }
+
   return (
     <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-border pt-6">
       <LinkedLogo size="sm" />
@@ -85,4 +98,5 @@ export function PartnerBlock({ variant = "inline" }: PartnerBlockProps) {
     </div>
   );
 }
+
 
