@@ -1,6 +1,6 @@
 import { Check } from "lucide-react";
-import { negocios, parceiro } from "@/data/site";
-import datacaisLogo from "@/assets/datacais-logo.png.asset.json";
+import { negocios } from "@/data/site";
+import { PartnerBlock } from "@/components/rui/PartnerBlock";
 
 export function Business() {
   return (
