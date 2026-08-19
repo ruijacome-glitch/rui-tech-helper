@@ -18,7 +18,6 @@ import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as PrecarioRouteImport } from './routes/precario'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ServicosRouteImport } from './routes/servicos'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
 import { Route as TermosLegaisRouteImport } from './routes/termos-legais'
 
@@ -67,11 +66,6 @@ const ServicosRoute = ServicosRouteImport.update({
   path: '/servicos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SobreORuiRoute = SobreORuiRouteImport.update({
   id: '/sobre-o-rui',
   path: '/sobre-o-rui',
@@ -93,7 +87,6 @@ export interface FileRoutesByFullPath {
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
 }
@@ -107,7 +100,6 @@ export interface FileRoutesByTo {
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
 }
@@ -122,7 +114,6 @@ export interface FileRoutesById {
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
   '/servicos': typeof ServicosRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
 }
@@ -138,7 +129,6 @@ export interface FileRouteTypes {
     | '/precario'
     | '/privacidade'
     | '/servicos'
-    | '/sitemap.xml'
     | '/sobre-o-rui'
     | '/termos-legais'
   fileRoutesByTo: FileRoutesByTo
@@ -152,7 +142,6 @@ export interface FileRouteTypes {
     | '/precario'
     | '/privacidade'
     | '/servicos'
-    | '/sitemap.xml'
     | '/sobre-o-rui'
     | '/termos-legais'
   id:
@@ -166,7 +155,6 @@ export interface FileRouteTypes {
     | '/precario'
     | '/privacidade'
     | '/servicos'
-    | '/sitemap.xml'
     | '/sobre-o-rui'
     | '/termos-legais'
   fileRoutesById: FileRoutesById
@@ -181,7 +169,6 @@ export interface RootRouteChildren {
   PrecarioRoute: typeof PrecarioRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
   ServicosRoute: typeof ServicosRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreORuiRoute: typeof SobreORuiRoute
   TermosLegaisRoute: typeof TermosLegaisRoute
 }
@@ -251,13 +238,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sobre-o-rui': {
       id: '/sobre-o-rui'
       path: '/sobre-o-rui'
@@ -285,7 +265,6 @@ const rootRouteChildren: RootRouteChildren = {
   PrecarioRoute: PrecarioRoute,
   PrivacidadeRoute: PrivacidadeRoute,
   ServicosRoute: ServicosRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreORuiRoute: SobreORuiRoute,
   TermosLegaisRoute: TermosLegaisRoute,
 }

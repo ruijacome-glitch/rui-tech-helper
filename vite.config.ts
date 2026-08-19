@@ -8,8 +8,23 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+    // cPanel shared hosting has no Node/Workers runtime — prerender every
+    // route to plain static HTML instead of the lovable-config SSR default.
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+    },
+  },
+  // Serve the prerendered output as static files, no server runtime.
+  nitro: {
+    preset: "static",
+    // Nitro's static-preset crawler only discovers routes reachable via
+    // <a> links from "/". /em-construcao has no inbound links, so it must
+    // be seeded explicitly alongside "/" (an explicit `routes` list
+    // replaces the default seed rather than merging with it).
+    prerender: {
+      crawlLinks: true,
+      routes: ["/", "/em-construcao"],
+    },
   },
 });

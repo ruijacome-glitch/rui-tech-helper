@@ -139,3 +139,22 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deploy (cPanel, sem SSH)
+
+cPanel shared hosting não tem runtime Node/Workers, por isso o site é prerenderizado
+para HTML estático (`nitro` preset `static`) e só o output já construído é enviado
+para o servidor — o build corre sempre localmente ou em CI, nunca no cPanel.
+
+1. cPanel → Git Version Control → clonar este repo em `/home/mercadom/repositories/rui-tech-helper`.
+2. Antes de cada push para `main`: `npm run deploy:prepare` — corre o build estático e
+   copia `.output/public/` para `static-dist/` (tracked em git, ao contrário de `.output/`).
+   Por omissão substitui `static-dist/index.html` pela página `/em-construcao`, para o
+   site público mostrar apenas "em construção" até à migração de dados real (ponto 5 do
+   roadmap). Para publicar o site completo: `CONSTRUCTION_MODE=false npm run deploy:prepare`.
+3. Commit + push `static-dist/` para `main` + "Update from Remote" no cPanel corre
+   `.cpanel.yml`, que faz rsync de `static-dist/` para a docroot.
+4. `npm run build` sozinho (sem o wrapper `deploy:prepare`) já é seguro de correr
+   isoladamente — ignora um crash conhecido e inofensivo do build final do Nitro que
+   acontece depois de todo o HTML estático já ter sido escrito (bug upstream do preset
+   `static`, não do código deste projecto).
