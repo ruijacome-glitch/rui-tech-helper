@@ -45,7 +45,7 @@ export function Breadcrumbs({ pagina }: { pagina: string }) {
 
 /**
  * Hero reutilizável das páginas internas.
- * Permite variações reais: fundo claro/escuro, coluna lateral e alinhamento.
+ * Permite variações reais: coluna lateral e alinhamento, sempre em navy.
  */
 export function PageHero({
   etiqueta,
