@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
+import { PageShell, PageHero, InnerCta, HeroMascot } from "@/components/rui/PageShell";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
 import negociosCenarioAsset from "@/assets/negocios-cenario.png.asset.json";
 
@@ -60,7 +60,12 @@ function NegociosPage() {
           </>
         }
         intro="Lojas, ateliês, clínicas e escritórios pequenos. Falas comigo directamente, sem departamentos nem intermediários."
-        aside={<CenarioNegocio />}
+        aside={
+          <HeroMascot
+            src={negociosCenarioAsset.url}
+            alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
+          />
+        }
       />
 
       <section className="bg-night py-16 text-foreground sm:py-24">

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
-import { PageShell, PageHero } from "@/components/rui/PageShell";
+import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { CableLine } from "@/components/rui/Cable";
 import { servicosDetalhe } from "@/data/paginas";
 import { whatsappHref } from "@/data/site";
@@ -50,16 +50,10 @@ function ServicosPage() {
         }
         intro="Assistência informática para particulares e pequenos negócios em Cascais e arredores. Ao domicílio ou remota, com diagnóstico antes de qualquer substituição."
         aside={
-          <div className="relative hidden lg:block">
-            <div className="absolute -left-6 top-6 h-px w-24 bg-electric/40" aria-hidden="true" />
-            <img
-              src={servicosHeroAsset.url}
-              alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
-              className="ml-auto w-full max-w-[30rem] drop-shadow-[0_28px_60px_rgba(0,0,0,0.45)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
+          <HeroMascot
+            src={servicosHeroAsset.url}
+            alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
+          />
         }
       />
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
-import { PageShell, PageHero } from "@/components/rui/PageShell";
+import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { ContactForm } from "@/components/rui/ContactForm";
 import { contacto, telefoneLabel, emailLabel } from "@/data/site";
 import { antesDeEnviares } from "@/data/paginas";
@@ -45,16 +45,10 @@ function ContactosPage() {
         }
         intro="Escreve à tua maneira. Não é um formulário administrativo — é a primeira etapa do diagnóstico."
         aside={
-          <div className="flex items-end justify-center">
-            <img
-              src={contactosHeroAsset.url}
-              alt="Ilustração do Rui com headset, portátil e telemóvel, pronto para atender o teu pedido"
-              className="h-auto w-full max-w-sm object-contain lg:max-w-lg"
-              width="600"
-              height="600"
-              loading="eager"
-            />
-          </div>
+          <HeroMascot
+            src={contactosHeroAsset.url}
+            alt="Ilustração do Rui com headset, portátil e telemóvel, pronto para atender o teu pedido"
+          />
         }
       />
 
