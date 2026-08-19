@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
-import { negocios } from "@/data/site";
+import { negocios, parceiro } from "@/data/site";
+import datacaisLogo from "@/assets/datacais-logo.png.asset.json";
 
 export function Business() {
   return (
