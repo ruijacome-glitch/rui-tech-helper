@@ -71,22 +71,22 @@ function ComoFuncionaPage() {
       </section>
 
       {/* O que deves dizer */}
-      <section className="bg-warm py-16 text-warm-ink sm:py-24">
+      <section className="bg-night py-16 text-foreground sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="label-tech text-electric">// Primeira mensagem</p>
+            <p className="label-tech text-electric-soft">// Primeira mensagem</p>
             <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.75rem)]">
               O que deves dizer na primeira mensagem
             </h2>
-            <p className="mt-5 max-w-md text-warm-ink/75">
+            <p className="mt-5 max-w-md text-muted-foreground">
               Não precisas de saber o nome das coisas. Quatro informações chegam para eu perceber
               por onde começar.
             </p>
           </div>
-          <ol className="divide-y divide-warm-ink/15 border-y border-warm-ink/15">
+          <ol className="divide-y divide-border border-y border-border">
             {primeiraMensagem.map((t, i) => (
               <li key={t} className="flex gap-5 py-5">
-                <span className="label-tech shrink-0 text-warm-ink/50">
+                <span className="label-tech shrink-0 text-steel">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="text-base">{t}</span>
