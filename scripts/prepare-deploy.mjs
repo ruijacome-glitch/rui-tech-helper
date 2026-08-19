@@ -7,8 +7,22 @@
 // /em-construcao page so the public site shows only the construction page,
 // without touching any Lovable-owned route/component source.
 import { spawnSync } from "node:child_process";
-import { cpSync, copyFileSync, existsSync, rmSync } from "node:fs";
+import { cpSync, existsSync, rmSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+
+// The prerendered /em-construcao page ships the full TanStack Router client
+// bundle so the app can hydrate into any other route. When that same HTML
+// is reused as "/", the router hydrates against the *real* URL ("/"),
+// matches the real Index route, and swaps the construction markup for the
+// real homepage a moment after paint. Stripping the hydration script tags
+// keeps the page pure static HTML — CSS-only animations still work.
+function stripHydrationScripts(html) {
+  return html
+    .replace(/<link rel="modulepreload"[^>]*\/>/g, "")
+    .replace(/<script>\(function\(a,f\)\{[\s\S]*?<\/script>/, "")
+    .replace(/<script class="\$tsr"[\s\S]*?<\/script>/, "")
+    .replace(/<script type="module" async="" src="[^"]*"><\/script>/, "");
+}
 
 const root = process.cwd();
 const outputDir = join(root, ".output", "public");
@@ -35,8 +49,9 @@ if (constructionOnly) {
     console.error(`[prepare-deploy] CONSTRUCTION_MODE is on but ${constructionPage} is missing.`);
     process.exit(1);
   }
-  copyFileSync(constructionPage, join(distDir, "index.html"));
-  console.log("[prepare-deploy] CONSTRUCTION_MODE on — root index.html replaced with /em-construcao.");
+  const html = readFileSync(constructionPage, "utf8");
+  writeFileSync(join(distDir, "index.html"), stripHydrationScripts(html));
+  console.log("[prepare-deploy] CONSTRUCTION_MODE on — root index.html replaced with /em-construcao (static, no hydration JS).");
 } else {
   console.log("[prepare-deploy] CONSTRUCTION_MODE off — root index.html left as the real homepage.");
 }
