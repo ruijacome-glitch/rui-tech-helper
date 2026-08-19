@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
+import negociosCenarioAsset from "@/assets/negocios-cenario.png.asset.json";
 
 const titulo = "Informática para Pequenos Negócios em Cascais | O Rui dos Computadores";
 const descricao =
@@ -20,40 +21,17 @@ export const Route = createFileRoute("/para-negocios")({
   component: NegociosPage,
 });
 
-/** Cenário editorial de um pequeno negócio — pontos de diagnóstico ligados por linhas. */
+/** Ilustração do cenário de um pequeno negócio com postos, rede e equipamentos. */
 function CenarioNegocio() {
-  const pontos = [
-    { x: 18, y: 30, label: "Posto de trabalho" },
-    { x: 52, y: 18, label: "Router / Wi-Fi" },
-    { x: 82, y: 38, label: "Impressora" },
-    { x: 38, y: 66, label: "Caixa / recepção" },
-    { x: 72, y: 74, label: "Cópias de segurança" },
-  ];
   return (
-    <div className="relative aspect-[4/3] w-full border border-border bg-night-soft">
-      <svg
-        viewBox="0 0 100 75"
-        preserveAspectRatio="none"
-        aria-hidden="true"
-        className="absolute inset-0 size-full"
-      >
-        <g stroke="var(--color-electric)" strokeOpacity="0.35" strokeWidth="0.3" fill="none">
-          <path d="M18 22 L52 13 L82 28 M52 13 L38 50 L72 55" />
-          <path d="M0 62 H100 M0 40 H100" strokeOpacity="0.1" />
-        </g>
-      </svg>
-      {pontos.map((p) => (
-        <div
-          key={p.label}
-          className="absolute -translate-x-1/2 -translate-y-1/2"
-          style={{ left: `${p.x}%`, top: `${p.y}%` }}
-        >
-          <span className="block size-2.5 rounded-full bg-electric-soft shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-electric)_25%,transparent)]" />
-          <span className="label-tech mt-2 block whitespace-nowrap text-[0.6rem] text-steel">
-            {p.label}
-          </span>
-        </div>
-      ))}
+    <div className="w-full overflow-hidden rounded-sm border border-border bg-white">
+      <img
+        src={negociosCenarioAsset.url}
+        alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
+        className="block size-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
   );
 }
