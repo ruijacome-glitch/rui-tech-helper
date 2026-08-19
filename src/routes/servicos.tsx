@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
 import { CableLine } from "@/components/rui/Cable";
-import { MascotPlaceholder } from "@/components/rui/Brand";
 import { servicosDetalhe } from "@/data/paginas";
+import servicosHeroAsset from "@/assets/servicos-hero.png.asset.json";
 
 /** Liga cada serviço ao tipo de problema do formulário de contacto. */
 const tipoPorServico: Record<string, string> = {
@@ -50,7 +50,13 @@ function ServicosPage() {
         aside={
           <div className="relative hidden lg:block">
             <div className="absolute -left-6 top-6 h-px w-24 bg-electric/40" aria-hidden="true" />
-            <MascotPlaceholder className="ml-auto w-52 opacity-90 [mask-image:linear-gradient(to_bottom,black_72%,transparent)]" />
+            <img
+              src={servicosHeroAsset.url}
+              alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
+              className="ml-auto w-full max-w-[30rem] drop-shadow-[0_28px_60px_rgba(0,0,0,0.45)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
+              loading="eager"
+              decoding="async"
+            />
           </div>
         }
       />
