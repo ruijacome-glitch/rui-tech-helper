@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/mercadom/public_html/oruidoscomputadores.pt/
-    - rsync -av --exclude='.git' --exclude='.env' static-dist/ $DEPLOYPATH
+    - mkdir -p $DEPLOYPATH
+    - /bin/cp -a static-dist/. $DEPLOYPATH

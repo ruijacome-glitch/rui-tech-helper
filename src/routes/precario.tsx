@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
 import { Reveal } from "@/components/rui/Reveal";
 import { precos, precarioAreas, notasPrecario } from "@/data/site";
-import precarioHeroAsset from "@/assets/precario-hero.png.asset.json";
+import precarioHeroAsset from "@/assets/precario-hero.png";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
 const descricao =
@@ -132,7 +132,7 @@ function PrecarioPage() {
                 className="absolute inset-x-6 bottom-14 top-8 border-l border-t border-electric/20"
               />
               <img
-                src={precarioHeroAsset.url}
+                src={precarioHeroAsset}
                 alt="Rui a apresentar o preçário digital com planos e soluções de informática em Cascais"
                 className="relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]"
                 loading="eager"

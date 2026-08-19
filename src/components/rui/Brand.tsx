@@ -1,14 +1,14 @@
-import logoAsset from "@/assets/logo-rui.svg.asset.json";
-import mascoteAsset from "@/assets/mascote-rui.png.asset.json";
-import mascoteSobreAsset from "@/assets/mascote-sobre-o-rui.png.asset.json";
-import mascotePrecarioAsset from "@/assets/mascote-precario.png.asset.json";
+import logoAsset from "@/assets/logo-rui.svg";
+import mascoteAsset from "@/assets/mascote-rui.png";
+import mascoteSobreAsset from "@/assets/mascote-sobre-o-rui.png";
+import mascotePrecarioAsset from "@/assets/mascote-precario.png";
 import { cn } from "@/lib/utils";
 
 /** Mascote oficial da página "Preçário" (PNG com transparência real). */
 export function MascotPrecario({ className = "" }: { className?: string }) {
   return (
     <img
-      src={mascotePrecarioAsset.url}
+      src={mascotePrecarioAsset}
       alt="Rui, técnico de informática em Cascais, a calcular o valor de uma reparação na bancada"
       className={className}
       loading="eager"
@@ -21,7 +21,7 @@ export function MascotPrecario({ className = "" }: { className?: string }) {
 export function MascotBancada({ className = "" }: { className?: string }) {
   return (
     <img
-      src={mascoteSobreAsset.url}
+      src={mascoteSobreAsset}
       alt="Rui, técnico de informática em Cascais, a diagnosticar um computador na bancada"
       className={className}
       loading="eager"
@@ -34,7 +34,7 @@ export function MascotBancada({ className = "" }: { className?: string }) {
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <img
-      src={logoAsset.url}
+      src={logoAsset}
       alt="Logótipo O Rui dos Computadores"
       width={40}
       height={40}
@@ -55,7 +55,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
 export function MascotPlaceholder({ className = "" }: { className?: string }) {
   return (
     <img
-      src={mascoteAsset.url}
+      src={mascoteAsset}
       alt="Rui, técnico de informática em Cascais, a trabalhar num portátil"
       className={className}
       loading="eager"

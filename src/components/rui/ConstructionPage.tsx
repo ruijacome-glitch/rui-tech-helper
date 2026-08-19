@@ -1,4 +1,4 @@
-import construcaoAsset from "@/assets/pagina-em-construcao.png.asset.json";
+import construcaoAsset from "@/assets/pagina-em-construcao.png";
 import { Cable } from "@/components/rui/Cable";
 import { contacto } from "@/data/site";
 
@@ -52,7 +52,7 @@ export function ConstructionPage() {
       <main id="conteudo" className="relative z-10 flex w-full max-w-5xl flex-col items-center">
         <div className="relative w-full max-w-3xl animate-float">
           <img
-            src={construcaoAsset.url}
+            src={construcaoAsset}
             alt="O Rui dos Computadores — Página em construção"
             className="h-auto w-full"
             loading="eager"

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/rui/ContactForm";
 import { contacto, telefoneLabel, emailLabel } from "@/data/site";
 import { CopyButton } from "@/components/rui/CopyButton";
 import { antesDeEnviares } from "@/data/paginas";
-import contactosHeroAsset from "@/assets/contactos-hero.png.asset.json";
+import contactosHeroAsset from "@/assets/contactos-hero.png";
 
 const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
@@ -47,7 +47,7 @@ function ContactosPage() {
         intro="Escreve à tua maneira. Não é um formulário administrativo — é a primeira etapa do diagnóstico."
         aside={
           <HeroMascot
-            src={contactosHeroAsset.url}
+            src={contactosHeroAsset}
             alt="Ilustração do Rui com headset, portátil e telemóvel, pronto para atender o teu pedido"
           />
         }

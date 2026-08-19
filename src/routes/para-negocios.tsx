@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero, InnerCta, HeroMascot } from "@/components/rui/PageShell";
 import { PartnerBlock } from "@/components/rui/PartnerBlock";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
-import negociosCenarioAsset from "@/assets/negocios-cenario.png.asset.json";
+import negociosCenarioAsset from "@/assets/negocios-cenario.png";
 
 const titulo = "Informática para Pequenos Negócios em Cascais | O Rui dos Computadores";
 const descricao =
@@ -38,7 +38,7 @@ function NegociosPage() {
         intro="Lojas, ateliês, clínicas e escritórios pequenos. Falas comigo directamente, sem departamentos nem intermediários."
         aside={
           <HeroMascot
-            src={negociosCenarioAsset.url}
+            src={negociosCenarioAsset}
             alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
           />
         }

@@ -4,8 +4,8 @@ import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { CableLine } from "@/components/rui/Cable";
 import { servicosDetalhe } from "@/data/paginas";
 import { whatsappHref } from "@/data/site";
-import servicosHeroAsset from "@/assets/servicos-hero.png.asset.json";
-import apontarOruiAsset from "@/assets/apontar-orui.png.asset.json";
+import servicosHeroAsset from "@/assets/servicos-hero.png";
+import apontarOruiAsset from "@/assets/apontar-orui.png";
 
 /** Liga cada serviço ao tipo de problema do formulário de contacto. */
 const tipoPorServico: Record<string, string> = {
@@ -51,7 +51,7 @@ function ServicosPage() {
         intro="Assistência informática para particulares e pequenos negócios em Cascais e arredores. Ao domicílio ou remota, com diagnóstico antes de qualquer substituição."
         aside={
           <HeroMascot
-            src={servicosHeroAsset.url}
+            src={servicosHeroAsset}
             alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
           />
         }
@@ -166,7 +166,7 @@ function ServicosPage() {
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
             <div className="flex justify-start self-end">
               <img
-                src={apontarOruiAsset.url}
+                src={apontarOruiAsset}
                 alt="Rui a apontar para o botão de WhatsApp"
                 className="block h-auto w-full max-w-[36rem] align-bottom object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
                 loading="lazy"
@@ -213,7 +213,7 @@ function ServicosPage() {
             <div className="mt-8 flex flex-col items-center gap-4">
               <div className="flex items-end justify-center gap-2">
                 <img
-                  src={apontarOruiAsset.url}
+                  src={apontarOruiAsset}
                   alt="Rui a apontar para o botão de WhatsApp"
                   className="h-auto w-32 object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.35)] sm:w-40"
                   loading="lazy"

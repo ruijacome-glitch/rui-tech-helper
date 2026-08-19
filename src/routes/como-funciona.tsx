@@ -8,7 +8,7 @@ import {
   remotoOuDomicilio,
   antesDaIntervencao,
 } from "@/data/paginas";
-import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png.asset.json";
+import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png";
 
 const titulo = "Como Funciona a Assistência | O Rui dos Computadores";
 const descricao =
@@ -43,7 +43,7 @@ function ComoFuncionaPage() {
         intro="Cinco passos simples, sempre pela mesma ordem. Sabes em que ponto estás e o que vem a seguir."
         aside={
           <HeroMascot
-            src={comoFuncionaHeroAsset.url}
+            src={comoFuncionaHeroAsset}
             alt="Ilustração do processo de suporte: envias o pedido, analisamos, entramos em contacto e fica resolvido"
           />
         }

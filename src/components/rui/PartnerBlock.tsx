@@ -1,4 +1,4 @@
-import datacaisLogo from "@/assets/datacais-logo.png.asset.json";
+import datacaisLogo from "@/assets/datacais-logo.png";
 import { parceiro } from "@/data/site";
 
 type PartnerBlockProps = {
@@ -18,7 +18,7 @@ function LinkedLogo({ size }: { size: "sm" | "lg" }) {
         {parceiro.nome} — {parceiro.papel}
       </span>
       <img
-        src={datacaisLogo.url}
+        src={datacaisLogo}
         alt={`${parceiro.nome} — ${parceiro.papel}`}
         className={`object-contain ${size === "lg" ? "h-16" : "h-10"}`}
         loading="lazy"
