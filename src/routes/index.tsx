@@ -12,6 +12,7 @@ import { Pricing } from "@/components/rui/Pricing";
 import { FinalCta } from "@/components/rui/FinalCta";
 import { Contact } from "@/components/rui/Contact";
 import { Footer } from "@/components/rui/Footer";
+import { schemaScripts } from "@/lib/schema";
 
 const BASE_URL = "https://rui-tech-helper.lovable.app";
 const titulo = "O Rui dos Computadores | Assistência Informática em Cascais";
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image:alt", content: "O Rui dos Computadores — Assistência Informática em Cascais" },
     ],
     links: [{ rel: "canonical", href: BASE_URL }],
+    scripts: schemaScripts,
   }),
   component: Index,
 });

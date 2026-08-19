@@ -27,7 +27,7 @@ export const legal = {
   nif: "231834322" as string,
 
   /** Email para assuntos de privacidade e exercício de direitos. */
-  emailPrivacidade: "" as string,
+  emailPrivacidade: contacto.email as string,
 
   /** Telefone — reutiliza a configuração de contacto do site. */
   telefone: contacto.telefone,

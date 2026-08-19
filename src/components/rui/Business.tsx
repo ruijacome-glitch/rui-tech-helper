@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
-import { negocios } from "@/data/site";
+import { negocios, parceiro } from "@/data/site";
+import datacaisLogo from "@/assets/datacais-logo.png.asset.json";
 
 export function Business() {
   return (
@@ -15,6 +16,29 @@ export function Business() {
           >
             {negocios.cta}
           </a>
+
+          <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-border pt-6">
+            <a href={parceiro.url} target="_blank" rel="noreferrer noopener" className="focus-tech">
+              <img
+                src={datacaisLogo.url}
+                alt="Datacais.pt — parceira tecnológica para soluções empresariais"
+                className="h-10 w-auto object-contain"
+                loading="lazy"
+              />
+            </a>
+            <p className="min-w-0 max-w-md text-sm text-muted-foreground">
+              As intervenções e projectos empresariais são realizados em parceria com a{" "}
+              <a
+                href={parceiro.url}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-electric-soft underline underline-offset-4 hover:text-foreground"
+              >
+                datacais.pt
+              </a>
+              , a nossa parceira tecnológica para soluções empresariais.
+            </p>
+          </div>
         </div>
         <ul className="self-center divide-y divide-border border-y border-border">
           {negocios.pontos.map((p) => (
