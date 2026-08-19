@@ -44,6 +44,18 @@ function ContactosPage() {
           </>
         }
         intro="Escreve à tua maneira. Não é um formulário administrativo — é a primeira etapa do diagnóstico."
+        aside={
+          <div className="flex items-end justify-center">
+            <img
+              src={contactosHeroAsset.url}
+              alt="Ilustração do Rui com headset, portátil e telemóvel, pronto para atender o teu pedido"
+              className="h-auto w-full max-w-sm object-contain lg:max-w-lg"
+              width="600"
+              height="600"
+              loading="eager"
+            />
+          </div>
+        }
       />
 
       <section className="bg-night py-14 sm:py-20">
