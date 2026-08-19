@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { ContactForm } from "@/components/rui/ContactForm";
 import { contacto, telefoneLabel, emailLabel } from "@/data/site";
+import { CopyButton } from "@/components/rui/CopyButton";
 import { antesDeEnviares } from "@/data/paginas";
 import contactosHeroAsset from "@/assets/contactos-hero.png.asset.json";
 
@@ -73,17 +74,29 @@ function ContactosPage() {
                   <MapPin className="size-5 shrink-0 text-electric-soft" aria-hidden="true" />
                   <span>Área de atendimento: {contacto.area}</span>
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex flex-wrap items-center gap-3">
                   <Phone className="size-5 shrink-0 text-electric-soft" aria-hidden="true" />
-                  <span className={contacto.telefone ? "" : "text-muted-foreground"}>
+                  <a
+                    href={`tel:${(contacto.telefone || "").replace(/\s/g, "")}`}
+                    className={
+                      contacto.telefone ? "hover:text-electric-soft" : "text-muted-foreground"
+                    }
+                  >
                     {telefoneLabel}
-                  </span>
+                  </a>
+                  <CopyButton valor={contacto.telefone} rotulo="Telefone" />
                 </li>
-                <li className="flex items-center gap-3">
+                <li className="flex flex-wrap items-center gap-3">
                   <Mail className="size-5 shrink-0 text-electric-soft" aria-hidden="true" />
-                  <span className={contacto.email ? "" : "text-muted-foreground"}>
+                  <a
+                    href={`mailto:${contacto.email}`}
+                    className={
+                      contacto.email ? "hover:text-electric-soft" : "text-muted-foreground"
+                    }
+                  >
                     {emailLabel}
-                  </span>
+                  </a>
+                  <CopyButton valor={contacto.email} rotulo="Email" />
                 </li>
               </ul>
             </div>

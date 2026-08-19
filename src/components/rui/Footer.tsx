@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { navegacao, contacto } from "@/data/site";
 import { abrirGestorCookies } from "@/lib/cookie-consent";
 import { LogoMark, Wordmark } from "./Brand";
+import { CopyButton } from "./CopyButton";
 
 export function Footer() {
   return (
@@ -43,20 +44,22 @@ export function Footer() {
               </Link>
             </li>
             <li className="text-muted-foreground">{contacto.area}</li>
-            <li className="text-muted-foreground">
-              Telefone:{" "}
+            <li className="flex flex-wrap items-center gap-2 text-muted-foreground">
+              <span>Telefone:</span>
               <a
                 href={`tel:${(contacto.telefone || "").replace(/\s/g, "")}`}
                 className="hover:text-foreground"
               >
                 {contacto.telefone || contacto.placeholder}
               </a>
+              <CopyButton valor={contacto.telefone} rotulo="Telefone" />
             </li>
-            <li className="text-muted-foreground">
-              Email:{" "}
+            <li className="flex flex-wrap items-center gap-2 text-muted-foreground">
+              <span>Email:</span>
               <a href={`mailto:${contacto.email}`} className="hover:text-foreground">
                 {contacto.email || contacto.placeholder}
               </a>
+              <CopyButton valor={contacto.email} rotulo="Email" />
             </li>
 
           </ul>
