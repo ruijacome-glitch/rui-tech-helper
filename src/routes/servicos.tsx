@@ -166,19 +166,20 @@ function ServicosPage() {
       })}
 
       {/* CTA final — Chamar o Rui */}
-      <section className="relative overflow-hidden bg-electric pb-4 pt-10 text-primary-foreground sm:pb-6 sm:pt-14">
+      <section className="relative overflow-hidden bg-electric pb-10 pt-10 text-primary-foreground sm:pt-14 lg:pb-0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          {/* Desktop: imagem à esquerda, texto à direita */}
+          {/* Desktop: imagem à esquerda, texto à direita — sem espaço até à margem inferior */}
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
-            <div className="flex translate-y-20 justify-start self-end">
+            <div className="flex justify-start self-end">
               <img
                 src={apontarOruiAsset.url}
                 alt="Rui a apontar para o botão de WhatsApp"
-                className="h-auto w-full max-w-[36rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
+                className="block h-auto w-full max-w-[36rem] align-bottom object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
                 loading="lazy"
                 decoding="async"
               />
             </div>
+
             <div className="text-left">
               <p className="label-tech text-primary-foreground/70">// Chamada para ação</p>
               <h2 className="mt-3 display-xl text-[clamp(2rem,6vw,3.5rem)]">
