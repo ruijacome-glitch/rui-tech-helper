@@ -3,13 +3,12 @@
  * Todo o conteúdo textual e de contacto vive aqui, separado do layout.
  */
 
-// TODO (a preencher pelo Rui antes de publicar): telefone, email, WhatsApp.
 export const contacto = {
   marca: "O Rui dos Computadores",
   area: "Cascais e arredores",
-  telefone: "" as string, // ex.: "+351 900 000 000"
-  email: "" as string, // ex.: "ola@oruidoscomputadores.pt"
-  whatsapp: "" as string, // link wa.me completo
+  telefone: "+351 91 155 69 01" as string,
+  email: "ola@oruidoscomputadores.pt" as string,
+  whatsapp: "https://wa.me/351911556901" as string,
   placeholder: "Contacto a adicionar",
 };
 
