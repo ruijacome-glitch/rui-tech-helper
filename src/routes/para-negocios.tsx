@@ -24,7 +24,17 @@ export const Route = createFileRoute("/para-negocios")({
 /** Ilustração do cenário de um pequeno negócio com postos, rede e equipamentos. */
 function CenarioNegocio() {
   return (
-    <div className="w-full">
+    <div
+      className="w-full"
+      style={{
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+        maskComposite: "intersect",
+        WebkitMaskComposite: "source-in",
+      }}
+    >
       <img
         src={negociosCenarioAsset.url}
         alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
