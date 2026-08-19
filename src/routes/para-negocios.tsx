@@ -75,9 +75,9 @@ function NegociosPage() {
         aside={<CenarioNegocio />}
       />
 
-      <section className="bg-warm py-16 text-warm-ink sm:py-24">
+      <section className="bg-night py-16 text-foreground sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <p className="label-tech text-electric">// Áreas</p>
+          <p className="label-tech text-electric-soft">// Áreas</p>
           <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.75rem)]">
             No que posso ajudar
           </h2>
@@ -85,12 +85,12 @@ function NegociosPage() {
             {negociosAreas.map((a) => (
               <li
                 key={a.numero}
-                className="flex gap-5 border-b border-warm-ink/15 py-6 last:border-b-0 sm:[&:nth-last-child(2)]:border-b-0"
+                className="flex gap-5 border-b border-border py-6 last:border-b-0 sm:[&:nth-last-child(2)]:border-b-0"
               >
-                <span className="label-tech shrink-0 pt-1 text-warm-ink/50">{a.numero}</span>
+                <span className="label-tech shrink-0 pt-1 text-steel">{a.numero}</span>
                 <div>
                   <h3 className="display-xl text-lg">{a.titulo}</h3>
-                  <p className="mt-2 text-sm text-warm-ink/75">{a.texto}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{a.texto}</p>
                 </div>
               </li>
             ))}
