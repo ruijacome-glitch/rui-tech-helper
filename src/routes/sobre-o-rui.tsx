@@ -272,11 +272,11 @@ function SobrePage() {
         </div>
       </section>
 
-      {/* Pausa editorial clara e curta */}
-      <section className="bg-warm py-12 text-warm-ink">
+      {/* Pausa editorial curta */}
+      <section className="surface-band section-divider py-12">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
-          <p className="label-tech text-warm-ink/60">// Cascais e arredores</p>
-          <p className="max-w-2xl text-lg">
+          <p className="label-tech text-electric-soft">// Cascais e arredores</p>
+          <p className="max-w-2xl text-lg text-muted-foreground">
             Assistência a particulares e pequenos negócios, com explicação antes de qualquer
             intervenção.
           </p>

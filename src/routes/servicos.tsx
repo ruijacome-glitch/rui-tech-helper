@@ -56,16 +56,16 @@ function ServicosPage() {
       />
 
       {/* Navegação visual pelos seis serviços */}
-      <section aria-label="Índice de serviços" className="border-b border-border bg-night-soft">
+      <section aria-label="Índice de serviços" className="surface-band section-divider">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
           <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
             {servicosDetalhe.map((s) => (
               <li key={s.id}>
                 <a
                   href={`#${s.id}`}
-                  className="group flex items-baseline gap-3 border-b border-border/60 py-2 text-sm text-muted-foreground transition-colors hover:text-electric-soft"
+                  className="focus-tech group flex items-baseline gap-3 border-b border-border py-2 text-sm text-foreground transition-colors hover:text-electric-soft"
                 >
-                  <span className="label-tech text-steel">{s.numero}</span>
+                  <span className="label-tech text-muted-foreground">{s.numero}</span>
                   <span className="min-w-0 flex-1">{s.titulo}</span>
                   <ArrowRight
                     className="size-4 shrink-0 transition-transform group-hover:translate-x-1"
@@ -84,8 +84,8 @@ function ServicosPage() {
           <section
             key={s.id}
             id={s.id}
-            className={`scroll-mt-28 border-b border-border py-16 sm:py-24 ${
-              alterna ? "bg-night-soft" : "bg-night"
+            className={`section-divider scroll-mt-28 py-16 sm:py-24 ${
+              alterna ? "surface-alt" : "surface-base"
             }`}
           >
             <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -103,16 +103,15 @@ function ServicosPage() {
                     {s.problema}
                   </p>
                   <CableLine className="mt-8 h-2 w-full max-w-sm" />
-                  <p className="mt-8 text-sm text-steel">
-                    <span className="label-tech">Quando pedir ajuda</span>
-                    <br />
-                    <span className="mt-2 block text-base">{s.quando}</span>
-                  </p>
+                  <div className="panel-tech mt-8 p-5">
+                    <p className="label-tech text-electric-soft">Quando pedir ajuda</p>
+                    <p className="mt-2 text-base text-muted-foreground">{s.quando}</p>
+                  </div>
                 </div>
 
                 <div className="grid gap-8 sm:grid-cols-2">
                   <div>
-                    <h3 className="label-tech text-steel">Sinais comuns</h3>
+                    <h3 className="label-tech text-electric-soft">Sinais comuns</h3>
                     <ul className="mt-4 space-y-3 text-sm">
                       {s.sinais.map((x) => (
                         <li
@@ -125,7 +124,7 @@ function ServicosPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="label-tech text-steel">Pode incluir</h3>
+                    <h3 className="label-tech text-electric-soft">Pode incluir</h3>
                     <ul className="mt-4 space-y-3 text-sm">
                       {s.incluido.map((x) => (
                         <li key={x} className="flex gap-2">
@@ -140,13 +139,13 @@ function ServicosPage() {
                       ))}
                     </ul>
                   </div>
-                  <p className="sm:col-span-2 text-sm text-steel">
+                  <p className="sm:col-span-2 text-sm text-muted-foreground">
                     {s.resumo}
                   </p>
                   <Link
                     to="/contactos"
                     search={{ problema: tipoPorServico[s.id] }}
-                    className="sm:col-span-2 inline-flex min-h-11 w-fit items-center gap-2 rounded-sm border border-steel/50 px-5 text-sm font-semibold uppercase tracking-wide text-foreground transition-colors hover:border-electric hover:text-electric-soft"
+                    className="focus-tech sm:col-span-2 inline-flex min-h-11 w-fit items-center gap-2 rounded-sm border border-steel px-5 text-sm font-semibold uppercase tracking-wide text-foreground transition-colors hover:border-electric hover:text-electric-soft"
                   >
                     Pedir ajuda para isto
                     <ArrowRight className="size-4" aria-hidden="true" />
