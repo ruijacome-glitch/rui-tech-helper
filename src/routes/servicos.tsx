@@ -166,7 +166,7 @@ function ServicosPage() {
       })}
 
       {/* CTA final — Chamar o Rui */}
-      <section className="relative overflow-hidden bg-electric pb-4 pt-16 text-primary-foreground sm:pb-6 sm:pt-24">
+      <section className="relative overflow-hidden bg-electric pb-4 pt-10 text-primary-foreground sm:pb-6 sm:pt-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           {/* Desktop: imagem à esquerda, texto à direita */}
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
