@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
+import negociosCenarioAsset from "@/assets/negocios-cenario.png.asset.json";
 
 const titulo = "Informática para Pequenos Negócios em Cascais | O Rui dos Computadores";
 const descricao =
