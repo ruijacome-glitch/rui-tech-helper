@@ -26,7 +26,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 export function Breadcrumbs({ pagina, claro = false }: { pagina: string; claro?: boolean }) {
   return (
     <nav aria-label="Trilho de navegação" className="label-tech">
-      <ol className={cn("flex items-center gap-2", claro ? "text-warm-ink/60" : "text-steel")}>
+      <ol className={cn("flex items-center gap-2", "text-muted-foreground")}>
         <li>
           <Link to="/" className="transition-colors hover:text-electric-soft">
             Início
@@ -68,7 +68,7 @@ export function PageHero({
     <section
       className={cn(
         "relative border-b py-14 sm:py-20",
-        claro ? "border-warm-ink/15 bg-warm text-warm-ink" : "border-border bg-night",
+        "border-border surface-base",
         className,
       )}
     >

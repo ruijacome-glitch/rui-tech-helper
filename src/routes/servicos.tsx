@@ -65,7 +65,7 @@ function ServicosPage() {
                   href={`#${s.id}`}
                   className="focus-tech group flex items-baseline gap-3 border-b border-border py-2 text-sm text-foreground transition-colors hover:text-electric-soft"
                 >
-                  <span className="label-tech text-steel">{s.numero}</span>
+                  <span className="label-tech text-muted-foreground">{s.numero}</span>
                   <span className="min-w-0 flex-1">{s.titulo}</span>
                   <ArrowRight
                     className="size-4 shrink-0 transition-transform group-hover:translate-x-1"
