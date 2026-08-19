@@ -23,10 +23,10 @@ export function PageShell({ children }: { children: ReactNode }) {
   );
 }
 
-export function Breadcrumbs({ pagina, claro = false }: { pagina: string; claro?: boolean }) {
+export function Breadcrumbs({ pagina }: { pagina: string }) {
   return (
     <nav aria-label="Trilho de navegação" className="label-tech">
-      <ol className={cn("flex items-center gap-2", "text-muted-foreground")}>
+      <ol className="flex items-center gap-2 text-muted-foreground">
         <li>
           <Link to="/" className="transition-colors hover:text-electric-soft">
             Início
@@ -35,7 +35,7 @@ export function Breadcrumbs({ pagina, claro = false }: { pagina: string; claro?:
         <li aria-hidden="true">
           <ChevronRight className="size-3" />
         </li>
-        <li aria-current="page" className={claro ? "text-warm-ink" : "text-foreground"}>
+        <li aria-current="page" className="text-foreground">
           {pagina}
         </li>
       </ol>
@@ -52,7 +52,6 @@ export function PageHero({
   titulo,
   intro,
   pagina,
-  claro = false,
   aside,
   className = "",
 }: {
@@ -60,20 +59,15 @@ export function PageHero({
   titulo: ReactNode;
   intro?: ReactNode;
   pagina: string;
-  claro?: boolean;
   aside?: ReactNode;
   className?: string;
 }) {
   return (
     <section
-      className={cn(
-        "relative border-b py-14 sm:py-20",
-        "border-border surface-base",
-        className,
-      )}
+      className={cn("relative section-divider surface-base py-14 sm:py-20", className)}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <Breadcrumbs pagina={pagina} claro={claro} />
+        <Breadcrumbs pagina={pagina} />
         <div
           className={cn(
             "mt-8 grid gap-10",
@@ -81,23 +75,17 @@ export function PageHero({
           )}
         >
           <div>
-            <p className={cn("label-tech", claro ? "text-electric" : "text-electric-soft")}>
+            <p className="label-tech text-electric-soft">
               {etiqueta}
             </p>
             <h1
-              className={cn(
-                "mt-4 display-xl text-[clamp(2.1rem,7vw,4.5rem)]",
-                claro ? "text-warm-ink" : "text-foreground",
-              )}
+              className="mt-4 display-xl text-[clamp(2.1rem,7vw,4.5rem)] text-foreground"
             >
               {titulo}
             </h1>
             {intro && (
               <p
-                className={cn(
-                  "mt-6 max-w-xl text-base sm:text-lg",
-                  claro ? "text-warm-ink/75" : "text-muted-foreground",
-                )}
+                className="mt-6 max-w-xl text-base sm:text-lg text-muted-foreground"
               >
                 {intro}
               </p>
@@ -125,7 +113,7 @@ export function InnerCta({
   search?: { problema?: string };
 }) {
   return (
-    <section className="border-y border-border bg-night-soft py-14">
+    <section className="surface-band border-y border-border py-14">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <p className="label-tech text-electric-soft">// Próximo passo</p>
@@ -135,7 +123,7 @@ export function InnerCta({
         <Link
           to={to}
           search={search as never}
-          className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm bg-orange px-6 text-sm font-semibold uppercase tracking-wide text-night transition-transform hover:-translate-y-0.5"
+          className="focus-tech inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm bg-orange px-6 text-sm font-semibold uppercase tracking-wide text-night transition-transform hover:-translate-y-0.5"
         >
           {accao}
         </Link>
