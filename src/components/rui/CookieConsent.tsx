@@ -157,7 +157,7 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => decidir({ necessarios: true, analise: true, marketing: true })}
-                className="min-h-11 flex-1 rounded-sm border border-electric bg-electric px-4 text-sm font-semibold text-primary-foreground focus-tech transition-colors hover:bg-electric/85 sm:flex-none"
+                className="min-h-11 flex-1 rounded-sm border border-electric-soft bg-electric-soft px-4 text-sm font-semibold text-night focus-tech transition-colors hover:bg-electric/85 sm:flex-none"
               >
                 Aceitar todos
               </button>
@@ -247,7 +247,7 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => decidir({ necessarios: true, analise: true, marketing: true })}
-                className="min-h-11 flex-1 rounded-sm border border-electric bg-electric px-4 text-sm font-semibold text-primary-foreground focus-tech transition-colors hover:bg-electric/85"
+                className="min-h-11 flex-1 rounded-sm border border-electric-soft bg-electric-soft px-4 text-sm font-semibold text-night focus-tech transition-colors hover:bg-electric/85"
               >
                 Aceitar todos
               </button>
