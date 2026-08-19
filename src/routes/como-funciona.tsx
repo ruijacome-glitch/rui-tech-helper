@@ -8,6 +8,7 @@ import {
   remotoOuDomicilio,
   antesDaIntervencao,
 } from "@/data/paginas";
+import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png.asset.json";
 
 const titulo = "Como Funciona a Assistência | O Rui dos Computadores";
 const descricao =
