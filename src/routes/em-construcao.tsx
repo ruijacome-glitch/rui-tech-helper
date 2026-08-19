@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-
 import { ConstructionPage } from "@/components/rui/ConstructionPage";
 
-const titulo = "O Rui dos Computadores | Em construção";
+const titulo = "Em construção | O Rui dos Computadores";
 const descricao =
   "O novo site da O Rui dos Computadores está a chegar. Assistência informática em Cascais, ao domicílio e remota.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/em-construcao")({
   head: () => ({
     meta: [
       { title: titulo },
@@ -17,9 +16,5 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: ConstructionPage,
 });
-
-function Index() {
-  return <ConstructionPage />;
-}
