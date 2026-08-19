@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
-import { MascotPrecario } from "@/components/rui/Brand";
 import { Reveal } from "@/components/rui/Reveal";
 import { precos, precarioAreas, notasPrecario } from "@/data/site";
+import precarioHeroAsset from "@/assets/precario-hero.png.asset.json";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
 const descricao =
@@ -125,13 +125,19 @@ function PrecarioPage() {
               </div>
             </div>
 
-            {/* Mascote do Preçário — dimensão generosa, sem fundo circular */}
+            {/* Ilustração de hero do Preçário — dimensão generosa, sem fundo circular */}
             <div className="relative">
               <div
                 aria-hidden="true"
                 className="absolute inset-x-6 bottom-14 top-8 border-l border-t border-electric/20"
               />
-              <MascotPrecario className="relative z-10 mx-auto w-full max-w-[34rem] drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] lg:-mb-8 lg:max-w-none" />
+              <img
+                src={precarioHeroAsset.url}
+                alt="Rui a apresentar o preçário digital com planos e soluções de informática em Cascais"
+                className="relative z-10 mx-auto w-full max-w-[34rem] drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] lg:-mb-8 lg:max-w-none"
+                loading="eager"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
