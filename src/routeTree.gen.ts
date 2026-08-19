@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ComoFuncionaRouteImport } from './routes/como-funciona'
 import { Route as ContactosRouteImport } from './routes/contactos'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as EmConstrucaoRouteImport } from './routes/em-construcao'
 import { Route as ParaNegociosRouteImport } from './routes/para-negocios'
 import { Route as PrecarioRouteImport } from './routes/precario'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
@@ -38,6 +39,11 @@ const ContactosRoute = ContactosRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmConstrucaoRoute = EmConstrucaoRouteImport.update({
+  id: '/em-construcao',
+  path: '/em-construcao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParaNegociosRoute = ParaNegociosRouteImport.update({
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
   '/cookies': typeof CookiesRoute
+  '/em-construcao': typeof EmConstrucaoRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
   '/cookies': typeof CookiesRoute
+  '/em-construcao': typeof EmConstrucaoRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/como-funciona': typeof ComoFuncionaRoute
   '/contactos': typeof ContactosRoute
   '/cookies': typeof CookiesRoute
+  '/em-construcao': typeof EmConstrucaoRoute
   '/para-negocios': typeof ParaNegociosRoute
   '/precario': typeof PrecarioRoute
   '/privacidade': typeof PrivacidadeRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/contactos'
     | '/cookies'
+    | '/em-construcao'
     | '/para-negocios'
     | '/precario'
     | '/privacidade'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/contactos'
     | '/cookies'
+    | '/em-construcao'
     | '/para-negocios'
     | '/precario'
     | '/privacidade'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/como-funciona'
     | '/contactos'
     | '/cookies'
+    | '/em-construcao'
     | '/para-negocios'
     | '/precario'
     | '/privacidade'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   ComoFuncionaRoute: typeof ComoFuncionaRoute
   ContactosRoute: typeof ContactosRoute
   CookiesRoute: typeof CookiesRoute
+  EmConstrucaoRoute: typeof EmConstrucaoRoute
   ParaNegociosRoute: typeof ParaNegociosRoute
   PrecarioRoute: typeof PrecarioRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/em-construcao': {
+      id: '/em-construcao'
+      path: '/em-construcao'
+      fullPath: '/em-construcao'
+      preLoaderRoute: typeof EmConstrucaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/para-negocios': {
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComoFuncionaRoute: ComoFuncionaRoute,
   ContactosRoute: ContactosRoute,
   CookiesRoute: CookiesRoute,
+  EmConstrucaoRoute: EmConstrucaoRoute,
   ParaNegociosRoute: ParaNegociosRoute,
   PrecarioRoute: PrecarioRoute,
   PrivacidadeRoute: PrivacidadeRoute,
