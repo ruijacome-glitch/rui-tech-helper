@@ -166,15 +166,15 @@ function ServicosPage() {
       })}
 
       {/* CTA final — Chamar o Rui */}
-      <section className="relative overflow-hidden bg-electric py-16 text-primary-foreground sm:py-24">
+      <section className="relative overflow-hidden bg-electric pb-4 pt-16 text-primary-foreground sm:pb-6 sm:pt-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           {/* Desktop: imagem à esquerda, texto à direita */}
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
-            <div className="flex translate-y-16 justify-start self-end">
+            <div className="flex translate-y-20 justify-start self-end">
               <img
                 src={apontarOruiAsset.url}
                 alt="Rui a apontar para o botão de WhatsApp"
-                className="h-auto w-full max-w-[34rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
+                className="h-auto w-full max-w-[36rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
                 loading="lazy"
                 decoding="async"
               />
