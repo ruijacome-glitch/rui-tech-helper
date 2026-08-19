@@ -174,7 +174,7 @@ function ServicosPage() {
               />
             </div>
 
-            <div className="text-left">
+            <div className="self-center text-left">
               <p className="label-tech text-primary-foreground/70">// Chamada para ação</p>
               <h2 className="mt-3 display-xl text-[clamp(2rem,6vw,3.5rem)]">
                 Chamar o Rui.
