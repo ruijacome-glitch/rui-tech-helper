@@ -228,3 +228,12 @@ export const notasPrecario = [
   "A recuperação de dados depende de avaliação prévia e não tem resultado garantido.",
   "Deslocações fora da área habitual de Cascais e arredores são avaliadas caso a caso.",
 ];
+
+/** Parceiro tecnológico para soluções empresariais. */
+export const parceiro = {
+  nome: "datacais.pt",
+  url: "https://www.datacais.pt",
+  papel: "Parceira tecnológica para soluções empresariais",
+  texto:
+    "As intervenções e projectos empresariais são realizados em parceria com a datacais.pt, a nossa parceira tecnológica para soluções empresariais. Falas sempre comigo — e, quando o projecto exige mais estrutura, equipamento ou equipa, entra a datacais.pt.",
+};
