@@ -170,11 +170,11 @@ function PrecarioPage() {
         </div>
       </section>
 
-      {/* PAUSA EDITORIAL CLARA — curta */}
-      <section className="bg-warm py-12 text-warm-ink sm:py-14">
+      {/* PAUSA EDITORIAL — curta, navy */}
+      <section className="bg-night py-12 sm:py-14">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <p className="label-tech text-electric">// Princípio</p>
-          <p className="mt-4 display-xl text-[clamp(1.3rem,3.6vw,2rem)]">
+          <p className="label-tech text-electric-soft">// Princípio</p>
+          <p className="mt-4 display-xl text-[clamp(1.3rem,3.6vw,2rem)] text-foreground">
             Nada avança sem tu saberes quanto custa.
           </p>
         </div>
