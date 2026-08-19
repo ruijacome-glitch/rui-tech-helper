@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
 import { CableLine } from "@/components/rui/Cable";
-import { MascotPlaceholder } from "@/components/rui/Brand";
 import { servicosDetalhe } from "@/data/paginas";
+import servicosHeroAsset from "@/assets/servicos-hero.png.asset.json";
 
 /** Liga cada serviço ao tipo de problema do formulário de contacto. */
 const tipoPorServico: Record<string, string> = {
