@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell, PageHero, InnerCta } from "@/components/rui/PageShell";
+import { PageShell, PageHero, InnerCta, HeroMascot } from "@/components/rui/PageShell";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
 import negociosCenarioAsset from "@/assets/negocios-cenario.png.asset.json";
 
@@ -21,31 +21,6 @@ export const Route = createFileRoute("/para-negocios")({
   component: NegociosPage,
 });
 
-/** Ilustração do cenário de um pequeno negócio com postos, rede e equipamentos. */
-function CenarioNegocio() {
-  return (
-    <div
-      className="w-full"
-      style={{
-        maskImage:
-          "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%), linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
-        maskComposite: "intersect",
-        WebkitMaskComposite: "source-in",
-      }}
-    >
-      <img
-        src={negociosCenarioAsset.url}
-        alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
-        className="block h-auto w-full object-contain"
-        loading="lazy"
-        decoding="async"
-      />
-    </div>
-  );
-}
-
 function NegociosPage() {
   return (
     <PageShell>
@@ -60,7 +35,12 @@ function NegociosPage() {
           </>
         }
         intro="Lojas, ateliês, clínicas e escritórios pequenos. Falas comigo directamente, sem departamentos nem intermediários."
-        aside={<CenarioNegocio />}
+        aside={
+          <HeroMascot
+            src={negociosCenarioAsset.url}
+            alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
+          />
+        }
       />
 
       <section className="bg-night py-16 text-foreground sm:py-24">

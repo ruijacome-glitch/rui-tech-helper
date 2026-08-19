@@ -134,7 +134,7 @@ function PrecarioPage() {
               <img
                 src={precarioHeroAsset.url}
                 alt="Rui a apresentar o preçário digital com planos e soluções de informática em Cascais"
-                className="relative z-10 mx-auto w-full max-w-[34rem] drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] lg:-mb-8 lg:max-w-none"
+                className="relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]"
                 loading="eager"
                 decoding="async"
               />

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
-import { PageShell, PageHero } from "@/components/rui/PageShell";
+import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { CableLine } from "@/components/rui/Cable";
 import { servicosDetalhe } from "@/data/paginas";
 import { whatsappHref } from "@/data/site";
@@ -50,16 +50,10 @@ function ServicosPage() {
         }
         intro="Assistência informática para particulares e pequenos negócios em Cascais e arredores. Ao domicílio ou remota, com diagnóstico antes de qualquer substituição."
         aside={
-          <div className="relative hidden lg:block">
-            <div className="absolute -left-6 top-6 h-px w-24 bg-electric/40" aria-hidden="true" />
-            <img
-              src={servicosHeroAsset.url}
-              alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
-              className="ml-auto w-full max-w-[30rem] drop-shadow-[0_28px_60px_rgba(0,0,0,0.45)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
+          <HeroMascot
+            src={servicosHeroAsset.url}
+            alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
+          />
         }
       />
 
@@ -166,19 +160,20 @@ function ServicosPage() {
       })}
 
       {/* CTA final — Chamar o Rui */}
-      <section className="relative overflow-hidden bg-electric pb-4 pt-10 text-primary-foreground sm:pb-6 sm:pt-14">
+      <section className="relative overflow-hidden bg-electric pb-10 pt-10 text-primary-foreground sm:pt-14 lg:pb-0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          {/* Desktop: imagem à esquerda, texto à direita */}
+          {/* Desktop: imagem à esquerda, texto à direita — sem espaço até à margem inferior */}
           <div className="hidden items-end gap-10 lg:grid lg:grid-cols-[1fr_1.1fr]">
-            <div className="flex translate-y-20 justify-start self-end">
+            <div className="flex justify-start self-end">
               <img
                 src={apontarOruiAsset.url}
                 alt="Rui a apontar para o botão de WhatsApp"
-                className="h-auto w-full max-w-[36rem] object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
+                className="block h-auto w-full max-w-[36rem] align-bottom object-contain drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)]"
                 loading="lazy"
                 decoding="async"
               />
             </div>
+
             <div className="text-left">
               <p className="label-tech text-primary-foreground/70">// Chamada para ação</p>
               <h2 className="mt-3 display-xl text-[clamp(2rem,6vw,3.5rem)]">
@@ -190,14 +185,14 @@ function ServicosPage() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href={whatsappHref}
-                  className="focus-tech inline-flex min-h-12 items-center gap-2 rounded-sm border border-primary-foreground/70 bg-primary-foreground px-6 font-semibold uppercase tracking-wide text-electric transition-colors hover:bg-primary-foreground/90"
+                  className="focus-tech inline-flex min-h-12 items-center gap-2 rounded-sm border border-primary-foreground/70 bg-primary-foreground px-6 font-semibold uppercase tracking-wide text-electric transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/90 active:translate-y-0 focus-visible:outline-night"
                 >
                   <MessageCircle className="size-5" aria-hidden="true" />
                   WhatsApp
                 </a>
                 <Link
                   to="/contactos"
-                  className="focus-tech inline-flex min-h-12 items-center rounded-sm bg-night px-6 font-semibold uppercase tracking-wide text-foreground transition-colors hover:bg-night/90"
+                  className="focus-tech inline-flex min-h-12 items-center rounded-sm bg-night px-6 font-semibold uppercase tracking-wide text-foreground transition-all hover:-translate-y-0.5 hover:bg-night/90 active:translate-y-0 focus-visible:outline-night"
                 >
                   Preencher formulário
                 </Link>
@@ -226,7 +221,7 @@ function ServicosPage() {
                 />
                 <a
                   href={whatsappHref}
-                  className="focus-tech inline-flex min-h-12 items-center gap-2 rounded-sm border border-primary-foreground/70 bg-primary-foreground px-5 font-semibold uppercase tracking-wide text-electric transition-colors hover:bg-primary-foreground/90 sm:px-6"
+                  className="focus-tech inline-flex min-h-12 items-center gap-2 rounded-sm border border-primary-foreground/70 bg-primary-foreground px-5 font-semibold uppercase tracking-wide text-electric transition-all hover:-translate-y-0.5 hover:bg-primary-foreground/90 active:translate-y-0 focus-visible:outline-night sm:px-6"
                 >
                   <MessageCircle className="size-5" aria-hidden="true" />
                   WhatsApp
@@ -234,7 +229,7 @@ function ServicosPage() {
               </div>
               <Link
                 to="/contactos"
-                className="focus-tech inline-flex min-h-12 items-center rounded-sm bg-night px-6 font-semibold uppercase tracking-wide text-foreground transition-colors hover:bg-night/90"
+                className="focus-tech inline-flex min-h-12 items-center rounded-sm bg-night px-6 font-semibold uppercase tracking-wide text-foreground transition-all hover:-translate-y-0.5 hover:bg-night/90 active:translate-y-0 focus-visible:outline-night"
               >
                 Preencher formulário
               </Link>

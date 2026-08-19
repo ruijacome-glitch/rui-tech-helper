@@ -70,11 +70,11 @@ export function PageHero({
         <Breadcrumbs pagina={pagina} />
         <div
           className={cn(
-            "mt-8 grid gap-10",
-            aside ? "lg:grid-cols-[1.25fr_minmax(0,0.75fr)] lg:items-center" : "",
+            "mt-8 grid gap-8",
+            aside ? "lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:items-end lg:gap-10" : "",
           )}
         >
-          <div>
+          <div className={aside ? "lg:pb-6" : undefined}>
             <p className="label-tech text-electric-soft">
               {etiqueta}
             </p>
@@ -97,6 +97,40 @@ export function PageHero({
     </section>
   );
 }
+
+/**
+ * Mascote dos heros das páginas internas.
+ * Garante posição e dimensão consistentes entre todas as páginas.
+ */
+export function HeroMascot({
+  src,
+  alt,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <div className="relative">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-6 bottom-14 top-8 hidden border-l border-t border-electric/20 lg:block"
+      />
+      <img
+        src={src}
+        alt={alt}
+        className={cn(
+          "relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]",
+          className,
+        )}
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  );
+}
+
 
 /** CTA transversal das páginas internas — mais contido que o CTA da homepage. */
 export function InnerCta({

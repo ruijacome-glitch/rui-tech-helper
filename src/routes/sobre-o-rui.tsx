@@ -128,7 +128,7 @@ function SobrePage() {
                 aria-hidden="true"
                 className="absolute inset-x-6 bottom-16 top-8 border-l border-t border-electric/20"
               />
-              <MascotBancada className="relative z-10 mx-auto w-full max-w-[34rem] translate-y-2 drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] lg:-mb-10 lg:max-w-none lg:scale-105 lg:origin-bottom" />
+              <MascotBancada className="relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]" />
             </div>
           </div>
         </div>
