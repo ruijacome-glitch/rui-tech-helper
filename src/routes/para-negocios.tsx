@@ -100,35 +100,7 @@ function NegociosPage() {
         </div>
       </section>
 
-      <section className="bg-navy-mid py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <div className="border border-electric/20 bg-night p-8">
-            <a href={parceiro.url} target="_blank" rel="noreferrer noopener" className="focus-tech block">
-              <img
-                src={datacaisLogo.url}
-                alt="Datacais.pt — parceira tecnológica para soluções empresariais"
-                className="h-16 w-auto object-contain"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div>
-            <p className="label-tech text-electric-soft">// Parceria</p>
-            <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.6rem)]">
-              Em parceria com a datacais.pt
-            </h2>
-            <p className="mt-5 text-muted-foreground">{parceiro.texto}</p>
-            <a
-              href={parceiro.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="focus-tech mt-6 inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-wide text-electric-soft underline underline-offset-4 hover:text-foreground"
-            >
-              Conhecer a datacais.pt
-            </a>
-          </div>
-        </div>
-      </section>
+      <PartnerBlock variant="featured" />
 
       <InnerCta
         titulo="Falar sobre o meu negócio"
