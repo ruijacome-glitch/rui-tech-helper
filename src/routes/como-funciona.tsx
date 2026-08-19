@@ -41,6 +41,18 @@ function ComoFuncionaPage() {
           </>
         }
         intro="Cinco passos simples, sempre pela mesma ordem. Sabes em que ponto estás e o que vem a seguir."
+        aside={
+          <div className="flex items-end justify-center">
+            <img
+              src={comoFuncionaHeroAsset.url}
+              alt="Ilustração do processo de suporte: envias o pedido, analisamos, entramos em contacto e fica resolvido"
+              className="h-auto w-full max-w-md object-contain lg:max-w-xl"
+              width="800"
+              height="600"
+              loading="eager"
+            />
+          </div>
+        }
       />
 
       {/* Percurso — timeline vertical em mobile, composição alternada em desktop */}
