@@ -7,7 +7,7 @@
  * REGRA: não inventar informação. Os campos por preencher ficam vazios ("")
  * e o site mostra discretamente "A preencher antes da publicação".
  *
- * Preencher antes de publicar: nomeLegal, nif, endereco, emailPrivacidade,
+ * Preencher antes de publicar: nomeLegal, nif, emailPrivacidade,
  * entidadeRal e entidadeRalUrl.
  */
 
@@ -21,13 +21,10 @@ export const legal = {
   nomeComercial: "O Rui dos Computadores",
 
   /** Nome legal / denominação social do prestador. */
-  nomeLegal: "" as string,
+  nomeLegal: "Rui Jácome" as string,
 
   /** Número de identificação fiscal. */
-  nif: "" as string,
-
-  /** Endereço profissional (sede ou domicílio profissional declarado). */
-  endereco: "" as string,
+  nif: "231834322" as string,
 
   /** Email para assuntos de privacidade e exercício de direitos. */
   emailPrivacidade: "" as string,

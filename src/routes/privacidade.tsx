@@ -32,7 +32,6 @@ function PrivacidadePage() {
           <LinhaLegal rotulo="Nome comercial" campo={valorOuPendente(legal.nomeComercial)} />
           <LinhaLegal rotulo="Nome legal" campo={valorOuPendente(legal.nomeLegal)} />
           <LinhaLegal rotulo="NIF" campo={valorOuPendente(legal.nif)} />
-          <LinhaLegal rotulo="Endereço profissional" campo={valorOuPendente(legal.endereco)} />
           <LinhaLegal
             rotulo="Email de privacidade"
             campo={valorOuPendente(legal.emailPrivacidade)}
