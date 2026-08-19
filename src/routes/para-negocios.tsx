@@ -24,7 +24,7 @@ export const Route = createFileRoute("/para-negocios")({
 /** Ilustração do cenário de um pequeno negócio com postos, rede e equipamentos. */
 function CenarioNegocio() {
   return (
-    <div className="w-full overflow-hidden rounded-sm border border-border bg-white">
+    <div className="w-full overflow-hidden rounded-sm border border-border bg-night-soft">
       <img
         src={negociosCenarioAsset.url}
         alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
