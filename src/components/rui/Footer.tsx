@@ -44,8 +44,21 @@ export function Footer() {
             </li>
             <li className="text-muted-foreground">{contacto.area}</li>
             <li className="text-muted-foreground">
-              Telefone e email: {contacto.telefone || contacto.placeholder}
+              Telefone:{" "}
+              <a
+                href={`tel:${(contacto.telefone || "").replace(/\s/g, "")}`}
+                className="hover:text-foreground"
+              >
+                {contacto.telefone || contacto.placeholder}
+              </a>
             </li>
+            <li className="text-muted-foreground">
+              Email:{" "}
+              <a href={`mailto:${contacto.email}`} className="hover:text-foreground">
+                {contacto.email || contacto.placeholder}
+              </a>
+            </li>
+
           </ul>
         </div>
       </div>
