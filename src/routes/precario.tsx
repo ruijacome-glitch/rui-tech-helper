@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
 import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
 import { Reveal } from "@/components/rui/Reveal";
 import { notasPrecario } from "@/data/site";
-import { fetchConteudoSite, conteudoSiteFallback } from "@/lib/conteudoSite";
+import { useConteudoSite } from "@/lib/conteudoSite";
 import precarioHeroAsset from "@/assets/precario-hero.png";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
@@ -90,12 +89,7 @@ function CaboLigacao({ className = "" }: { className?: string }) {
 }
 
 function PrecarioPage() {
-  const { data } = useQuery({
-    queryKey: ["conteudo-site"],
-    queryFn: fetchConteudoSite,
-    initialData: conteudoSiteFallback,
-    staleTime: 60_000,
-  });
+  const { data } = useConteudoSite();
   const precos = data.precosHome;
   const precarioAreas = data.precarioAreas;
 

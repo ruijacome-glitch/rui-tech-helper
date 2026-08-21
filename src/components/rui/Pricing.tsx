@@ -1,13 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchConteudoSite, conteudoSiteFallback } from "@/lib/conteudoSite";
+import { useConteudoSite } from "@/lib/conteudoSite";
 
 export function Pricing() {
-  const { data } = useQuery({
-    queryKey: ["conteudo-site"],
-    queryFn: fetchConteudoSite,
-    initialData: conteudoSiteFallback,
-    staleTime: 60_000,
-  });
+  const { data } = useConteudoSite();
   const precos = data.precosHome;
 
   return (

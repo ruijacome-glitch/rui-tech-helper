@@ -1,14 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { argumentos } from "@/data/site";
-import { fetchConteudoSite, conteudoSiteFallback } from "@/lib/conteudoSite";
+import { useConteudoSite } from "@/lib/conteudoSite";
 
 export function WhyRui() {
-  const { data } = useQuery({
-    queryKey: ["conteudo-site"],
-    queryFn: fetchConteudoSite,
-    initialData: conteudoSiteFallback,
-    staleTime: 60_000,
-  });
+  const { data } = useConteudoSite();
   const testemunho = data.testemunho;
 
   return (

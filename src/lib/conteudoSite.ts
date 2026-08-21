@@ -3,6 +3,7 @@
  * Falha, timeout ou API em baixo -> usa silenciosamente os valores estáticos
  * de src/data/site.ts. Sem cache de browser nesta fase.
  */
+import { useQuery } from "@tanstack/react-query";
 import {
   contacto as contactoEstatico,
   testemunhoExemplo,
@@ -41,11 +42,12 @@ export const conteudoSiteFallback: ConteudoSite = {
 };
 
 type ApiPrecoRow = { servico: string; valor: string; nota: string | null };
+type ApiPrecarioAreaRow = { servico: string; valor: string; nota: string | null; titulo?: string };
 type ApiResponse = {
   contacto?: Partial<ContactoSite>;
   testemunho?: Partial<TestemunhoSite>;
   precosHome?: ApiPrecoRow[];
-  precarioAreas?: ApiPrecoRow[];
+  precarioAreas?: ApiPrecarioAreaRow[];
 };
 
 /** Busca o conteúdo configurável na API. Nunca rejeita — devolve sempre um ConteudoSite válido. */
@@ -79,7 +81,11 @@ export async function fetchConteudoSite(): Promise<ConteudoSite> {
 
     const precarioAreas =
       data.precarioAreas && data.precarioAreas.length > 0
-        ? data.precarioAreas.map((a) => ({ titulo: a.servico, valor: a.valor, nota: a.nota ?? "" }))
+        ? data.precarioAreas.map((a) => ({
+            titulo: a.titulo ?? a.servico,
+            valor: a.valor,
+            nota: a.nota ?? "",
+          }))
         : conteudoSiteFallback.precarioAreas;
 
     return { contacto, testemunho, precosHome, precarioAreas };
@@ -88,4 +94,14 @@ export async function fetchConteudoSite(): Promise<ConteudoSite> {
   } finally {
     clearTimeout(timeoutId);
   }
+}
+
+/** Hook partilhado — dedupe automático do fetch entre todos os componentes que o usam. */
+export function useConteudoSite() {
+  return useQuery({
+    queryKey: ["conteudo-site"],
+    queryFn: fetchConteudoSite,
+    initialData: conteudoSiteFallback,
+    staleTime: 60_000,
+  });
 }

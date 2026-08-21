@@ -1,19 +1,13 @@
 import { useState, type FormEvent } from "react";
-import { useQuery } from "@tanstack/react-query";
 import { MapPin, Phone, Mail, CheckCircle2 } from "lucide-react";
 import { contacto as contactoEstatico, sintomas } from "@/data/site";
-import { fetchConteudoSite, conteudoSiteFallback } from "@/lib/conteudoSite";
+import { useConteudoSite } from "@/lib/conteudoSite";
 import { CopyButton } from "./CopyButton";
 
 type Erros = { nome?: string; contactoValor?: string; mensagem?: string };
 
 export function Contact() {
-  const { data } = useQuery({
-    queryKey: ["conteudo-site"],
-    queryFn: fetchConteudoSite,
-    initialData: conteudoSiteFallback,
-    staleTime: 60_000,
-  });
+  const { data } = useConteudoSite();
   const contacto = { ...contactoEstatico, ...data.contacto };
   const telefoneLabel = contacto.telefone || contactoEstatico.placeholder;
   const emailLabel = contacto.email || contactoEstatico.placeholder;
