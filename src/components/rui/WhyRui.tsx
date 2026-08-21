@@ -1,6 +1,16 @@
-import { argumentos, testemunhoExemplo } from "@/data/site";
+import { useQuery } from "@tanstack/react-query";
+import { argumentos } from "@/data/site";
+import { fetchConteudoSite, conteudoSiteFallback } from "@/lib/conteudoSite";
 
 export function WhyRui() {
+  const { data } = useQuery({
+    queryKey: ["conteudo-site"],
+    queryFn: fetchConteudoSite,
+    initialData: conteudoSiteFallback,
+    staleTime: 60_000,
+  });
+  const testemunho = data.testemunho;
+
   return (
     <section id="porque-o-rui" className="bg-night-soft py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -19,13 +29,12 @@ export function WhyRui() {
         </dl>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          {/* CONTEÚDO DE EXEMPLO — substituir por testemunho real e autorizado. */}
           <figure className="border-l-2 border-orange pl-6">
             <blockquote className="display-xl text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">
-              “{testemunhoExemplo.citacao}”
+              “{testemunho.citacao}”
             </blockquote>
             <figcaption className="label-tech mt-4 text-steel">
-              {testemunhoExemplo.atribuicao}
+              {testemunho.atribuicao}
             </figcaption>
           </figure>
 
