@@ -102,6 +102,6 @@ export function useConteudoSite() {
     queryKey: ["conteudo-site"],
     queryFn: fetchConteudoSite,
     initialData: conteudoSiteFallback,
-    staleTime: 60_000,
+    staleTime: 0,
   });
 }
