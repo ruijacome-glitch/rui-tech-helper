@@ -2,6 +2,8 @@ import { useRef, useState, type FormEvent } from "react";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { tiposProblema, periodosContacto } from "@/data/paginas";
 
+const CONTACTO_API_URL = "https://api.oruidoscomputadores.pt/api/public/contacto";
+
 type CampoId = "nome" | "contactoValor" | "preferencia" | "mensagem" | "localidade";
 type Erros = Partial<Record<CampoId, string>>;
 
@@ -30,6 +32,8 @@ function MensagemErro({ id, texto }: { id: string; texto: string }) {
 
 export function ContactForm({ problemaInicial = "" }: { problemaInicial?: string }) {
   const [enviado, setEnviado] = useState(false);
+  const [aEnviar, setAEnviar] = useState(false);
+  const [erroEnvio, setErroEnvio] = useState(false);
   const [erros, setErros] = useState<Erros>({});
   const resumoRef = useRef<HTMLDivElement>(null);
   const [v, setV] = useState({
@@ -79,21 +83,46 @@ export function ContactForm({ problemaInicial = "" }: { problemaInicial?: string
     return e;
   }
 
-  function submeter(ev: FormEvent) {
+  async function submeter(ev: FormEvent) {
     ev.preventDefault();
     const e = validar();
     setErros(e);
 
-    // Simulação: nada é enviado, guardado ou partilhado. Só estado local.
-    if (Object.keys(e).length === 0) {
-      setEnviado(true);
+    if (Object.keys(e).length > 0) {
+      requestAnimationFrame(() => {
+        resumoRef.current?.focus();
+        resumoRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
       return;
     }
 
-    requestAnimationFrame(() => {
-      resumoRef.current?.focus();
-      resumoRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
-    });
+    setAEnviar(true);
+    setErroEnvio(false);
+    try {
+      const res = await fetch(CONTACTO_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: v.nome.trim(),
+          contactoValor: v.contactoValor.trim(),
+          preferencia: v.preferencia,
+          problema: v.problema || null,
+          mensagem: v.mensagem.trim(),
+          localidade: v.localidade.trim(),
+          periodo: v.periodo,
+        }),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      setEnviado(true);
+    } catch {
+      setErroEnvio(true);
+      requestAnimationFrame(() => {
+        resumoRef.current?.focus();
+        resumoRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
+    } finally {
+      setAEnviar(false);
+    }
   }
 
   if (enviado) {
@@ -104,14 +133,14 @@ export function ContactForm({ problemaInicial = "" }: { problemaInicial?: string
         className="rounded-sm border border-electric/40 bg-night-soft p-8 text-center"
       >
         <CheckCircle2 className="mx-auto size-10 text-electric-soft" aria-hidden="true" />
-        <h2 className="mt-4 display-xl text-2xl">Pedido validado</h2>
+        <h2 className="mt-4 display-xl text-2xl">Pedido enviado</h2>
         <p className="mt-3 text-muted-foreground">
           Obrigado, {v.nome.trim().split(" ")[0]}. Registei a preferência de contacto por{" "}
           <strong className="text-foreground">{v.preferencia}</strong>.
         </p>
         <p className="mt-3 text-sm text-muted-foreground">
-          Esta é uma confirmação de demonstração: o formulário não envia, não guarda nem partilha
-          os dados. Para falar mesmo comigo, usa o WhatsApp ou o telefone indicados nesta página.
+          Respondo assim que possível. Se for urgente, usa o WhatsApp ou o telefone indicados
+          nesta página.
         </p>
         <button
           type="button"
@@ -164,6 +193,15 @@ export function ContactForm({ problemaInicial = "" }: { problemaInicial?: string
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+        {erroEnvio && (
+          <div className="mt-6 rounded-sm border border-orange/60 bg-orange/10 p-4">
+            <p className="flex items-center gap-2 text-sm font-semibold text-orange">
+              <AlertCircle className="size-4" aria-hidden="true" />
+              Não consegui enviar o pedido. Tenta outra vez ou usa o WhatsApp/telefone indicados
+              nesta página.
+            </p>
           </div>
         )}
       </div>
@@ -325,13 +363,13 @@ export function ContactForm({ problemaInicial = "" }: { problemaInicial?: string
 
       <button
         type="submit"
-        className="focus-tech mt-8 flex min-h-12 w-full items-center justify-center rounded-sm bg-orange px-6 text-sm font-semibold uppercase tracking-wide text-night transition-transform hover:-translate-y-0.5 active:translate-y-0"
+        disabled={aEnviar}
+        className="focus-tech mt-8 flex min-h-12 w-full items-center justify-center rounded-sm bg-orange px-6 text-sm font-semibold uppercase tracking-wide text-night transition-transform hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-wait disabled:opacity-70"
       >
-        Enviar pedido
+        {aEnviar ? "A enviar…" : "Enviar pedido"}
       </button>
       <p className="mt-4 text-xs text-muted-foreground">
-        Este formulário é apenas uma simulação: funciona no teu navegador e nada é enviado,
-        guardado ou partilhado.
+        Os dados são enviados diretamente para o Rui, só para responder ao teu pedido.
       </p>
     </form>
   );
