@@ -22,7 +22,7 @@ export function Pricing() {
                 <h3 className="display-xl text-2xl">{p.servico}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{p.nota}</p>
               </div>
-              <p className="label-tech rounded-sm border border-electric/40 px-3 py-2 text-electric-soft sm:justify-self-end">
+              <p className="rounded-sm border border-electric/40 px-3 py-2 font-mono text-base font-semibold text-electric-soft sm:justify-self-end sm:text-lg">
                 {p.valor}
               </p>
             </li>

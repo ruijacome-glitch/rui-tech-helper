@@ -170,7 +170,7 @@ function PrecarioPage() {
                     <h3 className="display-xl text-[clamp(1.2rem,3.2vw,1.8rem)]">{p.servico}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{p.nota}</p>
                   </div>
-                  <span className="label-tech inline-flex items-center gap-2 whitespace-nowrap rounded-sm border border-electric/40 px-3 py-2 text-electric-soft transition-colors group-hover:border-orange/60 group-hover:text-orange sm:justify-self-end">
+                  <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-sm border border-electric/40 px-3 py-2 font-mono text-base font-semibold text-electric-soft transition-colors group-hover:border-orange/60 group-hover:text-orange sm:justify-self-end sm:text-lg">
                     <span className="inline-block size-1.5 rounded-full bg-current" />
                     {p.valor}
                   </span>
@@ -206,7 +206,7 @@ function PrecarioPage() {
                 <div className="h-full bg-night p-6 transition-colors hover:bg-navy-mid sm:p-8">
                   <div className="flex flex-wrap items-baseline justify-between gap-3">
                     <h3 className="display-xl text-lg">{a.titulo}</h3>
-                    <span className="label-tech text-orange">{a.valor}</span>
+                    <span className="font-mono text-base font-semibold text-orange">{a.valor}</span>
                   </div>
                   <p className="mt-3 text-sm text-muted-foreground">{a.nota}</p>
                 </div>
