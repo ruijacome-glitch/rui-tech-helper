@@ -154,15 +154,6 @@ export const argumentos = [
   },
 ];
 
-/**
- * CONTEÚDO DE EXEMPLO — substituir por testemunho real e autorizado
- * antes da publicação. Não representa um cliente concreto.
- */
-export const testemunhoExemplo = {
-  citacao: "Finalmente alguém que explica sem complicar.",
-  atribuicao: "Exemplo editorial — a validar antes da publicação",
-};
-
 /** PREÇOS — espelha os valores publicados via CMS (api/public/conteudo-site). Actualizar aqui se mudarem lá. */
 export const precos = [
   {

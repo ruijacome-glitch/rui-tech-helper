@@ -6,7 +6,6 @@
 import { useQuery } from "@tanstack/react-query";
 import {
   contacto as contactoEstatico,
-  testemunhoExemplo,
   precos as precosEstatico,
   precarioAreas as precarioAreasEstatico,
 } from "@/data/site";
@@ -32,7 +31,7 @@ export const conteudoSiteFallback: ConteudoSite = {
     email: contactoEstatico.email,
     whatsapp: contactoEstatico.whatsapp,
   },
-  testemunho: { ...testemunhoExemplo },
+  testemunho: { citacao: "", atribuicao: "" },
   precosHome: precosEstatico.map((p) => ({ servico: p.servico, valor: p.valor, nota: p.nota })),
   precarioAreas: precarioAreasEstatico.map((a) => ({
     titulo: a.titulo,

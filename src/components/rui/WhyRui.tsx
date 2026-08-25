@@ -22,15 +22,19 @@ export function WhyRui() {
           ))}
         </dl>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <figure className="border-l-2 border-orange pl-6">
-            <blockquote className="display-xl text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">
-              “{testemunho.citacao}”
-            </blockquote>
-            <figcaption className="label-tech mt-4 text-steel">
-              {testemunho.atribuicao}
-            </figcaption>
-          </figure>
+        <div
+          className={`mt-12 grid gap-8 ${testemunho.citacao ? "lg:grid-cols-[1.2fr_0.8fr]" : "lg:grid-cols-1"}`}
+        >
+          {testemunho.citacao && (
+            <figure className="border-l-2 border-orange pl-6">
+              <blockquote className="display-xl text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">
+                “{testemunho.citacao}”
+              </blockquote>
+              <figcaption className="label-tech mt-4 text-steel">
+                {testemunho.atribuicao}
+              </figcaption>
+            </figure>
+          )}
 
           <div
             aria-hidden="true"
