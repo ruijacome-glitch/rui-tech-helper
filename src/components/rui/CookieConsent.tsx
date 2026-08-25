@@ -9,6 +9,7 @@ import {
   type Preferencias,
 } from "@/lib/cookie-consent";
 import { carregarGoogleAnalytics } from "@/lib/analytics";
+import { carregarMetaPixel } from "@/lib/meta-pixel";
 
 type Categoria = {
   id: "necessarios" | "analise" | "marketing";
@@ -35,7 +36,7 @@ const categorias: Categoria[] = [
     id: "marketing",
     titulo: "Marketing",
     texto:
-      "Publicidade e acompanhamento de campanhas. Não existe actualmente nenhuma ferramenta de marketing no site.",
+      "Publicidade e acompanhamento de campanhas através do Meta Pixel (Facebook/Instagram). Só carregado se autorizares esta categoria.",
   },
 ];
 
@@ -52,6 +53,7 @@ export function CookieConsent() {
     if (registo) {
       setPrefs({ necessarios: true, analise: registo.analise, marketing: registo.marketing });
       if (registo.analise) carregarGoogleAnalytics();
+      if (registo.marketing) carregarMetaPixel();
     } else {
       setPainelVisivel(true);
     }
@@ -120,6 +122,7 @@ export function CookieConsent() {
     setDialogoAberto(false);
     focoAnterior.current?.focus?.();
     if (valores.analise) carregarGoogleAnalytics();
+    if (valores.marketing) carregarMetaPixel();
   }
 
   return (

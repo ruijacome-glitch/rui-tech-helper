@@ -3,8 +3,10 @@
  *
  * Guarda a escolha do utilizador em localStorage, na chave
  * `rui_cookie_preferences_v1`, com validade de seis meses.
- * O Google Analytics (categoria "análise") só é carregado se autorizado —
- * ver carregarGoogleAnalytics() em src/lib/analytics.ts.
+ * O Google Analytics (categoria "análise") e o Meta Pixel (categoria
+ * "marketing") só são carregados se autorizados — ver
+ * carregarGoogleAnalytics() em src/lib/analytics.ts e carregarMetaPixel()
+ * em src/lib/meta-pixel.ts.
  */
 
 export const COOKIE_STORAGE_KEY = "rui_cookie_preferences_v1";

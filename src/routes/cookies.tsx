@@ -8,7 +8,7 @@ import { schemaScripts } from "@/lib/schema";
 
 const titulo = "Política de Cookies | O Rui dos Computadores";
 const descricao =
-  "Que armazenamento o site usa, para que serve e como alterar as tuas preferências a qualquer momento, incluindo o Google Analytics opcional.";
+  "Que armazenamento o site usa, para que serve e como alterar as tuas preferências a qualquer momento, incluindo o Google Analytics e Meta Pixel opcionais.";
 
 export const Route = createFileRoute("/cookies")({
   head: () => ({
@@ -95,17 +95,39 @@ function CookiesPage() {
               </div>
             </dl>
           </div>
+          <div className="mt-4 border border-electric/20 bg-night p-5">
+            <p className="label-tech text-electric-soft">Meta Pixel (Facebook/Instagram)</p>
+            <dl className="mt-4 space-y-2 text-sm">
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Tipo</dt>
+                <dd>Cookie/script de terceiros (Meta)</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Categoria</dt>
+                <dd>Marketing — opcional, desligada por defeito</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Finalidade</dt>
+                <dd>Medição de campanhas publicitárias no Facebook e Instagram</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Activação</dt>
+                <dd>Só carrega depois de autorizares a categoria "Marketing"</dd>
+              </div>
+            </dl>
+          </div>
         </>
       ),
     },
     {
       id: "sem-analise",
-      titulo: "Análise opcional, publicidade e marketing",
+      titulo: "Análise e marketing opcionais",
       conteudo: (
         <p>
-          O site usa o Google Analytics para estatísticas de visitas, mas só depois de autorizares
-          a categoria "Análise" no painel de preferências — está desligada por defeito. Não usa
-          cookies de publicidade, marketing ou outras ferramentas de acompanhamento de terceiros.
+          O site usa o Google Analytics (estatísticas de visitas) e o Meta Pixel (medição de
+          campanhas no Facebook/Instagram), mas só depois de autorizares as categorias
+          correspondentes no painel de preferências — ambas desligadas por defeito. Não usa outras
+          ferramentas de acompanhamento de terceiros.
         </p>
       ),
     },
@@ -114,9 +136,9 @@ function CookiesPage() {
       titulo: "Outras tecnologias opcionais no futuro",
       conteudo: (
         <p>
-          Se vier a ser necessário usar publicidade, marketing ou outras tecnologias opcionais além
-          do Google Analytics, só serão activadas depois do teu consentimento explícito. Esta
-          política será actualizada com o inventário completo antes de qualquer activação.
+          Se vier a ser necessário usar outras tecnologias opcionais além do Google Analytics e do
+          Meta Pixel, só serão activadas depois do teu consentimento explícito. Esta política será
+          actualizada com o inventário completo antes de qualquer activação.
         </p>
       ),
     },
