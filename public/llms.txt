@@ -53,9 +53,9 @@ Regras: o valor final é sempre confirmado com o cliente antes de qualquer inter
 - Website: https://oruidoscomputadores.pt
 
 ## Páginas
-- Serviços: https://oruidoscomputadores.pt/servicos
-- Como funciona: https://oruidoscomputadores.pt/como-funciona
-- Para negócios: https://oruidoscomputadores.pt/para-negocios
-- Sobre o Rui: https://oruidoscomputadores.pt/sobre-o-rui
-- Preçário: https://oruidoscomputadores.pt/precario
-- Contactos: https://oruidoscomputadores.pt/contactos
+- [Serviços](https://oruidoscomputadores.pt/servicos/): lista completa de serviços de assistência informática
+- [Como funciona](https://oruidoscomputadores.pt/como-funciona/): processo passo a passo, do primeiro contacto à resolução
+- [Para negócios](https://oruidoscomputadores.pt/para-negocios/): apoio a pequenos negócios (lojas, ateliês, clínicas, escritórios)
+- [Sobre o Rui](https://oruidoscomputadores.pt/sobre-o-rui/): percurso e experiência de Rui Jácome
+- [Preçário](https://oruidoscomputadores.pt/precario/): valores de referência por tipo de intervenção
+- [Contactos](https://oruidoscomputadores.pt/contactos/): formulário de contacto e dados directos

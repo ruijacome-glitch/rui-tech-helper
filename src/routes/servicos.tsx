@@ -5,9 +5,13 @@ import { CableLine } from "@/components/rui/Cable";
 import { servicosDetalhe } from "@/data/paginas";
 import { whatsappHref } from "@/data/site";
 import servicosHeroAsset from "@/assets/servicos-hero.png";
+import servicosAvif400 from "@/assets/servicos-hero-400.avif";
+import servicosAvif800 from "@/assets/servicos-hero-800.avif";
+import servicosWebp400 from "@/assets/servicos-hero-400.webp";
+import servicosWebp800 from "@/assets/servicos-hero-800.webp";
 import apontarOruiAsset from "@/assets/apontar-orui.png";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScriptsServicos, breadcrumbScript } from "@/lib/schema";
 
 /** Liga cada serviço ao tipo de problema do formulário de contacto. */
 const tipoPorServico: Record<string, string> = {
@@ -25,8 +29,8 @@ const descricao =
 
 export const Route = createFileRoute("/servicos")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/servicos" }),
-    scripts: schemaScripts,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/servicos/" }),
+    scripts: [...schemaScriptsServicos, breadcrumbScript("Serviços", "/servicos/")],
   }),
   component: ServicosPage,
 });
@@ -49,6 +53,8 @@ function ServicosPage() {
           <HeroMascot
             src={servicosHeroAsset}
             alt="Rui apresenta os serviços de assistência informática em Cascais: reparação, redes, segurança e apoio remoto"
+            avifSrcSet={`${servicosAvif400} 400w, ${servicosAvif800} 800w`}
+            webpSrcSet={`${servicosWebp400} 400w, ${servicosWebp800} 800w`}
           />
         }
       />
@@ -99,6 +105,9 @@ function ServicosPage() {
                   <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.9rem)]">{s.titulo}</h2>
                   <p className="mt-5 max-w-lg text-muted-foreground">
                     {s.problema}
+                  </p>
+                  <p className="mt-4 max-w-lg text-sm text-muted-foreground">
+                    {s.detalhe}
                   </p>
                   <CableLine className="mt-8 h-2 w-full max-w-sm" />
                   <div className="panel-tech mt-8 p-5">

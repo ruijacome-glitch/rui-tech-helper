@@ -4,7 +4,7 @@ import { MascotBancada } from "@/components/rui/Brand";
 import { Reveal } from "@/components/rui/Reveal";
 import { sobreTimeline, sobreValores } from "@/data/paginas";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScriptsSobre } from "@/lib/schema";
+import { schemaScriptsSobre, breadcrumbScript } from "@/lib/schema";
 
 const titulo = "Sobre o Rui | Assistência Informática em Cascais";
 const descricao =
@@ -12,8 +12,8 @@ const descricao =
 
 export const Route = createFileRoute("/sobre-o-rui")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/sobre-o-rui", type: "profile" }),
-    scripts: schemaScriptsSobre,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/sobre-o-rui/", type: "profile" }),
+    scripts: [...schemaScriptsSobre, breadcrumbScript("Sobre o Rui", "/sobre-o-rui/")],
   }),
   component: SobrePage,
 });

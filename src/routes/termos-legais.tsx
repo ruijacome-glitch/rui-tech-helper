@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage, LinhaLegal, type SeccaoLegal } from "@/components/rui/LegalPage";
 import { legal, ligacoesOficiais, valorOuPendente } from "@/data/legal";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScripts, breadcrumbScript } from "@/lib/schema";
 
 const titulo = "Termos Legais | O Rui dos Computadores";
 const descricao =
@@ -10,8 +10,8 @@ const descricao =
 
 export const Route = createFileRoute("/termos-legais")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/termos-legais" }),
-    scripts: schemaScripts,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/termos-legais/" }),
+    scripts: [...schemaScripts, breadcrumbScript("Termos legais", "/termos-legais/")],
   }),
   component: TermosPage,
 });

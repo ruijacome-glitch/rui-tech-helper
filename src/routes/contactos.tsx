@@ -1,14 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { PageShell, PageHero, HeroMascot } from "@/components/rui/PageShell";
 import { ContactForm } from "@/components/rui/ContactForm";
-import { contacto as contactoEstatico } from "@/data/site";
+import { contacto as contactoEstatico, whatsappHref } from "@/data/site";
 import { useConteudoSite } from "@/lib/conteudoSite";
 import { CopyButton } from "@/components/rui/CopyButton";
 import { antesDeEnviares } from "@/data/paginas";
 import contactosHeroAsset from "@/assets/contactos-hero.png";
+import contactosAvif400 from "@/assets/contactos-hero-400.avif";
+import contactosAvif800 from "@/assets/contactos-hero-800.avif";
+import contactosWebp400 from "@/assets/contactos-hero-400.webp";
+import contactosWebp800 from "@/assets/contactos-hero-800.webp";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScripts, breadcrumbScript } from "@/lib/schema";
 
 const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
@@ -21,8 +25,8 @@ export const Route = createFileRoute("/contactos")({
     problema: typeof search['problema'] === "string" ? (search['problema'] as string) : undefined,
   }),
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/contactos" }),
-    scripts: schemaScripts,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/contactos/" }),
+    scripts: [...schemaScripts, breadcrumbScript("Contactos", "/contactos/")],
   }),
   component: ContactosPage,
 });
@@ -50,6 +54,8 @@ function ContactosPage() {
           <HeroMascot
             src={contactosHeroAsset}
             alt="Ilustração do Rui com headset, portátil e telemóvel, pronto para atender o teu pedido"
+            avifSrcSet={`${contactosAvif400} 400w, ${contactosAvif800} 800w`}
+            webpSrcSet={`${contactosWebp400} 400w, ${contactosWebp800} 800w`}
           />
         }
       />
@@ -98,6 +104,12 @@ function ContactosPage() {
                     {emailLabel}
                   </a>
                   <CopyButton valor={contacto.email} rotulo="Email" />
+                </li>
+                <li className="flex items-center gap-3">
+                  <MessageCircle className="size-5 shrink-0 text-electric-soft" aria-hidden="true" />
+                  <a href={whatsappHref} className="hover:text-electric-soft">
+                    Falar no WhatsApp
+                  </a>
                 </li>
               </ul>
             </div>

@@ -10,8 +10,12 @@ import {
   faq,
 } from "@/data/paginas";
 import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png";
+import comoFuncionaAvif400 from "@/assets/como-funciona-hero-400.avif";
+import comoFuncionaAvif800 from "@/assets/como-funciona-hero-800.avif";
+import comoFuncionaWebp400 from "@/assets/como-funciona-hero-400.webp";
+import comoFuncionaWebp800 from "@/assets/como-funciona-hero-800.webp";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScriptsComoFunciona } from "@/lib/schema";
+import { schemaScriptsComoFunciona, breadcrumbScript } from "@/lib/schema";
 import {
   Accordion,
   AccordionItem,
@@ -25,8 +29,8 @@ const descricao =
 
 export const Route = createFileRoute("/como-funciona")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/como-funciona" }),
-    scripts: schemaScriptsComoFunciona,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/como-funciona/" }),
+    scripts: [...schemaScriptsComoFunciona, breadcrumbScript("Como funciona", "/como-funciona/")],
   }),
   component: ComoFuncionaPage,
 });
@@ -48,6 +52,8 @@ function ComoFuncionaPage() {
           <HeroMascot
             src={comoFuncionaHeroAsset}
             alt="Ilustração do processo de suporte: envias o pedido, analisamos, entramos em contacto e fica resolvido"
+            avifSrcSet={`${comoFuncionaAvif400} 400w, ${comoFuncionaAvif800} 800w`}
+            webpSrcSet={`${comoFuncionaWebp400} 400w, ${comoFuncionaWebp800} 800w`}
           />
         }
       />

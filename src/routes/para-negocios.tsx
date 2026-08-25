@@ -3,8 +3,12 @@ import { PageShell, PageHero, InnerCta, HeroMascot } from "@/components/rui/Page
 import { PartnerBlock } from "@/components/rui/PartnerBlock";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
 import negociosCenarioAsset from "@/assets/negocios-cenario.png";
+import negociosAvif400 from "@/assets/negocios-cenario-400.avif";
+import negociosAvif800 from "@/assets/negocios-cenario-800.avif";
+import negociosWebp400 from "@/assets/negocios-cenario-400.webp";
+import negociosWebp800 from "@/assets/negocios-cenario-800.webp";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScripts, breadcrumbScript } from "@/lib/schema";
 
 const titulo = "Informática para Pequenos Negócios em Cascais | O Rui dos Computadores";
 const descricao =
@@ -12,8 +16,8 @@ const descricao =
 
 export const Route = createFileRoute("/para-negocios")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/para-negocios" }),
-    scripts: schemaScripts,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/para-negocios/" }),
+    scripts: [...schemaScripts, breadcrumbScript("Para negócios", "/para-negocios/")],
   }),
   component: NegociosPage,
 });
@@ -36,6 +40,8 @@ function NegociosPage() {
           <HeroMascot
             src={negociosCenarioAsset}
             alt="Técnico de informática ao telefone num escritório com computadores, servidor, router e caixas de instalação, configuração e suporte."
+            avifSrcSet={`${negociosAvif400} 400w, ${negociosAvif800} 800w`}
+            webpSrcSet={`${negociosWebp400} 400w, ${negociosWebp800} 800w`}
           />
         }
       />

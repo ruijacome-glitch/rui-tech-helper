@@ -102,31 +102,54 @@ export function PageHero({
  * Mascote dos heros das páginas internas.
  * Garante posição e dimensão consistentes entre todas as páginas.
  */
+const HERO_SIZES = "(min-width: 1024px) 544px, (min-width: 640px) 416px, 352px";
+
 export function HeroMascot({
   src,
   alt,
   className = "",
+  avifSrcSet,
+  webpSrcSet,
 }: {
   src: string;
   alt: string;
   className?: string;
+  avifSrcSet?: string;
+  webpSrcSet?: string;
 }) {
+  const imgClassName = cn(
+    "relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]",
+    className,
+  );
   return (
     <div className="relative">
       <div
         aria-hidden="true"
         className="absolute inset-x-6 bottom-14 top-8 hidden border-l border-t border-electric/20 lg:block"
       />
-      <img
-        src={src}
-        alt={alt}
-        className={cn(
-          "relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]",
-          className,
-        )}
-        loading="eager"
-        decoding="async"
-      />
+      {avifSrcSet || webpSrcSet ? (
+        <picture>
+          {avifSrcSet && <source type="image/avif" srcSet={avifSrcSet} sizes={HERO_SIZES} />}
+          {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes={HERO_SIZES} />}
+          <img
+            src={src}
+            alt={alt}
+            className={imgClassName}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className={imgClassName}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
+      )}
     </div>
   );
 }

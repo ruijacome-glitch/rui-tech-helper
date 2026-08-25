@@ -1,11 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
 import { Reveal } from "@/components/rui/Reveal";
-import { notasPrecario } from "@/data/site";
+import { notasPrecario, whatsappHref } from "@/data/site";
+import { MessageCircle } from "lucide-react";
 import { useConteudoSite } from "@/lib/conteudoSite";
 import precarioHeroAsset from "@/assets/precario-hero.png";
+import precarioAvif400 from "@/assets/precario-hero-400.avif";
+import precarioAvif800 from "@/assets/precario-hero-800.avif";
+import precarioWebp400 from "@/assets/precario-hero-400.webp";
+import precarioWebp800 from "@/assets/precario-hero-800.webp";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScriptsPrecario, breadcrumbScript } from "@/lib/schema";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
 const descricao =
@@ -13,8 +18,8 @@ const descricao =
 
 export const Route = createFileRoute("/precario")({
   head: () => ({
-    ...buildPageHead({ title: titulo, description: descricao, path: "/precario" }),
-    scripts: schemaScripts,
+    ...buildPageHead({ title: titulo, description: descricao, path: "/precario/" }),
+    scripts: [...schemaScriptsPrecario, breadcrumbScript("Preçário", "/precario/")],
   }),
   component: PrecarioPage,
 });
@@ -122,6 +127,14 @@ function PrecarioPage() {
                   <Etiqueta key={e.texto} texto={e.texto} cor={e.cor} />
                 ))}
               </div>
+
+              <a
+                href={whatsappHref}
+                className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-sm border border-steel/50 px-5 text-sm font-semibold text-foreground transition-colors hover:border-electric hover:text-electric-soft"
+              >
+                <MessageCircle className="size-4" aria-hidden="true" />
+                Falar no WhatsApp
+              </a>
             </div>
 
             {/* Ilustração de hero do Preçário — dimensão generosa, sem fundo circular */}
@@ -130,13 +143,26 @@ function PrecarioPage() {
                 aria-hidden="true"
                 className="absolute inset-x-6 bottom-14 top-8 border-l border-t border-electric/20"
               />
-              <img
-                src={precarioHeroAsset}
-                alt="Rui a apresentar o preçário digital com planos e soluções de informática em Cascais"
-                className="relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]"
-                loading="eager"
-                decoding="async"
-              />
+              <picture>
+                <source
+                  type="image/avif"
+                  srcSet={`${precarioAvif400} 400w, ${precarioAvif800} 800w`}
+                  sizes="(min-width: 1024px) 544px, (min-width: 640px) 416px, 352px"
+                />
+                <source
+                  type="image/webp"
+                  srcSet={`${precarioWebp400} 400w, ${precarioWebp800} 800w`}
+                  sizes="(min-width: 1024px) 544px, (min-width: 640px) 416px, 352px"
+                />
+                <img
+                  src={precarioHeroAsset}
+                  alt="Rui a apresentar o preçário digital com planos e soluções de informática em Cascais"
+                  className="relative z-10 mx-auto block h-auto w-full max-w-[22rem] object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.55)] sm:max-w-[26rem] lg:max-w-[34rem]"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -151,6 +177,20 @@ function PrecarioPage() {
             <h2 className="mt-4 display-xl text-[clamp(1.7rem,4.6vw,2.8rem)]">
               O que é avaliado e confirmado
             </h2>
+            <p className="mt-5 max-w-2xl text-muted-foreground">
+              Os valores abaixo cobrem as intervenções mais pedidas por particulares e pequenos
+              negócios em Cascais e arredores. Servem de referência, não de tabela fechada: cada
+              equipamento chega com um historial diferente, e o que parece a mesma avaria pode ter
+              causas — e soluções — distintas. Por isso o valor final é sempre confirmado depois de
+              uma avaliação, nunca cobrado à cega.
+            </p>
+            <p className="mt-4 max-w-2xl text-muted-foreground">
+              Assistência remota tem valor fixo por sessão, cobrado apenas quando o problema fica
+              resolvido. Deslocações ao domicílio em Cascais têm um valor base que inclui a
+              deslocação; fora da zona habitual pode haver um acréscimo, sempre informado antes de
+              marcar. Peças e materiais, quando necessários, são sempre orçamentados à parte e só
+              comprados depois de dizeres que sim.
+            </p>
           </Reveal>
 
           <ul className="mt-12 border-t border-electric/15">
@@ -182,6 +222,12 @@ function PrecarioPage() {
           <p className="mt-4 display-xl text-[clamp(1.3rem,3.6vw,2rem)] text-foreground">
             Nada avança sem tu saberes quanto custa.
           </p>
+          <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
+            É uma regra simples, mas incomum no sector: primeiro o diagnóstico, depois o valor
+            explicado por escrito ou de viva voz, só depois a intervenção. Se durante o trabalho
+            surgir algo fora do que foi combinado, paro e falo contigo antes de continuar — nunca
+            depois de já estar feito.
+          </p>
         </div>
       </section>
 
@@ -193,6 +239,13 @@ function PrecarioPage() {
             <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.6rem)]">
               Áreas de intervenção adicionais
             </h2>
+            <p className="mt-5 max-w-2xl text-muted-foreground">
+              Além das intervenções mais comuns, resolvo também situações mais específicas —
+              configuração de redes maiores, migração de dados entre equipamentos, ou apoio pontual
+              a pequenos negócios com vários postos de trabalho. Estas áreas dependem mais do
+              contexto de cada caso, por isso o valor costuma ficar marcado como a confirmar até à
+              avaliação.
+            </p>
           </Reveal>
           <div className="mt-10 grid gap-px bg-electric/15 sm:grid-cols-2">
             {precarioAreas.map((a, i) => (
@@ -218,6 +271,12 @@ function PrecarioPage() {
             <h2 className="mt-4 display-xl text-[clamp(1.4rem,4vw,2.2rem)]">
               Quatro regras simples
             </h2>
+            <p className="mt-5 text-muted-foreground">
+              Estas regras aplicam-se a todos os serviços listados nesta página, sem excepção. Não
+              há cobrança por deslocação quando o pedido acaba por não ter solução viável — nesse
+              caso és sempre avisado antes de qualquer trabalho ser feito. O pagamento é feito no
+              final da intervenção, depois de confirmares que ficou resolvido.
+            </p>
           </Reveal>
           <ul className="mt-8 space-y-4">
             {notasPrecario.map((n, i) => (
@@ -231,6 +290,20 @@ function PrecarioPage() {
               </Reveal>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* NOTA FINAL — porque não há tabela fixa de todos os cenários */}
+      <section className="bg-night py-12 sm:py-16">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+          <p className="text-muted-foreground">
+            Não existe uma tabela de preços que cubra todos os cenários possíveis — o mesmo
+            equipamento pode ter várias avarias em simultâneo, ou o problema descrito pode ter uma
+            causa diferente da aparente. Por isso o preçário funciona como ponto de partida
+            realista, não como último valor. Se o teu caso não encaixar exactamente numa das linhas
+            acima, descreve o que se passa e recebes uma estimativa personalizada antes de
+            decidires avançar.
+          </p>
         </div>
       </section>
 

@@ -12,6 +12,7 @@ export type ServicoDetalhe = {
   sinais: string[];
   incluido: string[];
   quando: string;
+  detalhe: string;
 };
 
 export const servicosDetalhe: ServicoDetalhe[] = [
@@ -36,6 +37,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Assim que o problema se repete. Continuar a usar um equipamento com falhas costuma agravar a avaria.",
+    detalhe:
+      "Trabalho com computadores de secretária e portáteis de todas as marcas comuns em Portugal — HP, Dell, Lenovo, Asus, Acer, Apple. O diagnóstico é sempre físico e presencial ou remoto conforme o caso: abro o equipamento quando necessário, testo componentes isoladamente (fonte, memória, disco, placa) e só proponho substituição quando a peça em causa está mesmo confirmada como avariada, não por suposição.",
   },
   {
     id: "optimizacao",
@@ -58,6 +61,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Quando o trabalho do dia-a-dia começa a custar. É a intervenção mais simples e a que mais se nota.",
+    detalhe:
+      "A maioria dos computadores lentos não precisa de peças novas — precisa de arranque revisto, ventilação limpa e disco com espaço livre. Reviso os programas que arrancam com o sistema, remoto software desnecessário, actualizo drivers desactualizados e confirmo que o antivírus e as actualizações de segurança estão activos antes de terminar.",
   },
   {
     id: "instalacao",
@@ -80,6 +85,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Antes de começares a usar o equipamento novo. Evita ter de repetir tudo mais tarde.",
+    detalhe:
+      "Configuro Windows e macOS, contas de email (Outlook, Gmail, iCloud), impressoras em rede e programas de trabalho como Office, contabilidade ou facturação. Deixo sempre uma cópia de segurança automática a funcionar antes de sair, com o processo explicado em linguagem simples — não presumo conhecimento técnico da tua parte.",
   },
   {
     id: "dados",
@@ -102,6 +109,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Imediatamente, e sem continuar a usar o equipamento. Nenhuma recuperação pode ser garantida à partida.",
+    detalhe:
+      "Antes de qualquer tentativa, explico honestamente as hipóteses de sucesso pelo estado físico do disco ou pela forma como os ficheiros foram perdidos. Em casos de falha lógica (apagados, formatação, corrupção do sistema) a taxa de sucesso costuma ser boa; em falhas físicas do disco, o resultado depende do dano e é sempre avaliado primeiro sem compromisso.",
   },
   {
     id: "remoto",
@@ -124,6 +133,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Sempre que o computador liga e tem Internet. É a via mais rápida e a mais barata.",
+    detalhe:
+      "Uso ferramentas de acesso remoto seguro que só funcionam com autorização explícita tua em cada sessão — nunca acedo sem que estejas presente e a ver o ecrã. No fim, a ligação fica sempre encerrada por completo. É a opção mais usada por quem trabalha a partir de casa e não pode parar para esperar uma deslocação.",
   },
   {
     id: "redes",
@@ -146,6 +157,8 @@ export const servicosDetalhe: ServicoDetalhe[] = [
     ],
     quando:
       "Quando trabalhas ou estudas em casa e a ligação já te fez perder tempo mais do que uma vez.",
+    detalhe:
+      "Analiso a cobertura Wi-Fi divisão a divisão, identifico interferências (paredes, outros routers, electrodomésticos) e configuro repetidores ou sistemas mesh quando fazem sentido para a tua casa — nem sempre é preciso comprar equipamento novo, muitas vezes basta reposicionar o router ou ajustar canais. Impressoras e periféricos ficam testados a imprimir e digitalizar antes de terminar.",
   },
 ];
 
