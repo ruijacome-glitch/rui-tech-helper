@@ -5,7 +5,7 @@
 import { contacto } from "@/data/site";
 import { legal } from "@/data/legal";
 
-export const SITE_URL = "https://rui-tech-helper.lovable.app";
+export const SITE_URL = "https://oruidoscomputadores.pt";
 
 const telefone = contacto.telefone || undefined;
 const email = contacto.email || undefined;

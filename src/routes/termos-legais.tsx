@@ -1,24 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage, LinhaLegal, type SeccaoLegal } from "@/components/rui/LegalPage";
 import { legal, ligacoesOficiais, valorOuPendente } from "@/data/legal";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Termos Legais | O Rui dos Computadores";
 const descricao =
   "Condições de utilização do site, pedidos de assistência, diagnóstico e orçamento, responsabilidades, reclamações e lei aplicável.";
 
 export const Route = createFileRoute("/termos-legais")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/termos-legais" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/termos-legais" }],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/termos-legais" }),
   component: TermosPage,
 });
 

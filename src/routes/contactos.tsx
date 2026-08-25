@@ -7,6 +7,7 @@ import { useConteudoSite } from "@/lib/conteudoSite";
 import { CopyButton } from "@/components/rui/CopyButton";
 import { antesDeEnviares } from "@/data/paginas";
 import contactosHeroAsset from "@/assets/contactos-hero.png";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
@@ -18,16 +19,7 @@ export const Route = createFileRoute("/contactos")({
   validateSearch: (search: Record<string, unknown>): Busca => ({
     problema: typeof search['problema'] === "string" ? (search['problema'] as string) : undefined,
   }),
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/contactos" }),
   component: ContactosPage,
 });
 

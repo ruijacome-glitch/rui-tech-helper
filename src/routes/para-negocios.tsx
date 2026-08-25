@@ -3,22 +3,14 @@ import { PageShell, PageHero, InnerCta, HeroMascot } from "@/components/rui/Page
 import { PartnerBlock } from "@/components/rui/PartnerBlock";
 import { negociosAreas, negociosQuando, negociosModelo } from "@/data/paginas";
 import negociosCenarioAsset from "@/assets/negocios-cenario.png";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Informática para Pequenos Negócios em Cascais | O Rui dos Computadores";
 const descricao =
   "Apoio informático a lojas, ateliês, clínicas e escritórios de Cascais: postos de trabalho, redes Wi-Fi, impressoras, instalação e resolução de avarias.";
 
 export const Route = createFileRoute("/para-negocios")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/para-negocios" }),
   component: NegociosPage,
 });
 

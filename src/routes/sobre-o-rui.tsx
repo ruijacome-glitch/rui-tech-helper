@@ -3,22 +3,15 @@ import { PageShell, Breadcrumbs, InnerCta } from "@/components/rui/PageShell";
 import { MascotBancada } from "@/components/rui/Brand";
 import { Reveal } from "@/components/rui/Reveal";
 import { sobreTimeline, sobreValores } from "@/data/paginas";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Sobre o Rui | Assistência Informática em Cascais";
 const descricao =
   "Informática desde 2006, em Cascais. Suporte a utilizadores, equipamentos, sistemas, redes e infraestruturas, explicado sem linguagem técnica desnecessária.";
 
 export const Route = createFileRoute("/sobre-o-rui")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "profile" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    buildPageHead({ title: titulo, description: descricao, path: "/sobre-o-rui", type: "profile" }),
   component: SobrePage,
 });
 

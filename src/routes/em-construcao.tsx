@@ -10,6 +10,7 @@ export const Route = createFileRoute("/em-construcao")({
     meta: [
       { title: titulo },
       { name: "description", content: descricao },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: titulo },
       { property: "og:description", content: descricao },
       { property: "og:type", content: "website" },

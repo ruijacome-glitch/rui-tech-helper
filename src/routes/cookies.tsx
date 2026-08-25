@@ -3,24 +3,14 @@ import { LegalPage, type SeccaoLegal } from "@/components/rui/LegalPage";
 import { ligacoesOficiais } from "@/data/legal";
 import { COOKIE_STORAGE_KEY } from "@/lib/cookie-consent";
 import { abrirGestorCookies } from "@/lib/cookie-consent";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Política de Cookies | O Rui dos Computadores";
 const descricao =
   "Que armazenamento o site usa, para que serve e como alterar as tuas preferências a qualquer momento. Sem cookies de análise, publicidade ou marketing.";
 
 export const Route = createFileRoute("/cookies")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/cookies" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/cookies" }],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/cookies" }),
   component: CookiesPage,
 });
 

@@ -6,6 +6,7 @@ import { servicosDetalhe } from "@/data/paginas";
 import { whatsappHref } from "@/data/site";
 import servicosHeroAsset from "@/assets/servicos-hero.png";
 import apontarOruiAsset from "@/assets/apontar-orui.png";
+import { buildPageHead } from "@/lib/seo";
 
 /** Liga cada serviço ao tipo de problema do formulário de contacto. */
 const tipoPorServico: Record<string, string> = {
@@ -22,16 +23,7 @@ const descricao =
   "Reparação, limpeza e optimização, instalação, recuperação de dados, apoio remoto e redes Wi-Fi para particulares e pequenos negócios em Cascais.";
 
 export const Route = createFileRoute("/servicos")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/servicos" }),
   component: ServicosPage,
 });
 

@@ -4,24 +4,14 @@ import { Reveal } from "@/components/rui/Reveal";
 import { notasPrecario } from "@/data/site";
 import { useConteudoSite } from "@/lib/conteudoSite";
 import precarioHeroAsset from "@/assets/precario-hero.png";
+import { buildPageHead } from "@/lib/seo";
 
 const titulo = "Preçário | O Rui dos Computadores — Cascais";
 const descricao =
   "Cada problema é avaliado antes de avançar: diagnóstico, assistência remota, assistência ao domicílio e outras áreas de intervenção em Cascais, com valor confirmado antes da intervenção.";
 
 export const Route = createFileRoute("/precario")({
-  head: () => ({
-    meta: [
-      { title: titulo },
-      { name: "description", content: descricao },
-      { property: "og:title", content: titulo },
-      { property: "og:description", content: descricao },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/precario" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: "/precario" }],
-  }),
+  head: () => buildPageHead({ title: titulo, description: descricao, path: "/precario" }),
   component: PrecarioPage,
 });
 

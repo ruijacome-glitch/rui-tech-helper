@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://rui-tech-helper.lovable.app/sitemap.xml
+Sitemap: https://oruidoscomputadores.pt/sitemap.xml
