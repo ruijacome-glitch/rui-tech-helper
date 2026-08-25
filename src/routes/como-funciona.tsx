@@ -65,6 +65,11 @@ function ComoFuncionaPage() {
           height={640}
         />
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <p className="mb-12 max-w-2xl text-muted-foreground lg:mb-16">
+            O processo é sempre o mesmo, seja o problema pequeno ou grande: primeiro percebo o que
+            se passa, depois avalio, confirmo contigo antes de mexer em qualquer coisa e só depois
+            resolvo. Nenhum passo é saltado, mesmo quando a solução parece óbvia à primeira vista.
+          </p>
           <ol className="space-y-12 lg:space-y-20">
             {passosDetalhe.map((p, i) => (
               <li
@@ -165,6 +170,10 @@ function ComoFuncionaPage() {
           <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.75rem)]">
             O que perguntam com mais frequência
           </h2>
+          <p className="mt-5 max-w-2xl text-muted-foreground">
+            Dúvidas que voltam a aparecer em quase todos os primeiros contactos — prazos, formas de
+            pagamento, garantia do trabalho e o que fazer quando o problema não é claro à partida.
+          </p>
           <Accordion type="single" collapsible className="mt-10">
             {faq.map((f, i) => (
               <AccordionItem key={f.pergunta} value={`faq-${i}`}>

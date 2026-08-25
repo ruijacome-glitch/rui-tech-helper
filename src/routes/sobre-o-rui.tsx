@@ -213,6 +213,10 @@ function SobrePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
             <p className="label-tech text-electric-soft">// Competências comprovadas</p>
+            <p className="mt-4 max-w-xl text-muted-foreground">
+              Áreas trabalhadas de forma consistente ao longo dos anos, testadas em contexto real de
+              particulares e pequenos negócios — não uma lista de tecnologias soltas.
+            </p>
             <ul className="mt-6 flex flex-wrap gap-3">
               {competencias.map((c) => (
                 <li

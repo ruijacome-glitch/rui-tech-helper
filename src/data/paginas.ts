@@ -206,12 +206,12 @@ export const remotoOuDomicilio = [
   {
     titulo: "Assistência remota",
     texto:
-      "Indicada quando o computador liga e tem Internet: configurações, programas, email e erros de sistema. Mais rápida e sem deslocação.",
+      "Indicada quando o computador liga e tem Internet: configurações, programas, email e erros de sistema. Mais rápida e sem deslocação — ligo-me ao teu equipamento com a tua autorização, vês o ecrã a ser usado em tempo real e posso cortar a ligação a qualquer momento.",
   },
   {
     titulo: "Assistência ao domicílio",
     texto:
-      "Indicada quando há hardware, redes, impressoras ou equipamento que não arranca. Em Cascais e arredores.",
+      "Indicada quando há hardware, redes, impressoras ou equipamento que não arranca. Em Cascais e arredores. Levo o material necessário para diagnóstico no local e, sempre que possível, resolvo na mesma visita em vez de levar o equipamento para oficina.",
   },
 ];
 
@@ -227,31 +227,43 @@ export const negociosAreas = [
     numero: "01",
     titulo: "Computadores e postos de trabalho",
     texto: "Equipamento preparado, actualizado e igual para toda a equipa.",
+    detalhe:
+      "Instalo o sistema operativo, actualizações de segurança e os programas que cada posto precisa, com a mesma configuração base em toda a equipa — para que um substituto ou um posto novo não seja um problema à parte.",
   },
   {
     numero: "02",
     titulo: "Redes Wi-Fi",
     texto: "Cobertura estável para a equipa e para os clientes, sem cortes a meio.",
+    detalhe:
+      "Analiso a cobertura por divisão, separo a rede de trabalho da rede de clientes quando faz sentido e ajusto ou substituo equipamento apenas quando é mesmo necessário — muitas vezes o problema resolve-se sem comprar nada de novo.",
   },
   {
     numero: "03",
     titulo: "Impressoras e periféricos",
     texto: "Impressão, digitalização e equipamento partilhado a funcionar sempre.",
+    detalhe:
+      "Configuro impressoras partilhadas em rede, digitalização para email ou pasta, e verifico que todos os postos conseguem imprimir sem filas nem erros de driver nas horas de maior movimento.",
   },
   {
     numero: "04",
     titulo: "Instalação e configuração",
     texto: "Postos novos, contas de email e programas do dia-a-dia prontos a usar.",
+    detalhe:
+      "Quando entra alguém novo na equipa, preparo o posto, a conta de email e os acessos antes do primeiro dia de trabalho — sem perdas de tempo a improvisar configurações no momento.",
   },
   {
     numero: "05",
     titulo: "Resolução de avarias",
     texto: "Diagnóstico rápido quando alguma coisa pára no meio do horário de trabalho.",
+    detalhe:
+      "Uma avaria a meio do dia custa tempo e clientes. Faço uma primeira avaliação remota para perceber se dá para resolver à distância ou se compensa mais ir ao local, e priorizo sempre o que está a impedir o negócio de funcionar.",
   },
   {
     numero: "06",
     titulo: "Apoio próximo e remoto",
     texto: "Falas comigo directamente. Resolvo à distância ou apareço no local.",
+    detalhe:
+      "Sem central de atendimento nem tickets a rodar por técnicos diferentes. Falas sempre comigo, explico o que encontrei em linguagem simples e confirmo o valor antes de avançar.",
   },
 ];
 

@@ -52,6 +52,12 @@ function NegociosPage() {
           <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.75rem)]">
             No que posso ajudar
           </h2>
+          <p className="mt-5 max-w-2xl text-muted-foreground">
+            Pequenos negócios em Cascais — lojas, ateliês, clínicas, escritórios — costumam ter um
+            ou dois postos de trabalho críticos, sem margem para paragens longas. O apoio cobre o
+            que mantém esse dia-a-dia a funcionar: equipamento, rede, impressoras e as
+            configurações que ninguém tem tempo de tratar sozinho.
+          </p>
           <ul className="mt-10 grid gap-x-10 sm:grid-cols-2">
             {negociosAreas.map((a) => (
               <li
@@ -62,6 +68,7 @@ function NegociosPage() {
                 <div>
                   <h3 className="display-xl text-lg">{a.titulo}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{a.texto}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{a.detalhe}</p>
                 </div>
               </li>
             ))}
