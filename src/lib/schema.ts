@@ -57,8 +57,31 @@ export const localBusinessSchema = {
   knowsLanguage: ["pt-PT"],
 };
 
+export const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/sobre-o-rui#person`,
+  name: "Rui Jácome",
+  jobTitle: "Especialista técnico sénior",
+  url: `${SITE_URL}/sobre-o-rui`,
+  worksFor: { "@id": `${SITE_URL}/#organization` },
+  knowsAbout: [
+    "Reparação de computadores",
+    "Redes informáticas",
+    "Recuperação de dados",
+    "Suporte técnico",
+  ],
+  knowsLanguage: ["pt-PT"],
+};
+
 /** Entradas prontas para o campo `scripts` do head() das rotas. */
 export const schemaScripts = [
   { type: "application/ld+json", children: JSON.stringify(organizationSchema) },
   { type: "application/ld+json", children: JSON.stringify(localBusinessSchema) },
+];
+
+/** Só para /sobre-o-rui — inclui Person além dos schemas base. */
+export const schemaScriptsSobre = [
+  ...schemaScripts,
+  { type: "application/ld+json", children: JSON.stringify(personSchema) },
 ];
