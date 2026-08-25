@@ -1,9 +1,10 @@
 /**
  * Consentimento de cookies — armazenamento e estado partilhado.
  *
- * Guarda apenas a escolha do utilizador em localStorage, na chave
+ * Guarda a escolha do utilizador em localStorage, na chave
  * `rui_cookie_preferences_v1`, com validade de seis meses.
- * Não carrega scripts nem cria cookies de análise ou marketing.
+ * O Google Analytics (categoria "análise") só é carregado se autorizado —
+ * ver carregarGoogleAnalytics() em src/lib/analytics.ts.
  */
 
 export const COOKIE_STORAGE_KEY = "rui_cookie_preferences_v1";

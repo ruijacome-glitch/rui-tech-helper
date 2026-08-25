@@ -8,6 +8,7 @@ import {
   lerConsentimento,
   type Preferencias,
 } from "@/lib/cookie-consent";
+import { carregarGoogleAnalytics } from "@/lib/analytics";
 
 type Categoria = {
   id: "necessarios" | "analise" | "marketing";
@@ -28,7 +29,7 @@ const categorias: Categoria[] = [
     id: "analise",
     titulo: "Análise",
     texto:
-      "Estatísticas de utilização. Não existe actualmente nenhuma ferramenta de análise no site.",
+      "Estatísticas de utilização através do Google Analytics. Só carregado se autorizares esta categoria.",
   },
   {
     id: "marketing",
@@ -50,6 +51,7 @@ export function CookieConsent() {
     const registo = lerConsentimento();
     if (registo) {
       setPrefs({ necessarios: true, analise: registo.analise, marketing: registo.marketing });
+      if (registo.analise) carregarGoogleAnalytics();
     } else {
       setPainelVisivel(true);
     }
@@ -117,6 +119,7 @@ export function CookieConsent() {
     setPainelVisivel(false);
     setDialogoAberto(false);
     focoAnterior.current?.focus?.();
+    if (valores.analise) carregarGoogleAnalytics();
   }
 
   return (

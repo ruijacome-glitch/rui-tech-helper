@@ -8,7 +8,7 @@ import { schemaScripts } from "@/lib/schema";
 
 const titulo = "Política de Cookies | O Rui dos Computadores";
 const descricao =
-  "Que armazenamento o site usa, para que serve e como alterar as tuas preferências a qualquer momento. Sem cookies de análise, publicidade ou marketing.";
+  "Que armazenamento o site usa, para que serve e como alterar as tuas preferências a qualquer momento, incluindo o Google Analytics opcional.";
 
 export const Route = createFileRoute("/cookies")({
   head: () => ({
@@ -52,7 +52,7 @@ function CookiesPage() {
       titulo: "Inventário actual",
       conteudo: (
         <>
-          <p>Neste momento, o site utiliza apenas um registo, na categoria necessária:</p>
+          <p>Neste momento, o site utiliza os seguintes registos:</p>
           <div className="mt-4 border border-electric/20 bg-night p-5">
             <p className="label-tech text-electric-soft">{COOKIE_STORAGE_KEY}</p>
             <dl className="mt-4 space-y-2 text-sm">
@@ -74,28 +74,49 @@ function CookiesPage() {
               </div>
             </dl>
           </div>
+          <div className="mt-4 border border-electric/20 bg-night p-5">
+            <p className="label-tech text-electric-soft">Google Analytics (GA4)</p>
+            <dl className="mt-4 space-y-2 text-sm">
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Tipo</dt>
+                <dd>Cookie/script de terceiros (Google)</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Categoria</dt>
+                <dd>Análise — opcional, desligada por defeito</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Finalidade</dt>
+                <dd>Estatísticas de visitas ao site</dd>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <dt className="label-tech text-steel">Activação</dt>
+                <dd>Só carrega depois de autorizares a categoria "Análise"</dd>
+              </div>
+            </dl>
+          </div>
         </>
       ),
     },
     {
       id: "sem-analise",
-      titulo: "Sem análise, publicidade ou marketing",
+      titulo: "Análise opcional, publicidade e marketing",
       conteudo: (
         <p>
-          O site não utiliza actualmente cookies de análise, de publicidade ou de marketing, nem
-          ferramentas de acompanhamento de terceiros. As categorias opcionais existem no painel de
-          preferências apenas para registar a tua escolha e estão desligadas por defeito.
+          O site usa o Google Analytics para estatísticas de visitas, mas só depois de autorizares
+          a categoria "Análise" no painel de preferências — está desligada por defeito. Não usa
+          cookies de publicidade, marketing ou outras ferramentas de acompanhamento de terceiros.
         </p>
       ),
     },
     {
       id: "futuro",
-      titulo: "Tecnologias opcionais no futuro",
+      titulo: "Outras tecnologias opcionais no futuro",
       conteudo: (
         <p>
-          Se vier a ser necessário usar estatísticas de utilização ou outras tecnologias opcionais,
-          só serão activadas depois do teu consentimento explícito. Esta política será actualizada
-          com o inventário completo antes de qualquer activação.
+          Se vier a ser necessário usar publicidade, marketing ou outras tecnologias opcionais além
+          do Google Analytics, só serão activadas depois do teu consentimento explícito. Esta
+          política será actualizada com o inventário completo antes de qualquer activação.
         </p>
       ),
     },
