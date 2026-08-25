@@ -262,7 +262,7 @@ function PrecarioPage() {
             <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.6rem)]">
               Áreas de intervenção adicionais
             </h2>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
+            <p className="mt-5 max-w-3xl text-muted-foreground">
               Além das intervenções mais comuns, resolvo também situações mais específicas —
               configuração de redes maiores, migração de dados entre equipamentos, ou apoio pontual
               a pequenos negócios com vários postos de trabalho. Estas áreas dependem mais do
