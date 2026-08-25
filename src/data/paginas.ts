@@ -340,3 +340,49 @@ export const antesDeEnviares = [
     texto: "Se houver ficheiros em risco, desliga. Cada utilização reduz as hipóteses.",
   },
 ];
+
+export const faq = [
+  {
+    pergunta: "Atende ao domicílio em Cascais?",
+    resposta: "Sim, particulares e pequenos negócios em Cascais e arredores.",
+  },
+  {
+    pergunta: "Quanto custa um diagnóstico?",
+    resposta: "39 €.",
+  },
+  {
+    pergunta: "Faz recuperação de dados com garantia?",
+    resposta:
+      "Não há garantia; depende do estado do disco, avaliado antes de orçamentar.",
+  },
+  {
+    pergunta: "Preciso de saber termos técnicos para explicar o problema?",
+    resposta: "Não, descreve por palavras próprias.",
+  },
+  {
+    pergunta: "O valor final é sempre o mesmo do preçário?",
+    resposta: "É o valor de partida; confirmado contigo antes de qualquer intervenção.",
+  },
+  {
+    pergunta: "Fazem apoio remoto ou só ao domicílio?",
+    resposta:
+      "Os dois: primeira avaliação remota decide se resolve à distância ou exige deslocação.",
+  },
+  {
+    pergunta: "Atendem fora de Cascais?",
+    resposta: "Áreas fora de Cascais e arredores são avaliadas caso a caso.",
+  },
+  {
+    pergunta: "As peças estão incluídas no valor?",
+    resposta: "Não, salvo indicação em contrário; são orçamentadas à parte.",
+  },
+  {
+    pergunta: "Trabalham com pequenos negócios, não só particulares?",
+    resposta: "Sim — lojas, ateliês, clínicas, escritórios.",
+  },
+  {
+    pergunta: "Quanto tempo demora a resolver um problema?",
+    resposta:
+      "Apoio remoto costuma resolver no próprio dia; ao domicílio depende do diagnóstico, sempre confirmado antes de avançar.",
+  },
+];

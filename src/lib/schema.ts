@@ -4,6 +4,7 @@
  */
 import { contacto } from "@/data/site";
 import { legal } from "@/data/legal";
+import { faq } from "@/data/paginas";
 
 export const SITE_URL = "https://oruidoscomputadores.pt";
 
@@ -84,4 +85,20 @@ export const schemaScripts = [
 export const schemaScriptsSobre = [
   ...schemaScripts,
   { type: "application/ld+json", children: JSON.stringify(personSchema) },
+];
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.pergunta,
+    acceptedAnswer: { "@type": "Answer", text: f.resposta },
+  })),
+};
+
+/** Só para /como-funciona — inclui FAQPage além dos schemas base. */
+export const schemaScriptsComoFunciona = [
+  ...schemaScripts,
+  { type: "application/ld+json", children: JSON.stringify(faqSchema) },
 ];

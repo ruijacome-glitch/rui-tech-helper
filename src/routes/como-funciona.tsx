@@ -7,10 +7,17 @@ import {
   primeiraMensagem,
   remotoOuDomicilio,
   antesDaIntervencao,
+  faq,
 } from "@/data/paginas";
 import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png";
 import { buildPageHead } from "@/lib/seo";
-import { schemaScripts } from "@/lib/schema";
+import { schemaScriptsComoFunciona } from "@/lib/schema";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 const titulo = "Como Funciona a Assistência | O Rui dos Computadores";
 const descricao =
@@ -19,7 +26,7 @@ const descricao =
 export const Route = createFileRoute("/como-funciona")({
   head: () => ({
     ...buildPageHead({ title: titulo, description: descricao, path: "/como-funciona" }),
-    scripts: schemaScripts,
+    scripts: schemaScriptsComoFunciona,
   }),
   component: ComoFuncionaPage,
 });
@@ -142,6 +149,28 @@ function ComoFuncionaPage() {
               sem o teu acordo.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Perguntas frequentes */}
+      <section className="bg-night-soft py-16 sm:py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <p className="label-tech text-electric-soft">// Perguntas frequentes</p>
+          <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.75rem)]">
+            O que perguntam com mais frequência
+          </h2>
+          <Accordion type="single" collapsible className="mt-10">
+            {faq.map((f, i) => (
+              <AccordionItem key={f.pergunta} value={`faq-${i}`}>
+                <AccordionTrigger className="text-base text-foreground sm:text-lg">
+                  {f.pergunta}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {f.resposta}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
