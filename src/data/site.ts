@@ -163,21 +163,21 @@ export const testemunhoExemplo = {
   atribuicao: "Exemplo editorial — a validar antes da publicação",
 };
 
-/** PREÇOS — valores a definir. Editar aqui quando estiverem fechados. */
+/** PREÇOS — espelha os valores publicados via CMS (api/public/conteudo-site). Actualizar aqui se mudarem lá. */
 export const precos = [
   {
     servico: "Diagnóstico",
-    valor: "Valor a confirmar",
+    valor: "39 €",
     nota: "Avaliação do problema e explicação do que é preciso fazer.",
   },
   {
     servico: "Assistência remota",
-    valor: "Valor a confirmar",
+    valor: "desde 49 €",
     nota: "Resolução à distância, contigo a acompanhar.",
   },
   {
     servico: "Assistência ao domicílio",
-    valor: "Valor a confirmar",
+    valor: "desde 89 €",
     nota: "Deslocação em Cascais e arredores.",
   },
 ];
@@ -195,29 +195,26 @@ export const negocios = {
   cta: "Falar sobre o meu negócio",
 };
 
-/** Valor por defeito enquanto os preços finais não estiverem fechados. */
-export const VALOR_A_CONFIRMAR = "Valor a confirmar";
-
-/** Áreas de preçário adicionais — editar aqui quando os valores existirem. */
+/** Áreas de preçário adicionais — espelha os valores publicados via CMS. */
 export const precarioAreas = [
   {
     titulo: "Limpeza e optimização",
-    valor: VALOR_A_CONFIRMAR,
+    valor: "desde 89 €",
     nota: "Limpeza física, arranque, espaço em disco e desempenho geral.",
   },
   {
     titulo: "Instalação e configuração",
-    valor: VALOR_A_CONFIRMAR,
+    valor: "desde 69 €",
     nota: "Sistema, contas, email, cópias de segurança e equipamento novo.",
   },
   {
     titulo: "Redes e periféricos",
-    valor: VALOR_A_CONFIRMAR,
+    valor: "desde 99 €",
     nota: "Wi-Fi, routers, repetidores, impressoras e equipamento partilhado.",
   },
   {
     titulo: "Recuperação de dados",
-    valor: "Mediante avaliação",
+    valor: "orçamentação, após avaliação",
     nota: "Depende sempre do estado do equipamento. Nunca há garantia de recuperação.",
   },
 ];

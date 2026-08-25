@@ -23,8 +23,16 @@
 4. Confirmação da solução e do valor com o cliente antes de qualquer intervenção
 5. Resolução e teste em conjunto com o cliente
 
-## Modelo de preços
-Os valores finais de preçário ainda não foram publicados no site (em definição). Regras confirmadas: o valor é sempre acordado com o cliente antes de qualquer intervenção; peças e materiais não estão incluídos salvo indicação em contrário; a recuperação de dados depende de avaliação prévia sem garantia de resultado; deslocações fora de Cascais e arredores são avaliadas caso a caso.
+## Preços (Cascais e arredores)
+- Diagnóstico: 39 €
+- Assistência remota: desde 49 €
+- Assistência ao domicílio: desde 89 €
+- Limpeza e optimização: desde 89 €
+- Instalação e configuração: desde 69 €
+- Redes e periféricos: desde 99 €
+- Recuperação de dados: orçamentação, após avaliação (sem garantia de resultado)
+
+Regras: o valor final é sempre confirmado com o cliente antes de qualquer intervenção; peças e materiais não estão incluídos salvo indicação em contrário; deslocações fora de Cascais e arredores são avaliadas caso a caso.
 
 ## Contacto
 - Telefone: +351 91 155 69 01
