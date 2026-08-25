@@ -71,10 +71,10 @@ export function PageHero({
         <div
           className={cn(
             "mt-8 grid gap-8",
-            aside ? "lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:items-end lg:gap-10" : "",
+            aside ? "lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:items-start lg:gap-10" : "",
           )}
         >
-          <div className={aside ? "lg:pb-6" : undefined}>
+          <div>
             <p className="label-tech text-electric-soft">
               {etiqueta}
             </p>

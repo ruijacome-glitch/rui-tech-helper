@@ -95,8 +95,8 @@ function SobrePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <Breadcrumbs pagina="Sobre o Rui" />
 
-          <div className="mt-8 grid items-end gap-8 lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:gap-10">
-            <div className="animate-rise pb-10 lg:pb-24">
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:gap-10">
+            <div className="animate-rise">
               <p className="label-tech text-electric-soft">// Sobre</p>
               <h1 className="mt-4 display-xl text-[clamp(2.1rem,6.4vw,4.2rem)]">
                 Tecnologia explicada
