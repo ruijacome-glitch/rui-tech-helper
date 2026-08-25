@@ -172,26 +172,49 @@ function PrecarioPage() {
       <section className="relative overflow-hidden bg-navy-mid py-16 sm:py-24">
         <CaboLigacao className="pointer-events-none absolute left-6 top-0 hidden h-56 w-10 opacity-60 lg:block" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-          <Reveal>
-            <p className="label-tech text-electric-soft">// Intervenções base</p>
-            <h2 className="mt-4 display-xl text-[clamp(1.7rem,4.6vw,2.8rem)]">
-              O que é avaliado e confirmado
-            </h2>
-            <p className="mt-5 max-w-2xl text-muted-foreground">
-              Os valores abaixo cobrem as intervenções mais pedidas por particulares e pequenos
-              negócios em Cascais e arredores. Servem de referência, não de tabela fechada: cada
-              equipamento chega com um historial diferente, e o que parece a mesma avaria pode ter
-              causas — e soluções — distintas. Por isso o valor final é sempre confirmado depois de
-              uma avaliação, nunca cobrado à cega.
-            </p>
-            <p className="mt-4 max-w-2xl text-muted-foreground">
-              Assistência remota tem valor fixo por sessão, cobrado apenas quando o problema fica
-              resolvido. Deslocações ao domicílio em Cascais têm um valor base que inclui a
-              deslocação; fora da zona habitual pode haver um acréscimo, sempre informado antes de
-              marcar. Peças e materiais, quando necessários, são sempre orçamentados à parte e só
-              comprados depois de dizeres que sim.
-            </p>
-          </Reveal>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+            <Reveal>
+              <p className="label-tech text-electric-soft">// Intervenções base</p>
+              <h2 className="mt-4 display-xl text-[clamp(1.7rem,4.6vw,2.8rem)]">
+                O que é avaliado e confirmado
+              </h2>
+              <p className="mt-5 max-w-2xl text-muted-foreground">
+                Os valores abaixo cobrem as intervenções mais pedidas por particulares e pequenos
+                negócios em Cascais e arredores. Servem de referência, não de tabela fechada: cada
+                equipamento chega com um historial diferente, e o que parece a mesma avaria pode ter
+                causas — e soluções — distintas. Por isso o valor final é sempre confirmado depois de
+                uma avaliação, nunca cobrado à cega.
+              </p>
+              <p className="mt-4 max-w-2xl text-muted-foreground">
+                Assistência remota tem valor fixo por sessão, cobrado apenas quando o problema fica
+                resolvido. Deslocações ao domicílio em Cascais têm um valor base que inclui a
+                deslocação; fora da zona habitual pode haver um acréscimo, sempre informado antes de
+                marcar. Peças e materiais, quando necessários, são sempre orçamentados à parte e só
+                comprados depois de dizeres que sim.
+              </p>
+            </Reveal>
+
+            <Reveal delay={100} className="lg:self-start">
+              <div className="panel-tech p-6 sm:p-7">
+                <p className="label-tech text-electric-soft">Como funciona, resumido</p>
+                <ul className="mt-5 space-y-4">
+                  {etiquetas.map((e) => (
+                    <li key={e.texto} className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className={`${e.cor} mt-1.5 inline-block size-1.5 shrink-0 rounded-full bg-current motion-safe:animate-blink`}
+                      />
+                      <span className="text-sm text-foreground">{e.texto}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-sm text-muted-foreground">
+                  Se o teu caso não encaixar nos valores abaixo, escreve-me e recebes uma estimativa
+                  antes de decidires avançar.
+                </p>
+              </div>
+            </Reveal>
+          </div>
 
           <ul className="mt-12 border-t border-electric/15">
             {precos.map((p, i) => (
