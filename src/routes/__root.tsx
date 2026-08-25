@@ -87,6 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Assistência informática em Cascais, ao domicílio e remota. Reparação, optimização, recuperação de dados e redes Wi-Fi, sem conversa técnica.",
       },
       { name: "author", content: "O Rui dos Computadores" },
+      { name: "google-site-verification", content: "5P2Bpu9maLUOHyLxXpNeQQL2qrDpP-KxWhbd8pK4tXM" },
       { name: "theme-color", content: "#030B1A" },
       { property: "og:site_name", content: "O Rui dos Computadores" },
       { property: "og:locale", content: "pt_PT" },
