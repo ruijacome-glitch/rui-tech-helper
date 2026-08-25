@@ -8,6 +8,7 @@ import { CopyButton } from "@/components/rui/CopyButton";
 import { antesDeEnviares } from "@/data/paginas";
 import contactosHeroAsset from "@/assets/contactos-hero.png";
 import { buildPageHead } from "@/lib/seo";
+import { schemaScripts } from "@/lib/schema";
 
 const titulo = "Contactos | O Rui dos Computadores — Cascais";
 const descricao =
@@ -19,7 +20,10 @@ export const Route = createFileRoute("/contactos")({
   validateSearch: (search: Record<string, unknown>): Busca => ({
     problema: typeof search['problema'] === "string" ? (search['problema'] as string) : undefined,
   }),
-  head: () => buildPageHead({ title: titulo, description: descricao, path: "/contactos" }),
+  head: () => ({
+    ...buildPageHead({ title: titulo, description: descricao, path: "/contactos" }),
+    scripts: schemaScripts,
+  }),
   component: ContactosPage,
 });
 

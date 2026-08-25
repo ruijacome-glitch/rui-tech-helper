@@ -10,13 +10,17 @@ import {
 } from "@/data/paginas";
 import comoFuncionaHeroAsset from "@/assets/como-funciona-hero.png";
 import { buildPageHead } from "@/lib/seo";
+import { schemaScripts } from "@/lib/schema";
 
 const titulo = "Como Funciona a Assistência | O Rui dos Computadores";
 const descricao =
   "Da primeira mensagem à solução: avaliação, diagnóstico, confirmação do valor e resolução testada contigo. Assistência informática em Cascais.";
 
 export const Route = createFileRoute("/como-funciona")({
-  head: () => buildPageHead({ title: titulo, description: descricao, path: "/como-funciona" }),
+  head: () => ({
+    ...buildPageHead({ title: titulo, description: descricao, path: "/como-funciona" }),
+    scripts: schemaScripts,
+  }),
   component: ComoFuncionaPage,
 });
 

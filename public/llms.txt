@@ -1,0 +1,41 @@
+# O Rui dos Computadores
+
+> Assistência informática ao domicílio e remota em Cascais e arredores, Portugal. Fundado em 2006 por Rui Jácome. Serve particulares e pequenos negócios (lojas, ateliês, clínicas, escritórios).
+
+## Sobre
+- Nome comercial: O Rui dos Computadores
+- Responsável: Rui Jácome — mais de 15 anos de experiência em suporte técnico, desde suporte presencial (2006), passando por coordenação de equipa (2008) e especialista técnico sénior (2011)
+- Área servida: Cascais e arredores, Portugal
+- Idioma: Português (pt-PT)
+
+## Serviços
+- Reparação de computadores e portáteis: avarias de hardware e sistema, ecrãs, teclados, ventoinhas, discos, alimentação
+- Limpeza e optimização: limpeza física, gestão de arranque, libertação de espaço em disco, remoção de programas desnecessários
+- Instalação e configuração: sistema operativo, contas, email, impressoras, cópias de segurança, equipamento novo
+- Recuperação de dados: discos com falhas, ficheiros apagados por engano, sistemas que não arrancam (sem garantia de sucesso — depende de avaliação prévia)
+- Apoio remoto: resolução no próprio dia por ligação remota autorizada pelo cliente
+- Redes Wi-Fi, impressoras e periféricos: cobertura Wi-Fi, routers, repetidores, impressoras, digitalização, periféricos
+
+## Como funciona
+1. O cliente descreve o problema por palavras próprias (sem necessidade de vocabulário técnico)
+2. Primeira avaliação remota indica se é caso de apoio remoto ou deslocação ao domicílio
+3. Diagnóstico do equipamento e identificação da causa
+4. Confirmação da solução e do valor com o cliente antes de qualquer intervenção
+5. Resolução e teste em conjunto com o cliente
+
+## Modelo de preços
+Os valores finais de preçário ainda não foram publicados no site (em definição). Regras confirmadas: o valor é sempre acordado com o cliente antes de qualquer intervenção; peças e materiais não estão incluídos salvo indicação em contrário; a recuperação de dados depende de avaliação prévia sem garantia de resultado; deslocações fora de Cascais e arredores são avaliadas caso a caso.
+
+## Contacto
+- Telefone: +351 91 155 69 01
+- Email: ola@oruidoscomputadores.pt
+- WhatsApp: https://wa.me/351911556901
+- Website: https://oruidoscomputadores.pt
+
+## Páginas
+- Serviços: https://oruidoscomputadores.pt/servicos
+- Como funciona: https://oruidoscomputadores.pt/como-funciona
+- Para negócios: https://oruidoscomputadores.pt/para-negocios
+- Sobre o Rui: https://oruidoscomputadores.pt/sobre-o-rui
+- Preçário: https://oruidoscomputadores.pt/precario
+- Contactos: https://oruidoscomputadores.pt/contactos

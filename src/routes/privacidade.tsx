@@ -2,13 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage, LinhaLegal, type SeccaoLegal } from "@/components/rui/LegalPage";
 import { legal, ligacoesOficiais, valorOuPendente } from "@/data/legal";
 import { buildPageHead } from "@/lib/seo";
+import { schemaScripts } from "@/lib/schema";
 
 const titulo = "Política de Privacidade | O Rui dos Computadores";
 const descricao =
   "Que dados são tratados, com que finalidade e fundamento, durante quanto tempo e quais os teus direitos ao abrigo do RGPD.";
 
 export const Route = createFileRoute("/privacidade")({
-  head: () => buildPageHead({ title: titulo, description: descricao, path: "/privacidade" }),
+  head: () => ({
+    ...buildPageHead({ title: titulo, description: descricao, path: "/privacidade" }),
+    scripts: schemaScripts,
+  }),
   component: PrivacidadePage,
 });
 
