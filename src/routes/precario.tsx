@@ -109,7 +109,7 @@ function PrecarioPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <Breadcrumbs pagina="Preçário" />
 
-          <div className="mt-8 grid items-end gap-8 lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:gap-10">
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1fr_minmax(0,1.05fr)] lg:gap-10">
             <div className="motion-safe:animate-rise pb-8 lg:pb-24">
               <p className="label-tech text-electric-soft">// Preçário</p>
               <h1 className="mt-4 display-xl text-[clamp(2.1rem,6.4vw,4.2rem)]">
@@ -257,31 +257,33 @@ function PrecarioPage() {
       {/* OUTRAS ÁREAS */}
       <section className="bg-night py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <Reveal>
-            <p className="label-tech text-electric-soft">// Outras áreas</p>
-            <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.6rem)]">
-              Áreas de intervenção adicionais
-            </h2>
-            <p className="mt-5 max-w-3xl text-muted-foreground">
-              Além das intervenções mais comuns, resolvo também situações mais específicas —
-              configuração de redes maiores, migração de dados entre equipamentos, ou apoio pontual
-              a pequenos negócios com vários postos de trabalho. Estas áreas dependem mais do
-              contexto de cada caso, por isso o valor costuma ficar marcado como a confirmar até à
-              avaliação.
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-px bg-electric/15 sm:grid-cols-2">
-            {precarioAreas.map((a, i) => (
-              <Reveal key={a.titulo} delay={i * 80}>
-                <div className="h-full bg-night p-6 transition-colors hover:bg-navy-mid sm:p-8">
-                  <div className="flex flex-wrap items-baseline justify-between gap-3">
-                    <h3 className="display-xl text-lg">{a.titulo}</h3>
-                    <span className="font-mono text-base font-semibold text-orange">{a.valor}</span>
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 lg:items-start">
+            <Reveal>
+              <p className="label-tech text-electric-soft">// Outras áreas</p>
+              <h2 className="mt-4 display-xl text-[clamp(1.6rem,4.5vw,2.6rem)]">
+                Áreas de intervenção adicionais
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Além das intervenções mais comuns, resolvo também situações mais específicas —
+                configuração de redes maiores, migração de dados entre equipamentos, ou apoio
+                pontual a pequenos negócios com vários postos de trabalho. Estas áreas dependem
+                mais do contexto de cada caso, por isso o valor costuma ficar marcado como a
+                confirmar até à avaliação.
+              </p>
+            </Reveal>
+            <div className="grid gap-px bg-electric/15 sm:grid-cols-2">
+              {precarioAreas.map((a, i) => (
+                <Reveal key={a.titulo} delay={i * 80}>
+                  <div className="h-full bg-night p-6 transition-colors hover:bg-navy-mid sm:p-8">
+                    <div className="flex flex-wrap items-baseline justify-between gap-3">
+                      <h3 className="display-xl text-lg">{a.titulo}</h3>
+                      <span className="font-mono text-base font-semibold text-orange">{a.valor}</span>
+                    </div>
+                    <p className="mt-3 text-sm text-muted-foreground">{a.nota}</p>
                   </div>
-                  <p className="mt-3 text-sm text-muted-foreground">{a.nota}</p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
