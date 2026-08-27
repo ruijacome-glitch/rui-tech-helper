@@ -1,6 +1,8 @@
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 
+const CONVITE_API_URL = (token: string) =>
+  `https://api.oruidoscomputadores.pt/api/convites/${token}`;
 const COMPLETAR_API_URL = (token: string) =>
   `https://api.oruidoscomputadores.pt/api/convites/${token}/completar`;
 
@@ -23,10 +25,41 @@ function MensagemErro({ id, texto }: { id: string; texto: string }) {
 export function AtivarContaForm({ token }: { token: string }) {
   const [ativado, setAtivado] = useState(false);
   const [aEnviar, setAEnviar] = useState(false);
+  const [aCarregar, setACarregar] = useState(true);
+  const [erroConvite, setErroConvite] = useState<string | null>(null);
   const [erroApi, setErroApi] = useState<string | null>(null);
   const [erros, setErros] = useState<Erros>({});
   const resumoRef = useRef<HTMLDivElement>(null);
   const [v, setV] = useState({ email: "", morada: "", nif: "", password: "" });
+
+  useEffect(() => {
+    let cancelado = false;
+    (async () => {
+      try {
+        const res = await fetch(CONVITE_API_URL(token));
+        if (cancelado) return;
+        if (res.status === 404) {
+          setErroConvite("Convite não encontrado. Confirma o link recebido por email.");
+        } else if (res.status === 410) {
+          setErroConvite("Este convite expirou ou já foi utilizado. Pede um novo ao Rui.");
+        } else if (!res.ok) {
+          setErroConvite("Não foi possível carregar os dados do convite. Tenta outra vez.");
+        } else {
+          const dados = (await res.json()) as { nome: string; email: string | null };
+          setV((atual) => ({ ...atual, email: dados.email ?? "" }));
+        }
+      } catch {
+        if (!cancelado) {
+          setErroConvite("Não foi possível ligar ao servidor. Verifica a ligação e tenta outra vez.");
+        }
+      } finally {
+        if (!cancelado) setACarregar(false);
+      }
+    })();
+    return () => {
+      cancelado = true;
+    };
+  }, [token]);
 
   function validar(): Erros {
     const e: Erros = {};
@@ -90,6 +123,29 @@ export function AtivarContaForm({ token }: { token: string }) {
         });
       }
     }
+  }
+
+  if (aCarregar) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-sm border border-border bg-night-soft p-8 text-center text-muted-foreground"
+      >
+        A carregar convite…
+      </div>
+    );
+  }
+
+  if (erroConvite) {
+    return (
+      <div role="alert" className="rounded-sm border border-orange/60 bg-orange/10 p-6">
+        <p className="flex items-center gap-2 text-sm font-semibold text-orange">
+          <AlertCircle className="size-4 shrink-0" aria-hidden="true" />
+          {erroConvite}
+        </p>
+      </div>
+    );
   }
 
   if (ativado) {
