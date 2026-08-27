@@ -1,0 +1,9 @@
+# SPA fallback for TanStack Router client-side routes with no prerendered
+# static file (e.g. /ativar-conta/{token} — token is dynamic, never
+# prerendered). Any request that isn't a real file or directory falls back
+# to index.html, which ships the client router; it then matches the real
+# URL and renders the correct route.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

@@ -20,6 +20,7 @@ import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ServicosRouteImport } from './routes/servicos'
 import { Route as SobreORuiRouteImport } from './routes/sobre-o-rui'
 import { Route as TermosLegaisRouteImport } from './routes/termos-legais'
+import { Route as AtivarContaTokenRouteImport } from './routes/ativar-conta.$token'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -76,6 +77,11 @@ const TermosLegaisRoute = TermosLegaisRouteImport.update({
   path: '/termos-legais',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AtivarContaTokenRoute = AtivarContaTokenRouteImport.update({
+  id: '/ativar-conta/$token',
+  path: '/ativar-conta/$token',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
+  '/ativar-conta/$token': typeof AtivarContaTokenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
+  '/ativar-conta/$token': typeof AtivarContaTokenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/servicos': typeof ServicosRoute
   '/sobre-o-rui': typeof SobreORuiRoute
   '/termos-legais': typeof TermosLegaisRoute
+  '/ativar-conta/$token': typeof AtivarContaTokenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
+    | '/ativar-conta/$token'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
+    | '/ativar-conta/$token'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/servicos'
     | '/sobre-o-rui'
     | '/termos-legais'
+    | '/ativar-conta/$token'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   ServicosRoute: typeof ServicosRoute
   SobreORuiRoute: typeof SobreORuiRoute
   TermosLegaisRoute: typeof TermosLegaisRoute
+  AtivarContaTokenRoute: typeof AtivarContaTokenRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermosLegaisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ativar-conta/$token': {
+      id: '/ativar-conta/$token'
+      path: '/ativar-conta/$token'
+      fullPath: '/ativar-conta/$token'
+      preLoaderRoute: typeof AtivarContaTokenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -267,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicosRoute: ServicosRoute,
   SobreORuiRoute: SobreORuiRoute,
   TermosLegaisRoute: TermosLegaisRoute,
+  AtivarContaTokenRoute: AtivarContaTokenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
